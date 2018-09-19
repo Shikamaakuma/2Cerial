@@ -36,16 +36,7 @@
       </toolsSet>
       <compileType>
         <cTool>
-          <incFile>
-            <pElem>../../../../../../../Curl/include/curl/curl.h</pElem>
-            <pElem>../../../../../../../Curl/include/curl/curlver.h</pElem>
-            <pElem>../../../../../../../Curl/include/curl/easy.h</pElem>
-            <pElem>../../../../../../../Curl/include/curl/mprintf.h</pElem>
-            <pElem>../../../../../../../Curl/include/curl/multi.h</pElem>
-            <pElem>../../../../../../../Curl/include/curl/stdcheaders.h</pElem>
-            <pElem>../../../../../../../Curl/include/curl/system.h</pElem>
-            <pElem>../../../../../../../Curl/include/curl/typecheck-gcc.h</pElem>
-          </incFile>
+          <commandLine>-IC:/Curl/include/curl</commandLine>
         </cTool>
       </compileType>
       <item path="main.c" ex="false" tool="0" flavor2="0">
