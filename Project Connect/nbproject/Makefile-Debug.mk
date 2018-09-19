@@ -35,7 +35,7 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 
 # Object Files
 OBJECTFILES= \
-	${OBJECTDIR}/main.o
+	${OBJECTDIR}/connection.o
 
 
 # C Compiler Flags
@@ -62,10 +62,10 @@ ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/project_connect.exe: ${OBJECTFILES}
 	${MKDIR} -p ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}
 	${LINK.c} -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/project_connect ${OBJECTFILES} ${LDLIBSOPTIONS}
 
-${OBJECTDIR}/main.o: main.c
+${OBJECTDIR}/connection.o: connection.c
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
-	$(COMPILE.c) -g -include ../../../../../../../Curl/include/curl/curl.h -include ../../../../../../../Curl/include/curl/curlver.h -include ../../../../../../../Curl/include/curl/easy.h -include ../../../../../../../Curl/include/curl/mprintf.h -include ../../../../../../../Curl/include/curl/multi.h -include ../../../../../../../Curl/include/curl/stdcheaders.h -include ../../../../../../../Curl/include/curl/system.h -include ../../../../../../../Curl/include/curl/typecheck-gcc.h -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/main.o main.c
+	$(COMPILE.c) -g -include ../../../../../../../Curl/include/curl/curl.h -include ../../../../../../../Curl/include/curl/curlver.h -include ../../../../../../../Curl/include/curl/easy.h -include ../../../../../../../Curl/include/curl/mprintf.h -include ../../../../../../../Curl/include/curl/multi.h -include ../../../../../../../Curl/include/curl/stdcheaders.h -include ../../../../../../../Curl/include/curl/system.h -include ../../../../../../../Curl/include/curl/typecheck-gcc.h -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/connection.o connection.c
 
 # Subprojects
 .build-subprojects:
