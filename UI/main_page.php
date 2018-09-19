@@ -21,8 +21,10 @@ Datum/Zeit = auto Abruf
 		<h1> Winterthur </h1>
 		<div id="time_date"> 14:15 18.09.2018 </div>
 		<div id="temp_winti"> 21.0° C  </div>
+		
 		<?php
 		echo date('H:i:s D J. F Y');
-		?> 
+		?>
+		
 	</body>
 </html>
