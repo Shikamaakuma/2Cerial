@@ -35,6 +35,18 @@
         <rebuildPropChanged>false</rebuildPropChanged>
       </toolsSet>
       <compileType>
+        <cTool>
+          <incFile>
+            <pElem>Library/curl/curl.h</pElem>
+            <pElem>Library/curl/curlver.h</pElem>
+            <pElem>Library/curl/easy.h</pElem>
+            <pElem>Library/curl/mprintf.h</pElem>
+            <pElem>Library/curl/multi.h</pElem>
+            <pElem>Library/curl/stdcheaders.h</pElem>
+            <pElem>Library/curl/system.h</pElem>
+            <pElem>Library/curl/typecheck-gcc.h</pElem>
+          </incFile>
+        </cTool>
       </compileType>
       <item path="main.c" ex="false" tool="0" flavor2="0">
       </item>
