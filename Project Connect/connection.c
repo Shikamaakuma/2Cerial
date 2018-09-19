@@ -13,12 +13,34 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <curl.h>
+ 
+int postToWeb(char[] webpage, char[] toPost){
+    CURL *curl;
+    CURLcode res; 
+    
+    curl_global_init(CURL_GLOBAL_ALL);
+    
+    curl = curl_easy_init();
+    
+    if(curl) {
 
-/*
- * 
- */
-int main(int argc, char** argv) {
+        curl_easy_setopt(curl, CURLOPT_URL, );
+        
+        curl_easy_setopt(curl, CURLOPT_URL, webpage);
+        curl_easy_setopt(curl, CURLOPT_POSTFIELDS, toPost);
+ 
+ 
+        res = curl_easy_perform(curl);
 
-    return (EXIT_SUCCESS);
+
+        if(res != CURLE_OK)
+            fprintf(stderr, "curl_easy_perform() failed: %s\n",
+                curl_easy_strerror(res));
+ 
+
+        curl_easy_cleanup(curl);
+    }
+    curl_global_cleanup();
+    return 0;
 }
-
