@@ -17,7 +17,7 @@
 #include <stdlib.h>
 #include <curl.h>
  
-int postToWeb(char[] webpage, , char[] location, char[] varType, char[] value){
+int postToWeb(char[] webpage, char[] location, char[] varType, char[] value){
     CURL *curl;
     CURLcode res; 
 	//constructs whole string that should be posted
