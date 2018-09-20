@@ -26,6 +26,10 @@ int main ( int argc, char **argv ) {
     float pressure = 0;
     float fair_quality = 0.0f;
     char webPage[] = //"/*serveradresse*/";
+    int postsize = 4;
+    char toPost[postsize];
+    char type[];
+    char standort[] = "Winterthur";
     
 
     
@@ -42,8 +46,12 @@ int main ( int argc, char **argv ) {
         
         
         fair_quality = (float)air_quality;
-        //sends the data to our webpage
-        postToWeb(webPage, temp);
+        
+        //posting temp
+        gcvt(temp, postsize, toPost);
+        type = "temp";
+        //sends the temperatur to our webpage
+        postToWeb(webPage, standort, type, toPost);
     }
     
 }
