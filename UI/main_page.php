@@ -18,12 +18,30 @@ Datum/Zeit = auto Abruf
 		<title> Wetter Winterthur </title>
 	</head>
 	<body>
+	
 		<h1> Winterthur </h1>
-		<div id="time_date"> 14:15 18.09.2018 </div>
-		<div id="temp_winti"> 21.0° C  </div>
+		
+		<p id="time_date">
+		<?php
+			echo date('H:i') . "</br>"; 
+			echo date('j. n. Y');
+		?>
+		</p>
+		
+		<p id="temp_winti">
 		
 		<?php
-		echo date('H:i:s D J. F Y');
+		$temp = rand(200, 450)/10.0;
+		echo $temp . "°C";
+		?>
+		</p>	
+		<?php
+		if($temp > 20){
+			echo "<link rel='stylesheet' type='text/css' href='main_page_warm.css' />";
+		}
+		else{
+			echo "<link rel='stylesheet' type='text/css' href='main_page_cold.css' />" ;
+		}
 		?>
 		
 	</body>
