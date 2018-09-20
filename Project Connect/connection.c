@@ -21,7 +21,7 @@ int postToWeb(char[] webpage, char[] location, char[] varType, char[] value){
     CURL *curl;
     CURLcode res; 
 	//constructs whole string that should be posted
-	char[] toPost[] = location + "_" + varType + _"=" + value;
+	char[] *toPost[] = location + "_" + varType + _"=" + value;
 	
 	//initializes most things like socket and protocols
     curl_global_init(CURL_GLOBAL_ALL);
