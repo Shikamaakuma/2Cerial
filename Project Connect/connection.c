@@ -11,14 +11,18 @@
  * Created on 19 September 2018, 14:22
  */
 
+//TODO change toPost input to float and change code accordingly
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <curl.h>
  
-int postToWeb(char[] webpage, char[] toPost){
+int postToWeb(char[] webpage, , char[] location, char[] varType, char[] value){
     CURL *curl;
     CURLcode res; 
-    
+	//constructs whole string that should be posted
+	char[] toPost[] = location + "_" + varType + _"=" + value;
+	
 	//initializes most things like socket and protocols
     curl_global_init(CURL_GLOBAL_ALL);
     //starts a libcurl session with curl as handle
