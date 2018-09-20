@@ -24,6 +24,7 @@ int main ( int argc, char **argv ) {
     float humidity = 0;
     int air_quality = 0;
     float pressure = 0;
+    float fair_quality = 0.0f;
     char webPage[] = //"/*serveradresse*/";
     
 
@@ -39,6 +40,8 @@ int main ( int argc, char **argv ) {
         sleep(1);
         pressure = get_bmp280_value(bmp_adresse);
         
+        
+        fair_quality = (float)air_quality;
         //sends the data to our webpage
         postToWeb(webPage, temp);
     }
