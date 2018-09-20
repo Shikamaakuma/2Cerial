@@ -1,0 +1,19 @@
+/*
+version:   1.0 
+date:      19.09.2018 
+author:    Janosch Bohner
+email:     janosch.bohner@gmx.net 
+website:   https://2cerials.m2e-demo.ch
+*/
+
+*{font-family: Arial Black;}
+
+div#time_date {font-family: Helvetica; font-size: 6em;}
+
+div#temp_winti {
+	font-weight: bold;
+	font-size: 18em;
+	color: black;
+	position: center;
+}
+body {background-color: #0ff;}
