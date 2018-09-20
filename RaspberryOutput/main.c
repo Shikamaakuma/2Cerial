@@ -8,7 +8,7 @@
 #include "bmp280.h"
 #include "grovepi.h"
 
-#include "postToWeb.h"
+#include "postToWeb.h"//TODO actually get the library
 
 #define     DHT_DIGITAL_PORT            4
 #define     AIR_QUALITY_ANALOG_PORT     0
@@ -25,8 +25,8 @@ int main ( int argc, char **argv ) {
     int air_quality = 0;
     float pressure = 0;
     float fair_quality = 0.0f;
-    char webPage[] = //"/*serveradresse*/";
-    int postsize = 4;
+    char webPage[] = //"/*TODO insert serveradresse*/";
+    int postsize = 3;
     char toPost[postsize];
     char type[];
     char standort[] = "Winterthur";
@@ -45,13 +45,24 @@ int main ( int argc, char **argv ) {
         pressure = get_bmp280_value(bmp_adresse);
         
         
-        fair_quality = (float)air_quality;
+        
         
         //posting temp
+        postsize = 3;
         gcvt(temp, postsize, toPost);
         type = "temp";
         //sends the temperatur to our webpage
         postToWeb(webPage, standort, type, toPost);
+        
+        //posting air pressure (coming soon)
+        //TODO same as above 
+        
+        //posting air quality (coming soon)
+        //TODO same as above 
+        //fair_quality = (float)air_quality;
+        
+        //posting humidity (coming soon)
+        //TODO same as above 
     }
     
 }
