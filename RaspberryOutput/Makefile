@@ -31,6 +31,8 @@ LFLAGS = \
 # define any libraries to link into executable
 LIBS = -lwiringPi                                   \
        -lm                                          \
+	   -lcurl										\
+	   
 
 # define the source files
 SOURCES =   main.c                                  \
@@ -38,7 +40,8 @@ SOURCES =   main.c                                  \
             air_quality.c                           \
             bmp280.c                                \
             grovepi.c                               \
-
+			connection.c							\
+			
 # define the C object files 
 #
 # This uses Suffix Replacement within a macro:

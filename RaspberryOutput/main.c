@@ -8,7 +8,7 @@
 #include "bmp280.h"
 #include "grovepi.h"
 
-#include "postToWeb.h"//TODO actually get the library
+#include "connection.h"//TODO actually get the library
 
 #define     DHT_DIGITAL_PORT            4
 #define     AIR_QUALITY_ANALOG_PORT     0
