@@ -25,7 +25,7 @@ int main ( int argc, char **argv ) {
     int air_quality = 0;
     float pressure = 0;
     float fair_quality = 0;
-    char webPage[] = //"http://www.beispieladresse.ch/file_writer.php";
+    char webPage[] = "http://2cerials.m2e-demo.ch/file_writer.php";
     int postsize = 3;
     char toPost[postsize];
     char type[];
