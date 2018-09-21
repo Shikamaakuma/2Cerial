@@ -28,7 +28,7 @@ int main ( int argc, char **argv ) {
     char webPage[] = "http://2cerials.m2e-demo.ch/file_writer.php";
     int postsize = 3;
     char toPost[postsize];
-    char type[];
+    char *type[5];
     char standort[] = "Winterthur";
     
 
@@ -49,7 +49,7 @@ int main ( int argc, char **argv ) {
         //posting temp
         postsize = 3;
         gcvt(temp, postsize, toPost);
-        type = "temp";
+        *type = "temp";
         //sends the temperatur to our webpage
         postToWeb(webPage, standort, type, toPost);
         
