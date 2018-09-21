@@ -24,8 +24,8 @@ int main ( int argc, char **argv ) {
     float humidity = 0;
     int air_quality = 0;
     float pressure = 0;
-    float fair_quality = 0.0f;
-    char webPage[] = //"/*TODO insert serveradresse*/";
+    float fair_quality = 0;
+    char webPage[] = //"http://www.beispieladresse.ch/file_writer.php";
     int postsize = 3;
     char toPost[postsize];
     char type[];
@@ -44,8 +44,8 @@ int main ( int argc, char **argv ) {
         sleep(1);
         pressure = get_bmp280_value(bmp_adresse);
         
-        
-        
+        //determines all how many seconds data is being sent
+        sleep(60);
         
         //posting temp
         postsize = 3;
