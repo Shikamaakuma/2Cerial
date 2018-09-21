@@ -44,8 +44,7 @@ int main ( int argc, char **argv ) {
         sleep(1);
         pressure = get_bmp280_value(bmp_adresse);
         
-        //determines all how many seconds data is being sent
-        sleep(60);
+
         
         //posting temp
         postsize = 3;
@@ -63,6 +62,10 @@ int main ( int argc, char **argv ) {
         
         //posting humidity (coming soon)
         //TODO same as above 
+        
+        
+        //determines all how many seconds data is being sent
+        sleep(60);
     }
     
 }
