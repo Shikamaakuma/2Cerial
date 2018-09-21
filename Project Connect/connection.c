@@ -16,6 +16,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <curl/curl.h>
+#include <string.h>
  
 int postToWeb(char *webpage, char *location, char *varType, char *value){
     
@@ -26,6 +27,8 @@ int postToWeb(char *webpage, char *location, char *varType, char *value){
     strcat(location, varType);
     strcat(location, "=");
     strcat(location, value);
+    printf("%s \n", location);
+    
 	//initializes most things like socket and protocols
     curl_global_init(CURL_GLOBAL_ALL);
     //starts a libcurl session with curl as handle

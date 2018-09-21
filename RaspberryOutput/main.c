@@ -25,11 +25,11 @@ int main ( int argc, char **argv ) {
     int air_quality = 0;
     float pressure = 0;
     float fair_quality = 0;
-    char webPage[] = "http://2cerials.m2e-demo.ch/file_writer.php";
+    char webPage[1000] = "http://2cerials.m2e-demo.ch/file_writer.php";
     int postsize = 3;
     char toPost[postsize];
     char *type[5];
-    char standort[] = "Winterthur";
+    char *standort[200];
     
 
     
@@ -44,14 +44,14 @@ int main ( int argc, char **argv ) {
         sleep(1);
         pressure = get_bmp280_value(bmp_adresse);
         
-
-        
+        *standort = "Winterthur";
+        temp = 30;
         //posting temp
         postsize = 3;
         gcvt(temp, postsize, toPost);
         *type = "temp";
         //sends the temperatur to our webpage
-        postToWeb(webPage, standort, type, toPost);
+        postToWeb(webPage, *standort, *type, toPost);
         
         //posting air pressure (coming soon)
         //TODO same as above 
@@ -65,7 +65,7 @@ int main ( int argc, char **argv ) {
         
         
         //determines all how many seconds data is being sent
-        sleep(60);
+        sleep(1);
     }
     
 }
