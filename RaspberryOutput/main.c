@@ -52,16 +52,34 @@ int main ( int argc, char **argv ) {
         strcpy(type, "temp\0");
         //sends the temperatur to our webpage
         postToWeb(webPage, standort, type, toPost);
-        
+       
+        strcpy(standort,"Winterthur\0");
         //posting air pressure (coming soon)
         //TODO same as above 
-        
+        postsize = 4;
+        gcvt(pressure, postsize, toPost);
+        strcpy(type, "press\0");
+        //sends the pressure to our webpage
+        postToWeb(webPage, standort, type, toPost);
+       
+        strcpy(standort,"Winterthur\0");
         //posting air quality (coming soon)
         //TODO same as above 
-        //fair_quality = (float)air_quality;
+        fair_quality = (float)air_quality;
+        postsize = 3;
+        gcvt(fair_quality, postsize, toPost);
+        strcpy(type, "airqual\0");
+        //sends the air quality to our webpage
+        postToWeb(webPage, standort, type, toPost);
         
+        strcpy(standort,"Winterthur\0");
         //posting humidity (coming soon)
         //TODO same as above 
+        postsize = 3;
+        gcvt(humidity, postsize, toPost);
+        strcpy(type, "h20\0");
+        //sends the humidity to our webpage
+        postToWeb(webPage, standort, type, toPost);
         
         
         //determines all how many seconds data is being sent
