@@ -45,26 +45,25 @@ int main ( int argc, char **argv ) {
         sleep(1);
         pressure = get_bmp280_value(bmp_adresse);
         
-        strcpy(standort,"Winterthur\0");
+        
         //posting temp
+        strcpy(standort,"Winterthur\0");
         postsize = 3;
         gcvt(temp, postsize, toPost);
         strcpy(type, "temp\0");
         //sends the temperatur to our webpage
         postToWeb(webPage, standort, type, toPost);
        
-        strcpy(standort,"Winterthur\0");
         //posting air pressure (coming soon)
-        //TODO same as above 
+        strcpy(standort,"Winterthur\0");
         postsize = 4;
         gcvt(pressure, postsize, toPost);
         strcpy(type, "press\0");
         //sends the pressure to our webpage
         postToWeb(webPage, standort, type, toPost);
        
-        strcpy(standort,"Winterthur\0");
         //posting air quality (coming soon)
-        //TODO same as above 
+        strcpy(standort,"Winterthur\0");
         fair_quality = (float)air_quality;
         postsize = 3;
         gcvt(fair_quality, postsize, toPost);
@@ -72,9 +71,9 @@ int main ( int argc, char **argv ) {
         //sends the air quality to our webpage
         postToWeb(webPage, standort, type, toPost);
         
-        strcpy(standort,"Winterthur\0");
+        
         //posting humidity (coming soon)
-        //TODO same as above 
+        strcpy(standort,"Winterthur\0");
         postsize = 3;
         gcvt(humidity, postsize, toPost);
         strcpy(type, "h20\0");
@@ -83,7 +82,7 @@ int main ( int argc, char **argv ) {
         
         
         //determines all how many seconds data is being sent
-        sleep(60);
+        sleep(2);
     }
     
 }
