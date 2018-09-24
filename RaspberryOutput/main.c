@@ -53,6 +53,7 @@ int main ( int argc, char **argv ) {
         strcpy(type, "temp\0");
         //sends the temperatur to our webpage
         postToWeb(webPage, standort, type, toPost);
+        sleep(1);
        
         //posting air pressure (coming soon)
         strcpy(standort,"Winterthur\0");
@@ -61,6 +62,7 @@ int main ( int argc, char **argv ) {
         strcpy(type, "press\0");
         //sends the pressure to our webpage
         postToWeb(webPage, standort, type, toPost);
+        sleep(1);
        
         //posting air quality (coming soon)
         strcpy(standort,"Winterthur\0");
@@ -70,13 +72,13 @@ int main ( int argc, char **argv ) {
         strcpy(type, "airqual\0");
         //sends the air quality to our webpage
         postToWeb(webPage, standort, type, toPost);
-        
+        sleep(1);
         
         //posting humidity (coming soon)
         strcpy(standort,"Winterthur\0");
         postsize = 3;
         gcvt(humidity, postsize, toPost);
-        strcpy(type, "h20\0");
+        strcpy(type, "h2o\0");
         //sends the humidity to our webpage
         postToWeb(webPage, standort, type, toPost);
         
