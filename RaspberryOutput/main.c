@@ -56,7 +56,6 @@ int main ( int argc, char **argv ) {
         sleep(1);
        
         //posting air pressure (coming soon)
-        strcpy(standort,"Winterthur\0");
         postsize = 4;
         gcvt(pressure, postsize, toPost);
         strcpy(type, "press\0");
@@ -65,7 +64,6 @@ int main ( int argc, char **argv ) {
         sleep(1);
        
         //posting air quality (coming soon)
-        strcpy(standort,"Winterthur\0");
         fair_quality = (float)air_quality;
         postsize = 3;
         gcvt(fair_quality, postsize, toPost);
@@ -75,7 +73,6 @@ int main ( int argc, char **argv ) {
         sleep(1);
         
         //posting humidity (coming soon)
-        strcpy(standort,"Winterthur\0");
         postsize = 3;
         gcvt(humidity, postsize, toPost);
         strcpy(type, "h2o\0");

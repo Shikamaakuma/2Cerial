@@ -21,13 +21,11 @@
 int postToWeb(char *webpage, char *location, char *varType, char *value){
     
     CURL *curl;
-    CURLcode res; 
+    CURLcode res;
+    char toPost[35];
 	//constructs whole string that should be posted
-    strcat(location, "_");
-    strcat(location, varType);
-    strcat(location, "=");
-    strcat(location, value);
-    printf("%s \n", location);
+    sprintf(toPost,"%s _ %s = %s ",location,varType,value);
+    printf("%s \n", toPost);
     
 	//initializes most things like socket and protocols
     curl_global_init(CURL_GLOBAL_ALL);
@@ -39,7 +37,7 @@ int postToWeb(char *webpage, char *location, char *varType, char *value){
         
 		//sets the webpage and what to post for curl 
         curl_easy_setopt(curl, CURLOPT_URL, webpage);
-        curl_easy_setopt(curl, CURLOPT_POSTFIELDS, location);
+        curl_easy_setopt(curl, CURLOPT_POSTFIELDS, toPost);
  
 		//posts toPost on website and returns a value depending on if it was successful or not
         res = curl_easy_perform(curl);
