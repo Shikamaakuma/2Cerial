@@ -18,15 +18,21 @@ Datum/Zeit = auto Abruf
 		<title> Wetter Winterthur </title>
 	</head>
 	<body>
-	
+	<div id = "Winterthur">
 		<h1> Winterthur </h1>
 		
-		<p id="time_date">
+		
+		<div id="time">
 		<?php
-			echo date('H:i') . "</br>"; 
-			echo date('j. n. Y');
+				echo date('H:i'); 
 		?>
-		</p>
+		</div>
+		
+		<div id="date">
+		<?php
+				echo date('j. n. Y');
+		?>
+		</div>
 		
 		<p id="temp_winti">
 		
@@ -43,6 +49,6 @@ Datum/Zeit = auto Abruf
 			echo "<link rel='stylesheet' type='text/css' href='main_page_cold.css' />" ;
 		}
 		?>
-		
+	</div>	
 	</body>
 </html>

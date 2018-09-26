@@ -7,21 +7,48 @@ website:   https://2cerials.m2e-demo.ch
 */
 
 *{font-family: Arial Black;}
-
+div#Winterthur {
+	font-family: Arial Black;
+	margin: 30px;
+	background-color: #ff0;
+	padding: 3em;
+	width: 24em;
+ 	height: 20em;
+}
 h1 {
 	position
 }	
 
+	#time, #date{
+	display: block;
+	float: left;
+	color: black;
+}	
+	
 p#time_date {
-	font-family: Helvetica;
+	font-family: Arial Black;
 	font-size: 6em;
 	margin-right: 321;
+	color: black;
 }
 
 p#temp_winti {
+	font-family: Arial Black;
 	font-weight: bold;
 	font-size: 10em;
 	color: black;
 	position: center;
 }
-body {background-color: #ff0;}
+body, html {
+	background: url("matrix-1175x500.jpeg");
+	background-repeat: no-repeat;
+	background-position: top left;
+	background-size: cover;
+	color: white;
+	top: 0;
+	min-heigth: 100vh;
+	
+	//background-color: ;
+	
+
+}
