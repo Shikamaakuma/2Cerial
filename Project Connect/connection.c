@@ -24,7 +24,7 @@ int postToWeb(char *webpage, char *location, char *varType, char *value){
     CURLcode res;
     char toPost[35];
 	//constructs whole string that should be posted
-    sprintf(toPost,"%s _ %s = %s ",location,varType,value);
+    sprintf(toPost,"%s_%s=%s",location,varType,value);
     printf("%s \n", toPost);
     
 	//initializes most things like socket and protocols
