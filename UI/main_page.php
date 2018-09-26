@@ -1,9 +1,4 @@
- <?php
-    $saveThis = $_POST[Winterthur_temp];
-    $winterthur_Temp = fopen("winterthur_temp.txt", "r") or die("Unable to open file!");
-    $temp = fread($winterthur_Temp, 20);
-    fclose($winterthur_Temp);
-?> 
+
 
 <!--
 
@@ -18,6 +13,8 @@ Datum/Zeit: -> file Temp_Date
 Temp_Date:
 Temperatur = 21.0° C
 Datum/Zeit = auto Abruf
+
+ev. hilfreich für Strukturierung: gridbyexample.com
 -->
 <!DOCTYPE HTML>
 <html>
@@ -26,25 +23,26 @@ Datum/Zeit = auto Abruf
 		<title> Wetter Winterthur </title>
 	</head>
 	<body>
-	<div id = "Winterthur">
+	<div class = "Winterthur">
 		<h1> Winterthur </h1>
 		
 		
-		<div id="time">
+		<div class="time">
 		<?php
-				echo date('H:i'); 
+				echo date('H:i') ."&#09"; 
 		?>
 		</div>
 		
-		<div id="date">
+		<div class="date">
 		<?php
 				echo date('j. n. Y');
 		?>
 		</div>
 		
-		<p id="temp_winti">
+		<p class="temp_winti">
 		
 		<?php
+		$temp=21.9;
 		echo $temp . "°C";
 		?>
 		</p>	
