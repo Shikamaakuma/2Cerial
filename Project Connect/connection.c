@@ -15,14 +15,18 @@
 
 #include <stdio.h>
 #include <stdlib.h>
-#include <curl.h>
+#include <curl/curl.h>
+#include <string.h>
  
-int postToWeb(char[] webpage, char[] location, char[] varType, char[] value){
+int postToWeb(char *webpage, char *location, char *varType, char *value){
+    
     CURL *curl;
-    CURLcode res; 
+    CURLcode res;
+    char toPost[35];
 	//constructs whole string that should be posted
-	char[] toPost[] = location + "_" + varType + _"=" + value;
-	
+    sprintf(toPost,"%s _ %s = %s ",location,varType,value);
+    printf("%s \n", toPost);
+    
 	//initializes most things like socket and protocols
     curl_global_init(CURL_GLOBAL_ALL);
     //starts a libcurl session with curl as handle
@@ -47,5 +51,6 @@ int postToWeb(char[] webpage, char[] location, char[] varType, char[] value){
         curl_easy_cleanup(curl);
     }
     curl_global_cleanup();
+    
     return 0;
 }

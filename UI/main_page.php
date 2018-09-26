@@ -1,4 +1,12 @@
+ <?php
+    $saveThis = $_POST[Winterthur_temp];
+    $winterthur_Temp = fopen("winterthur_temp.txt", "r") or die("Unable to open file!");
+    $temp = fread($winterthur_Temp, 20);
+    fclose($winterthur_Temp);
+?> 
+
 <!--
+
 Aufgabe 18.09.2018
 
 Website-Oberfläche gestalten (html/css):
@@ -37,7 +45,6 @@ Datum/Zeit = auto Abruf
 		<p id="temp_winti">
 		
 		<?php
-		$temp = rand(200, 450)/10.0;
 		echo $temp . "°C";
 		?>
 		</p>	

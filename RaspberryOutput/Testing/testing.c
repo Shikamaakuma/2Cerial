@@ -1,18 +1,21 @@
 #include <stdio.h>
 #include <stdlib.h>
-
+#include <string.h>
 /*
  * File to Test Codes and stuff
  */
 int main(int argc, char** argv) {
     
-    float temp = 27.97896785;
-    int postsize = 4;
-    char toPost[postsize];
+    char *varType = "Winterthur";
+    char *value = "temp";
+    char *location;
     
-    gcvt(temp, postsize, toPost);
-    printf("resultat für toPost %s \n", toPost);
-    //should be 27.98
+    strcat(location, "_");
+    strcat(location, varType);
+    strcat(location, "=");
+    strcat(location, value);
+    
+    printf("%s", location);
 
     return 0;
 }

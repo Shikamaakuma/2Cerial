@@ -7,6 +7,7 @@
 #include "air_quality.h"
 #include "bmp280.h"
 #include "grovepi.h"
+#include <string.h>
 
 #include "connection.h"//TODO actually get the library
 
@@ -24,12 +25,12 @@ int main ( int argc, char **argv ) {
     float humidity = 0;
     int air_quality = 0;
     float pressure = 0;
-    float fair_quality = 0.0f;
-    char webPage[] = //"/*TODO insert serveradresse*/";
-    int postsize = 3;
+    float fair_quality = 0;
+    char webPage[1000] = "http://2cerials.m2e-demo.ch/file_writer.php";
+    int postsize = 33;
     char toPost[postsize];
-    char type[];
-    char standort[] = "Winterthur";
+    char type[10];
+    char standort[200];
     
 
     
@@ -45,24 +46,42 @@ int main ( int argc, char **argv ) {
         pressure = get_bmp280_value(bmp_adresse);
         
         
-        
-        
         //posting temp
+        strcpy(standort,"Winterthur\0");
         postsize = 3;
         gcvt(temp, postsize, toPost);
-        type = "temp";
+        strcpy(type, "temp\0");
         //sends the temperatur to our webpage
         postToWeb(webPage, standort, type, toPost);
-        
+        sleep(1);
+       
         //posting air pressure (coming soon)
-        //TODO same as above 
-        
+        postsize = 4;
+        gcvt(pressure, postsize, toPost);
+        strcpy(type, "press\0");
+        //sends the pressure to our webpage
+        postToWeb(webPage, standort, type, toPost);
+        sleep(1);
+       
         //posting air quality (coming soon)
-        //TODO same as above 
-        //fair_quality = (float)air_quality;
+        fair_quality = (float)air_quality;
+        postsize = 3;
+        gcvt(fair_quality, postsize, toPost);
+        strcpy(type, "airqual\0");
+        //sends the air quality to our webpage
+        postToWeb(webPage, standort, type, toPost);
+        sleep(1);
         
         //posting humidity (coming soon)
-        //TODO same as above 
+        postsize = 3;
+        gcvt(humidity, postsize, toPost);
+        strcpy(type, "h2o\0");
+        //sends the humidity to our webpage
+        postToWeb(webPage, standort, type, toPost);
+        
+        
+        //determines all how many seconds data is being sent
+        sleep(2);
     }
     
 }
