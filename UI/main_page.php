@@ -51,7 +51,6 @@ ev. hilfreich für Strukturierung: gridbyexample.com
 		<p class="temp_winti">
 		
 		<?php
-		$temp=21.9;
 		echo $temp . "°C";
 		?>
 		</p>	
