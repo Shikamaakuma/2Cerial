@@ -4,51 +4,50 @@ date:      19.09.2018
 author:    Janosch Bohner
 email:     janosch.bohner@gmx.net 
 website:   https://2cerials.m2e-demo.ch
+
+Nehmed de Website viellicht:
+coolors.co
 */
 
 *{font-family: Arial Black;}
-div#Winterthur {
+div.Winterthur {
 	font-family: Arial Black;
-	margin: 30px;
 	background-color: #ff0;
-	padding: 3em;
-	width: 24em;
- 	height: 20em;
+	position: fixed;
+	width: 1500px;
+	height: 600px;
+	padding: 30px;
+	
 }
 h1 {
-	position
+	color: black;
+	font-size: 80px;
 }	
 
-	#time, #date{
-	display: block;
-	float: left;
-	color: black;
-}	
 	
-p#time_date {
-	font-family: Arial Black;
-	font-size: 6em;
-	margin-right: 321;
-	color: black;
+
+.time{
+	text-align: left;
+	font-size: 40px;
 }
 
-p#temp_winti {
-	font-family: Arial Black;
+.date{
+	text-align: right;
+	font-size: 40px;
+}	
+
+p.temp_winti {
+	margin: 1px;
+	
 	font-weight: bold;
-	font-size: 10em;
+	font-size: 200px;
 	color: black;
-	position: center;
+	text-align: center;
 }
 body, html {
-	background: url("matrix-1175x500.jpeg");
-	background-repeat: no-repeat;
-	background-position: top left;
+	background: url("Winterthur_warm.jpg");
 	background-size: cover;
-	color: white;
-	top: 0;
-	min-heigth: 100vh;
-	
-	//background-color: ;
+	background-repeat: no-repeat;
 	
 
 }
