@@ -31,12 +31,15 @@ int main ( int argc, char **argv ) {
     char toPost[postsize];
     char type[10];
     char standort[200];
+    int start = 1;
     
 
     
     int i2c_adresse = wiringPiI2CSetup(GROVEPI_I2C_ADDRESS);
     int bmp_adresse = wiringPiI2CSetup(BMP280_I2C_ADDRESS);
     grove_set_pin_mode(i2c_adresse, AIR_QUALITY_ANALOG_PORT,PIN_MODE_INPUT);
+    
+    
     
     while(1){
         get_dht_values(i2c_adresse, DHT_DIGITAL_PORT, &temp, &humidity);
@@ -45,39 +48,41 @@ int main ( int argc, char **argv ) {
         sleep(1);
         pressure = get_bmp280_value(bmp_adresse);
         
-        
-        //posting temp
-        strcpy(standort,"Winterthur\0");
-        postsize = 3;
-        gcvt(temp, postsize, toPost);
-        strcpy(type, "temp\0");
-        //sends the temperatur to our webpage
-        postToWeb(webPage, standort, type, toPost);
-        sleep(1);
-       
-        //posting air pressure (coming soon)
-        postsize = 4;
-        gcvt(pressure, postsize, toPost);
-        strcpy(type, "press\0");
-        //sends the pressure to our webpage
-        postToWeb(webPage, standort, type, toPost);
-        sleep(1);
-       
-        //posting air quality (coming soon)
-        fair_quality = (float)air_quality;
-        postsize = 3;
-        gcvt(fair_quality, postsize, toPost);
-        strcpy(type, "airqual\0");
-        //sends the air quality to our webpage
-        postToWeb(webPage, standort, type, toPost);
-        sleep(1);
-        
-        //posting humidity (coming soon)
-        postsize = 3;
-        gcvt(humidity, postsize, toPost);
-        strcpy(type, "h2o\0");
-        //sends the humidity to our webpage
-        postToWeb(webPage, standort, type, toPost);
+        if(start !=1){
+            //posting temp
+            strcpy(standort,"Winterthur\0");
+            postsize = 3;
+            gcvt(temp, postsize, toPost);
+            strcpy(type, "temp\0");
+            //sends the temperatur to our webpage
+            postToWeb(webPage, standort, type, toPost);
+            sleep(1);
+
+            //posting air pressure (coming soon)
+            postsize = 4;
+            gcvt(pressure, postsize, toPost);
+            strcpy(type, "press\0");
+            //sends the pressure to our webpage
+            postToWeb(webPage, standort, type, toPost);
+            sleep(1);
+
+            //posting air quality (coming soon)
+            fair_quality = (float)air_quality;
+            postsize = 3;
+            gcvt(fair_quality, postsize, toPost);
+            strcpy(type, "airqual\0");
+            //sends the air quality to our webpage
+            postToWeb(webPage, standort, type, toPost);
+            sleep(1);
+
+            //posting humidity (coming soon)
+            postsize = 3;
+            gcvt(humidity, postsize, toPost);
+            strcpy(type, "h2o\0");
+            //sends the humidity to our webpage
+            postToWeb(webPage, standort, type, toPost);
+        }
+        else start = 0;
         
         
         //determines all how many seconds data is being sent
