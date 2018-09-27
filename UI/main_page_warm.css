@@ -9,41 +9,11 @@ Nehmed de Website viellicht:
 coolors.co
 */
 
-*{font-family: Arial Black;}
-div.Winterthur {
-	font-family: Arial Black;
+
+.Winterthur {
 	background-color: #ff0;
-	position: fixed;
-	width: 1500px;
-	height: 600px;
-	padding: 30px;
-	
-}
-h1 {
-	color: black;
-	font-size: 80px;
-}	
-
-	
-
-.time{
-	text-align: left;
-	font-size: 40px;
 }
 
-.date{
-	text-align: right;
-	font-size: 40px;
-}	
-
-p.temp_winti {
-	margin: 1px;
-	
-	font-weight: bold;
-	font-size: 200px;
-	color: black;
-	text-align: center;
-}
 body, html {
 	background: url("Winterthur_warm.jpg");
 	background-size: cover;

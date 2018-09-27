@@ -16,13 +16,15 @@ Datum/Zeit = auto Abruf
 
 ev. hilfreich für Strukturierung: gridbyexample.com
 -->
-- <?php
+
+<?php
     $saveThis = $_POST[Winterthur_temp];
     $winterthur_Temp = fopen("winterthur_temp.txt", "r") or die("Unable to open file!");
     $temp = fgets($winterthur_Temp);
     $date = fgets($winterthur_Temp);
     $time = fgets($winterthur_Temp);
     fclose($winterthur_Temp);
+	
 ?> 
 
 <!DOCTYPE HTML>
@@ -30,6 +32,7 @@ ev. hilfreich für Strukturierung: gridbyexample.com
 	<head>
 		<meta charset= "utf-8" />
 		<title> Wetter Winterthur </title>
+		<link rel="stylesheet" type="text/css" href="main_page.css" />
 	</head>
 	<body>
 	<div class = "Winterthur">
@@ -40,20 +43,21 @@ ev. hilfreich für Strukturierung: gridbyexample.com
 		<?php
 				echo $time; 
 		?>
-		</div>
+		</div><!--time-->
 		
 		<div class="date">
 		<?php
 				echo $date;
 		?>
-		</div>
+		</div><!--date-->
 		
 		<p class="temp_winti">
 		
 		<?php
+		/*$temp = 20.5;*/ /*for test purposes*/
 		echo $temp . "°C";
 		?>
-		</p>	
+		</p><!--temp_winti-->	
 		<?php
 		if($temp > 20){
 			echo "<link rel='stylesheet' type='text/css' href='main_page_warm.css' />";
@@ -62,6 +66,6 @@ ev. hilfreich für Strukturierung: gridbyexample.com
 			echo "<link rel='stylesheet' type='text/css' href='main_page_cold.css' />" ;
 		}
 		?>
-	</div>	
+	</div><!--Winterthur-->	
 	</body>
 </html>

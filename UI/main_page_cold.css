@@ -4,16 +4,20 @@ date:      19.09.2018
 author:    Janosch Bohner
 email:     janosch.bohner@gmx.net 
 website:   https://2cerials.m2e-demo.ch
+
+Nehmed de Website viellicht:
+coolors.co
 */
 
-*{font-family: Arial Black;}
 
-div#time_date {font-family: Helvetica; font-size: 6em;}
-
-div#temp_winti {
-	font-weight: bold;
-	font-size: 18em;
-	color: black;
-	position: center;
+.Winterthur {
+	background-color: #09f;
 }
-body {background-color: #0ff;}
+
+body, html {
+	background: url("Winterthur_cold.jpg");
+	background-size: cover;
+	background-repeat: no-repeat;
+	
+
+}
