@@ -16,6 +16,15 @@ Datum/Zeit = auto Abruf
 
 ev. hilfreich für Strukturierung: gridbyexample.com
 -->
+- <?php
+    $saveThis = $_POST[Winterthur_temp];
+    $winterthur_Temp = fopen("winterthur_temp.txt", "r") or die("Unable to open file!");
+    $temp = fgets($winterthur_Temp);
+    $date = fgets($winterthur_Temp);
+    $time = fgets($winterthur_Temp);
+    fclose($winterthur_Temp);
+?> 
+
 <!DOCTYPE HTML>
 <html>
 	<head>
@@ -29,13 +38,13 @@ ev. hilfreich für Strukturierung: gridbyexample.com
 		
 		<div class="time">
 		<?php
-				echo date('H:i') ."&#09"; 
+				echo $time; 
 		?>
 		</div>
 		
 		<div class="date">
 		<?php
-				echo date('j. n. Y');
+				echo $date;
 		?>
 		</div>
 		
