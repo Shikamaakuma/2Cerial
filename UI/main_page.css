@@ -1,0 +1,52 @@
+/*
+version:   1.0 
+date:      19.09.2018 
+author:    Janosch Bohner
+email:     janosch.bohner@gmx.net 
+website:   https://2cerials.m2e-demo.ch
+
+Nehmed de Website viellicht:
+coolors.co
+*/
+
+*{font-family: Arial Black;}
+
+#Winterthur {
+	font-family: Arial Black;
+	position: fixed;
+	left: 25%;
+	right: 25%;
+	width: 50%;
+	top: 5%;
+	height: 70%;
+	
+}
+h1{
+	color: black;
+	font-size: 5em;
+	text-align: center;
+}	
+
+	
+#datetime{
+	font-size: 2.5em;
+	text-align: center;
+}	
+	
+#time{
+	display: inline;
+}
+
+#date{
+	display: inline;
+}	
+
+p#temp_winti {
+	margin: 1px;
+	
+	font-weight: bold;
+	font-size: 11em;
+	color: black;
+	text-align: center;
+}
+

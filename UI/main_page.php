@@ -35,46 +35,44 @@ ev. hilfreich für Strukturierung: gridbyexample.com
 		<link rel="stylesheet" type="text/css" href="main_page.css" />
 	</head>
 	<body>
-	<div class = "Winterthur">
+	<div id = "Winterthur">
 		<h1> Winterthur </h1>
 		
-		
-		<div class="time">
-		<?php
+		<div id="datetime">
+			<p id="time">
+			<?php
+				/*$time = "19:00"; /*for test purpose*/
 				echo $time; 
-		?>
-		</div><!--time-->
-		
-		<div class="date">
-		<?php
+			?>
+			</p><!--time-->
+			
+			<p id ="date">
+			<?php
+				/*$date = "20.09.2018"; /*for test purpose*/
 				echo $date;
-		?>
-		</div><!--date-->
+			?>
+			</p><!--date-->
+		</div><!--date/time-->
 		
-		<p class="temp_winti">
+		<p id ="temp_winti">
 		
 		<?php
-		/*$temp = 20.5;*/ /*for test purposes*/
-		echo $temp . "°C";
+			/*$temp = 20.5; /*for test purposes*/
+			echo $temp . "°C";
 		?>
 		</p><!--temp_winti-->	
 		<?php
-		if($temp > 20){
-			echo "<link rel='stylesheet' type='text/css' href='main_page_warm.css' />";
-		}
-		else{
-			echo "<link rel='stylesheet' type='text/css' href='main_page_cold.css' />" ;
-		}
+			if($temp > 20){
+				echo "<link rel='stylesheet' type='text/css' href='main_page_warm.css' />";
+			}
+			else /*if*/{
+				echo "<link rel='stylesheet' type='text/css' href='main_page_cold.css' />" ;
+			}
+			/*
+			weitere else ifs für weitere temperaturen	
+			
+			*/
 		?>
-	</div><!--Winterthur-->
-	<div class="button 1">
-		<a href="weather1.php"> Wetter1 </a> 
-	</div>
-	<div class="button 2">
-		<a href="weather2.php"> Wetter2 </a>
-	</div>
-	<div class="button 3">
-		<a href="weather3.php"> Wetter3 </a> 
-	</div>
+	</div><!--Winterthur-->	
 	</body>
 </html>
