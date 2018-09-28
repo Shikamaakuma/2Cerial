@@ -66,6 +66,15 @@ ev. hilfreich für Strukturierung: gridbyexample.com
 			echo "<link rel='stylesheet' type='text/css' href='main_page_cold.css' />" ;
 		}
 		?>
-	</div><!--Winterthur-->	
+	</div><!--Winterthur-->
+	<div class="button 1">
+		<a href="weather1.php"> Wetter1 </a> 
+	</div>
+	<div class="button 2">
+		<a href="weather2.php"> Wetter2 </a>
+	</div>
+	<div class="button 3">
+		<a href="weather3.php"> Wetter3 </a> 
+	</div>
 	</body>
 </html>
