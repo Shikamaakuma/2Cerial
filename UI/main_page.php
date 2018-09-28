@@ -20,7 +20,8 @@ ev. hilfreich für Strukturierung: gridbyexample.com
 <?php
     $saveThis = $_POST[Winterthur_temp];
     $winterthur_Temp = fopen("winterthur_temp.txt", "r") or die("Unable to open file!");
-    $temp = fgets($winterthur_Temp);
+    $temp = fgets($winterthur_Temp, 5);
+	fgets($winterthur_Temp);
     $date = fgets($winterthur_Temp);
     $time = fgets($winterthur_Temp);
     fclose($winterthur_Temp);
@@ -41,14 +42,18 @@ ev. hilfreich für Strukturierung: gridbyexample.com
 		<div id="datetime">
 			<p id="time">
 			<?php
-				/*$time = "19:00"; /*for test purpose*/
+				/*$time = "19:00";*/ /*for test purpose*/
 				echo $time; 
 			?>
 			</p><!--time-->
-			
+			<p class="spacing">
+			<?php
+				echo "----------------";
+			?>
+			</p><!--spacing-->
 			<p id ="date">
 			<?php
-				/*$date = "20.09.2018"; /*for test purpose*/
+				/*$date = "20.09.2018";*/ /*for test purpose*/
 				echo $date;
 			?>
 			</p><!--date-->
@@ -57,8 +62,8 @@ ev. hilfreich für Strukturierung: gridbyexample.com
 		<p id ="temp_winti">
 		
 		<?php
-			/*$temp = 20.5; /*for test purposes*/
-			echo $temp . "°C";
+			/*$temp = 20.5;*/ /*for test purposes*/
+			echo $temp."°C";
 		?>
 		</p><!--temp_winti-->	
 		<?php
