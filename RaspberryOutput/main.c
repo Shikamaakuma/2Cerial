@@ -25,7 +25,6 @@ int main ( int argc, char **argv ) {
     float humidity = 0;
     int air_quality = 0;
     float pressure = 0;
-    float fair_quality = 0;
     char webPage[1000] = "http://2cerials.m2e-demo.ch/file_writer.php";
     int postsize = 33;
     char toPost[postsize];
@@ -51,33 +50,28 @@ int main ( int argc, char **argv ) {
         if(start !=1){
             //posting temp
             strcpy(standort,"Winterthur\0");
-            postsize = 3;
-            gcvt(temp, postsize, toPost);
+            sprintf(toPost,"%.1f",temp);
             strcpy(type, "temp\0");
             //sends the temperatur to our webpage
             postToWeb(webPage, standort, type, toPost);
             sleep(1);
 
             //posting air pressure (coming soon)
-            postsize = 4;
-            gcvt(pressure, postsize, toPost);
+            sprintf(toPost,"%.0f",pressure);
             strcpy(type, "press\0");
             //sends the pressure to our webpage
             postToWeb(webPage, standort, type, toPost);
             sleep(1);
 
             //posting air quality (coming soon)
-            fair_quality = (float)air_quality;
-            postsize = 3;
-            gcvt(fair_quality, postsize, toPost);
+            sprintf(toPost,"%d",air_quality);
             strcpy(type, "airqual\0");
             //sends the air quality to our webpage
             postToWeb(webPage, standort, type, toPost);
             sleep(1);
 
             //posting humidity (coming soon)
-            postsize = 3;
-            gcvt(humidity, postsize, toPost);
+            sprintf(toPost,"%.1f",humidity);
             strcpy(type, "h2o\0");
             //sends the humidity to our webpage
             postToWeb(webPage, standort, type, toPost);
