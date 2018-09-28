@@ -1,7 +1,6 @@
  <?php
+    include 'database_writer.php';
     date_default_timezone_set('Europe/Zurich');
-    include 'DB.php';
-    //$next = false;
     
     if(isset($_POST[Winterthur_temp])){
         $w_temp = $_POST[Winterthur_temp];
@@ -33,12 +32,6 @@
         $winterthur_H2o = fopen("winterthur_h2o.txt", "w") or die("Unable to open file!");
         fwrite($winterthur_H2o, $w_h2O);
         fclose($winterthur_H2o);
-        //$next = true;
+        writeToDatabase("winterthur");
     }
-    
-    //if($next = true){
-    //    $query = "INSERT INTO Winterthur(Temp,Press,Air,H2o)VALUES($w_temp,$w_press,$w_air,$w_h2o)";
-    //    mysqli_query($mysqli, $$query);
-    //    $next = false;
-    //}
 ?> 
