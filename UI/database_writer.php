@@ -19,7 +19,7 @@
         $h2o = fgets($file);
         fclose($file);
         
-        $query = "INSERT INTO $location (temperature,airpressure,airquality,waterSaturation)VALUES($temp,$press,$air,$h2o)";
+        $query = "INSERT INTO $location (airpressure,airquality,waterSaturation,temperature)VALUES($press,$air,$h2o,$temp)";
         mysqli_query($mysqli, $query);    
         mysqli_close($mysqli);
     }
