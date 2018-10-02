@@ -1,0 +1,79 @@
+#container{
+	margin-left: auto;
+	margin-right: auto;
+	display: grid;
+	max-width: 80%;
+	grid-row-gap: 10px;
+	grid-column-gap: 20px;
+}	
+body{
+	background-color: green;
+}
+.leftbox{
+	background-color: blue;
+	padding: 0.5%;
+}	
+.detail{
+	background-color: #555;
+	color: white;
+	padding: 0.5%;
+}
+/*
+#Winterthur.ort {
+	grid-column: 1 / span 2;
+	grid-row: 1;
+}
+#Winterthur.time {
+	grid-column: 1;
+}
+#Winterthur.date {
+	grid-column: 2;
+}	
+#Winterthur.temp {
+	grid-column: 1 / span 2; 
+}	
+#Winterthur.press {
+	grid-column: 3 / span 2;
+	grid-row: 2;
+}
+#Winterthur.h2o {
+	grid-column: 3 / span 2;
+	grid-row: 3;
+}
+*/
+
+
+
+#Winterthur.ort {
+  grid-column: 1 / span 2;
+  grid-row: 1;
+}
+#Winterthur.pressText {
+  grid-column: 3;
+  grid-row: 2;
+}
+#Winterthur.press {
+  grid-column: 4;
+  grid-row: 2;
+}
+#Winterthur.h2oText {
+  grid-column: 3;
+  grid-row: 3;
+}
+#Winterthur.h2o{
+	grid-column: 4;
+    grid-row: 3;
+}
+#Winterthur.temp {
+	grid-column: 1/span 2;
+    grid-row: 3;
+}
+#Winterthur.time {
+	grid-column 1;
+    grid-row: 2;
+}
+#Winterthur.date {
+	grid-column 2;
+    grid-row: 2;
+}
+
