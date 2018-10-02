@@ -1,4 +1,4 @@
-<?php
+<?php/*
 	//reads temperature of Winterthur
     $winterthur_Temp = fopen("winterthur_temp.txt", "r") or die("Unable to open file!");
     $tempW = fgets($winterthur_Temp, 5);
@@ -54,7 +54,7 @@
     $neuhausen_h2o = fopen("neuhausen_h2o.txt", "r") or die("Unable to open file!");
     $h2oN = fgets($neuhausen_h2o);
     fclose($neuhausen_h2o);
-	
+	*/
 ?> 
 
 <!DOCTYPE HTML>
@@ -66,27 +66,27 @@
 	</head>
 	<body>
 	<div id = "container">
-		<div id = "Winterthur">
+		<div id = "Winterthur" class="ort">
 			<!--rightboxstart-->
-				<p class="detail ort"> 
+				<p class="detail name"> 
 					Winterthur 
 				</p><!--ort-->
 				<p class="detail time">
 					<?php
-						/*$timeW = "19:00"; /*for test purposes*/
+						$timeW = "19:00"; /*for test purposes*/
 						echo $timeW; 
 					?>
 				</p><!--time-->
 				<p class ="detail date">
 					<?php
-						/*$dateW = "20.09.2018"; /*for test purposes*/
+						$dateW = "20.09.2018"; /*for test purposes*/
 						echo $dateW;
 					?>
 				</p><!--date-->
 				
 				<p class ="detail temp">
 					<?php
-						/*$tempW = 20.5; /*for test purposes*/
+						$tempW = 20.5; /*for test purposes*/
 						echo $tempW."°C";
 					?>
 				</p><!--temp-->	
@@ -115,7 +115,7 @@
 				</p><!--pressText-->
 				<p class="detail press">
 					<?php
-						/*$pressW = 990; /*for test purposes*/
+						$pressW = 990; /*for test purposes*/
 						echo $pressW;
 					?>
 				</p><!--press-->
@@ -124,33 +124,33 @@
 				</p><!--h2oText-->
 				<p class="detail h2o">
 					<?php
-						/*$h2oW = 25.7; /*for test purpose*/
+						$h2oW = 25.7; /*for test purpose*/
 						echo $h2oW;
 					?>
 				</p><!--h2o-->
 			<!--leftboxend-->
 		</div><!--Winterthur-->	
-		<div id = "Romanshorn">
+		<div id = "Romanshorn" class="ort">
 			<!--rightboxstart-->
-				<p class="detail ort"> 
+				<p class="detail name"> 
 					Romanshorn 
 				</p><!--ort-->
 				<p class="detail time">
 					<?php
-						/*$timeR = "19:00"; /*for test purposes*/
+						$timeR = "19:00"; /*for test purposes*/
 						echo $timeR; 
 					?>
 				</p><!--time-->
 				<p class ="detail date">
 					<?php
-						/*$dateR = "20.09.2018"; /*for test purposes*/
+						$dateR = "20.09.2018"; /*for test purposes*/
 						echo $dateR;
 					?>
 				</p><!--date-->
 				
 				<p class ="detail temp">
 					<?php
-						/*$tempR = 20.5; /*for test purposes*/
+						$tempR = 20.5; /*for test purposes*/
 						echo $tempR."°C";
 					?>
 				</p><!--temp-->	
@@ -179,7 +179,7 @@
 				</p><!--pressText-->
 				<p class="detail press">
 					<?php
-						/*$pressR = 990; /*for test purposes*/
+						$pressR = 990; /*for test purposes*/
 						echo $pressR;
 					?>
 				</p><!--press-->
@@ -188,33 +188,33 @@
 				</p><!--h2oText-->
 				<p class="detail h2o">
 					<?php
-						/*$h2oR = 25.7; /*for test purposes*/
+						$h2oR = 25.7; /*for test purposes*/
 						echo $h2oR;
 					?>
 				</p><!--h2o-->
 			<!--leftboxend-->
 		</div><!--Romanshorn-->	
-		<div id = "Neuhausen">
+		<div id = "Neuhausen" class="ort">
 			<!--rightboxstart-->
-				<p class="detail ort"> 
+				<p class="detail name"> 
 					Neuhausen am Rheinfall
 				</p><!--ort-->
 				<p class="detail time">
 					<?php
-						/*$timeN = "19:00"; /*for test purposes*/
+						$timeN = "19:00"; /*for test purposes*/
 						echo $timeN; 
 					?>
 				</p><!--time-->
 				<p class ="detail date">
 					<?php
-						/*$dateN = "20.09.2018"; /*for test purposes*/
+						$dateN = "20.09.2018"; /*for test purposes*/
 						echo $dateN;
 					?>
 				</p><!--date-->
 				
 				<p class ="detail temp">
 					<?php
-						/*$tempN = 20.5; /*for test purposes*/
+						$tempN = 20.5; /*for test purposes*/
 						echo $tempN."°C";
 					?>
 				</p><!--temp-->	
@@ -243,7 +243,7 @@
 				</p><!--pressText-->
 				<p class="detail press">
 					<?php
-						/*$pressN = 990; /*for test purposes*/
+						$pressN = 990; /*for test purposes*/
 						echo $pressN;
 					?>
 				</p><!--press-->
@@ -252,7 +252,7 @@
 				</p><!--h2oText-->
 				<p class="detail h2o">
 					<?php
-						/*$h2oN = 25.7; /*for test purposes*/
+						$h2oN = 25.7; /*for test purposes*/
 						echo $h2oN;
 					?>
 				</p><!--h2o-->

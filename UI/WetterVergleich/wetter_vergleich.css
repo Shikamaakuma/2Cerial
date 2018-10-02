@@ -4,11 +4,11 @@
 	display: grid;
 	max-width: 80%;
 	grid-row-gap: 10px;
-	grid-column-gap: 20px;
 	background-color: black;
-	padding: 2%;
+	padding: .5%;
 	grid-template-columns: 1);
 	grid-template-rows: repeat(3, 1fr);
+	border-radius: 20px;
 }	
 body{
 	background-color: green;
@@ -16,62 +16,75 @@ body{
 .detail{
 	background-color: #555;
 	color: white;
-	padding: .5%;
+	font-size: 1.25em;
+	font-family: Arial Black;
+	line-height: 2.5em;
+	text-align: center;
+	margin: .2em 0 .2em 0;
+}
+.ort{
+	display: grid;
+	grid-column-gap: 0;
+	padding-left: 2%;
+	padding-right: 2%;
+	border-radius: 15px;
 }
 #Winterthur{
 	background-color: blue;
-	display: grid;
-	grid-row-gap: 10px;
-	grid-column-gap: 20px;
-	text-align: center;
-	padding: 2%;
 }	
 #Romanshorn{
 	background-color: red;
-	display: grid;
-	grid-row-gap: 10px;
-	grid-column-gap: 20px;
-	text-align: center;
-	padding: 2%;
 }	
 #Neuhausen{
 	background-color: yellow;
-	display: grid;
-	grid-row-gap: 10px;
-	grid-column-gap: 20px;
-	text-align: center;
-	padding: 2%;
 }
-.ort {
+.name {
   grid-column: 1 / span 2;
   grid-row: 1;
-}
-.pressText {
-  grid-column: 3;
-  grid-row: 2;
-}
-.press {
-  grid-column: 4;
-  grid-row: 2;
-}
-.h2oText {
-  grid-column: 3;
-  grid-row: 3;
-}
-.h2o{
-	grid-column: 4;
-    grid-row: 3;
-}
-.temp {
-	grid-column: 1/span 2;
-    grid-row: 3;
+  border-radius:10px 10px 0 0;
+  margin-top: 1em;
 }
 .time {
 	grid-column 1;
     grid-row: 2;
+	margin: 0 1em 0 0;
 }
 .date {
 	grid-column 2;
     grid-row: 2;
+	margin: 0 0 0 0;
 }
+.temp {
+	grid-column: 1/span 2;
+    grid-row: 3;
+	border-radius:0 0 10px 10px;
+	margin-bottom: 1em;
+}
+.pressText {
+  grid-column: 3;
+  grid-row: 2;
+  border-radius:10px 0 0 0;
+  margin: 0 0 0 1em;
+}
+.press {
+  grid-column: 4;
+  grid-row: 2;
+  border-radius:0 10px 0 0;
+  margin: 0 0 0 0;
+  
+}
+.h2oText {
+  grid-column: 3;
+  grid-row: 3;
+  border-radius:0 0 0 10px;
+  margin-left: 1em;
+  margin-bottom: 1em;
+}
+.h2o{
+	grid-column: 4;
+    grid-row: 3;
+	border-radius:0 0 10px 0;
+	margin-bottom: 1em;
+}
+
 
