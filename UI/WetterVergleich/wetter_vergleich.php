@@ -1,4 +1,4 @@
-<?php/*
+<?php
 	//reads temperature of Winterthur
     $winterthur_Temp = fopen("winterthur_temp.txt", "r") or die("Unable to open file!");
     $tempW = fgets($winterthur_Temp, 6);
@@ -13,10 +13,48 @@
     fclose($winterthur_Press);
 	
 	// reads waterconcentration in air of Winterthur
-    $winterthur_Temp = fopen("winterthur_h2o.txt", "r") or die("Unable to open file!");
+    $winterthur_h2o = fopen("winterthur_h2o.txt", "r") or die("Unable to open file!");
     $h2oW = fgets($winterthur_h2o);
     fclose($winterthur_h2o);
-	*/
+	
+	
+	//reads temperature of Romanshorn
+    $romanshorn_Temp = fopen("romanshorn_temp.txt", "r") or die("Unable to open file!");
+    $tempR = fgets($romanshorn_Temp, 6);
+	fgets($romanshorn_Temp);
+    $dateR = fgets($romanshorn_Temp);
+    $timeR = fgets($romanshorn_Temp);
+    fclose($romanshorn_Temp);
+	
+	// reads airpressure of Romanshorn
+    $romanshorn_Press = fopen("romanshorn_press.txt", "r") or die("Unable to open file!");
+    $pressR = fgets($romanshorn_Press);
+    fclose($romanshorn_Press);
+	
+	// reads waterconcentration in air of Romanshorn
+    $romanshorn_h2o = fopen("romanshorn_h2o.txt", "r") or die("Unable to open file!");
+    $h2oW = fgets($romanshorn_h2o);
+    fclose($romanshorn_h2o);
+	
+	
+	//reads temperature of Neuhausen am Rheinfall
+    $neuhausen_Temp = fopen("neuhausen_temp.txt", "r") or die("Unable to open file!");
+    $tempN = fgets($neuhausen_Temp, 6);
+	fgets($neuhausen_Temp);
+    $dateN = fgets($neuhausen_Temp);
+    $timeN = fgets($neuhausen_Temp);
+    fclose($neuhausen_Temp);
+	
+	// reads airpressure of Neuhausen am Rheinfall
+    $winterthur_Press = fopen("neuhausen_press.txt", "r") or die("Unable to open file!");
+    $pressW = fgets($neuhausen_Press);
+    fclose($neuhausen_Press);
+	
+	// reads waterconcentration in air of Neuhausen am Rheinfall
+    $winterthur_h2o = fopen("neuhausen_h2o.txt", "r") or die("Unable to open file!");
+    $h2oN = fgets($neuhausen_h2o);
+    fclose($neuhausen_h2o);
+	
 ?> 
 
 <!DOCTYPE HTML>
@@ -35,20 +73,20 @@
 				</p><!--ort-->
 				<p class="detail time">
 					<?php
-						$timeW = "19:00"; /*for test purpose*/
+						/*$timeW = "19:00"; /*for test purposes*/
 						echo $timeW; 
 					?>
 				</p><!--time-->
 				<p class ="detail date">
 					<?php
-						$dateW = "20.09.2018"; /*for test purpose*/
+						/*$dateW = "20.09.2018"; /*for test purposes*/
 						echo $dateW;
 					?>
 				</p><!--date-->
 				
 				<p class ="detail temp">
 					<?php
-						$tempW = 20.5; /*for test purposes*/
+						/*$tempW = 20.5; /*for test purposes*/
 						echo $tempW."°C";
 					?>
 				</p><!--temp-->	
@@ -77,7 +115,7 @@
 				</p><!--pressText-->
 				<p class="detail press">
 					<?php
-						$pressW = 990;
+						/*$pressW = 990; /*for test purposes*/
 						echo $pressW;
 					?>
 				</p><!--press-->
@@ -86,7 +124,7 @@
 				</p><!--h2oText-->
 				<p class="detail h2o">
 					<?php
-						$h2oW = 25.7;
+						/*$h2oW = 25.7; /*for test purpose*/
 						echo $h2oW;
 					?>
 				</p><!--h2o-->
@@ -99,20 +137,20 @@
 				</p><!--ort-->
 				<p class="detail time">
 					<?php
-						$timeR = "19:00"; /*for test purpose*/
+						/*$timeR = "19:00"; /*for test purposes*/
 						echo $timeR; 
 					?>
 				</p><!--time-->
 				<p class ="detail date">
 					<?php
-						$dateR = "20.09.2018"; /*for test purpose*/
+						/*$dateR = "20.09.2018"; /*for test purposes*/
 						echo $dateR;
 					?>
 				</p><!--date-->
 				
 				<p class ="detail temp">
 					<?php
-						$tempR = 20.5; /*for test purposes*/
+						/*$tempR = 20.5; /*for test purposes*/
 						echo $tempR."°C";
 					?>
 				</p><!--temp-->	
@@ -141,7 +179,7 @@
 				</p><!--pressText-->
 				<p class="detail press">
 					<?php
-						$pressR = 990;
+						/*$pressR = 990; /*for test purposes*/
 						echo $pressR;
 					?>
 				</p><!--press-->
@@ -150,7 +188,7 @@
 				</p><!--h2oText-->
 				<p class="detail h2o">
 					<?php
-						$h2oR = 25.7;
+						/*$h2oR = 25.7; /*for test purposes*/
 						echo $h2oR;
 					?>
 				</p><!--h2o-->
@@ -163,20 +201,20 @@
 				</p><!--ort-->
 				<p class="detail time">
 					<?php
-						$timeN = "19:00"; /*for test purpose*/
+						/*$timeN = "19:00"; /*for test purposes*/
 						echo $timeN; 
 					?>
 				</p><!--time-->
 				<p class ="detail date">
 					<?php
-						$dateN = "20.09.2018"; /*for test purpose*/
+						/*$dateN = "20.09.2018"; /*for test purposes*/
 						echo $dateN;
 					?>
 				</p><!--date-->
 				
 				<p class ="detail temp">
 					<?php
-						$tempN = 20.5; /*for test purposes*/
+						/*$tempN = 20.5; /*for test purposes*/
 						echo $tempN."°C";
 					?>
 				</p><!--temp-->	
@@ -205,7 +243,7 @@
 				</p><!--pressText-->
 				<p class="detail press">
 					<?php
-						$pressN = 990;
+						/*$pressN = 990; /*for test purposes*/
 						echo $pressN;
 					?>
 				</p><!--press-->
@@ -214,7 +252,7 @@
 				</p><!--h2oText-->
 				<p class="detail h2o">
 					<?php
-						$h2oN = 25.7;
+						/*$h2oN = 25.7; /*for test purposes*/
 						echo $h2oN;
 					?>
 				</p><!--h2o-->
