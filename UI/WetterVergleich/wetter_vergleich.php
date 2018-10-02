@@ -1,7 +1,7 @@
 <?php
 	//reads temperature of Winterthur
     $winterthur_Temp = fopen("winterthur_temp.txt", "r") or die("Unable to open file!");
-    $tempW = fgets($winterthur_Temp, 6);
+    $tempW = fgets($winterthur_Temp, 5);
 	fgets($winterthur_Temp);
     $dateW = fgets($winterthur_Temp);
     $timeW = fgets($winterthur_Temp);
@@ -20,7 +20,7 @@
 	
 	//reads temperature of Romanshorn
     $romanshorn_Temp = fopen("romanshorn_temp.txt", "r") or die("Unable to open file!");
-    $tempR = fgets($romanshorn_Temp, 6);
+    $tempR = fgets($romanshorn_Temp, 5);
 	fgets($romanshorn_Temp);
     $dateR = fgets($romanshorn_Temp);
     $timeR = fgets($romanshorn_Temp);
@@ -33,25 +33,25 @@
 	
 	// reads waterconcentration in air of Romanshorn
     $romanshorn_h2o = fopen("romanshorn_h2o.txt", "r") or die("Unable to open file!");
-    $h2oW = fgets($romanshorn_h2o);
+    $h2oR = fgets($romanshorn_h2o);
     fclose($romanshorn_h2o);
 	
 	
 	//reads temperature of Neuhausen am Rheinfall
     $neuhausen_Temp = fopen("neuhausen_temp.txt", "r") or die("Unable to open file!");
-    $tempN = fgets($neuhausen_Temp, 6);
+    $tempN = fgets($neuhausen_Temp, 5);
 	fgets($neuhausen_Temp);
     $dateN = fgets($neuhausen_Temp);
     $timeN = fgets($neuhausen_Temp);
     fclose($neuhausen_Temp);
 	
 	// reads airpressure of Neuhausen am Rheinfall
-    $winterthur_Press = fopen("neuhausen_press.txt", "r") or die("Unable to open file!");
-    $pressW = fgets($neuhausen_Press);
+    $neuhausen_Press = fopen("neuhausen_press.txt", "r") or die("Unable to open file!");
+    $pressN = fgets($neuhausen_Press);
     fclose($neuhausen_Press);
 	
 	// reads waterconcentration in air of Neuhausen am Rheinfall
-    $winterthur_h2o = fopen("neuhausen_h2o.txt", "r") or die("Unable to open file!");
+    $neuhausen_h2o = fopen("neuhausen_h2o.txt", "r") or die("Unable to open file!");
     $h2oN = fgets($neuhausen_h2o);
     fclose($neuhausen_h2o);
 	
