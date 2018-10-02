@@ -12,12 +12,11 @@ coolors.co
 
 #Winterthur {
 	background-color: #dcf763;
+	border-radius: 1em;
 }
 
 body, html {
 	background: url("Winterthur_warm.jpg");
 	background-size: cover;
 	background-repeat: no-repeat;
-	
-
 }
