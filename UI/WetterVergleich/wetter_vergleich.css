@@ -31,7 +31,7 @@ body{
 }
 #Winterthur{
 	background-color: blue;
-}	
+}
 #Romanshorn{
 	background-color: red;
 }	
@@ -92,19 +92,21 @@ trying to find a solution for the code below.
 was formerly in the .php file but didn't work.
 due to not wanting to write 15 or so different .css files it resides here for now.
 
-if ($tempN > 30){
-	echo"<style='background-color: red'>";
+<?php
+if ($tempW > 30){
+	echo"<style='#Winterthur{background-color: red;}'>";
 }	
-else if($tempN <= 30 && $tempN > 20){
-	echo "<style='background-color: bce784'>";
+else if($tempW <= 30 && $tempW > 20){
+	echo "<style='#Winterthur{background-color: bce784;}'>";
 }
-else if($tempN <= 20 && $tempN >10){
-	echo "<style='background-color: 7cfffc4'>";
+else if($tempW <= 20 && $tempW >10){
+	echo "<style='#Winterthur{background-color: 7cfffc4;}'>";
 }
-else if($tempN <= 10 && $tempN >0){
-	echo "<style='background-color: 9ffff5'>";
+else if($tempW <= 10 && $tempW >0){
+	echo "<style='#Winterthur{background-color: 9ffff5;}'>";
 }
-else if($tempN <= 0){
-	echo "<style='background-color: 3e78b2'>";
+else if($tempW <= 0){
+	echo "<style='#Winterthur{background-color: 3e78b2;}'>";
 }
+?>
 */
