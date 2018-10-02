@@ -90,24 +90,7 @@
 						echo $tempW."°C";
 					?>
 				</p><!--temp-->	
-				<?php?>
-				<!--
-				if ($tempW > 30){
-					echo"<style='background-color: '>";
-				}	
-				else if($tempW <= 20 && $temp > 20){
-					echo "<style='background-color: '>";
-				}
-				else if($tempW <= 20 && $temp >10){
-					echo "<style='background-color: '>";
-				}
-				else if($tempW <= 10 && $temp >0){
-					echo "<style='background-color: '>";
-				}
-				else if($tempW <= 0){
-					echo "<style='background-color: '>";
-				}*/
-				?>-->
+				<!--colourchange was here-->
 			<!--rightboxend-->
 			<!--leftboxstart-->
 				<p class="detail pressText">
@@ -154,24 +137,7 @@
 						echo $tempR."°C";
 					?>
 				</p><!--temp-->	
-				<?php?>
-				<!--
-				if ($tempR > 30){
-					echo"<style='background-color: '>";
-				}	
-				else if($tempR <= 20 && $temp > 20){
-					echo "<style='background-color: '>";
-				}
-				else if($tempR <= 20 && $temp >10){
-					echo "<style='background-color: '>";
-				}
-				else if($tempR <= 10 && $temp >0){
-					echo "<style='background-color: '>";
-				}
-				else if($tempR <= 0){
-					echo "<style='background-color: '>";
-				}*/
-				?>-->
+				<!--colourchange was here-->
 			<!--rightboxend-->
 			<!--leftboxstart-->
 				<p class="detail pressText">
@@ -218,24 +184,7 @@
 						echo $tempN."°C";
 					?>
 				</p><!--temp-->	
-				<?php?>
-				<!--
-				if ($tempN > 30){
-					echo"<style='background-color: '>";
-				}	
-				else if($tempN <= 20 && $temp > 20){
-					echo "<style='background-color: '>";
-				}
-				else if($tempN <= 20 && $temp >10){
-					echo "<style='background-color: '>";
-				}
-				else if($tempN <= 10 && $temp >0){
-					echo "<style='background-color: '>";
-				}
-				else if($tempN <= 0){
-					echo "<style='background-color: '>";
-				}*/
-				?>-->
+				<!--colourchange was here-->
 			<!--rightboxend-->
 			<!--leftboxstart-->
 				<p class="detail pressText">
