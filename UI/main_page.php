@@ -30,12 +30,12 @@ ev. hilfreich für Strukturierung: gridbyexample.com
 	if($temp > 20){
 		$wetter = "higher";
 		
-		echo "<link rel='stylesheet' type='text/css' href='main_page_warm.css' />";
+		echo "<link rel='stylesheet' type='text/css' href='css/main_page_warm.css' />";
 	}
 	else {
 		$wetter = "lower";
 		
-		echo "<link rel='stylesheet' type='text/css' href='main_page_cold.css' />" ;
+		echo "<link rel='stylesheet' type='text/css' href='css/main_page_cold.css' />" ;
 	}
 	
 	if ($temp > 30){
@@ -59,9 +59,9 @@ ev. hilfreich für Strukturierung: gridbyexample.com
 	<head>
 		<meta charset= "utf-8" />
 		<title> Wetter Winterthur </title>
-		<link rel="stylesheet" type="text/css" href="reset.css" />
-		<link rel="stylesheet" type="text/css" href="main_page.css" />
-		<link rel="stylesheet" type="text/css" href="temperature.css" />
+		<link rel="stylesheet" type="text/css" href="css/reset.css" />
+		<link rel="stylesheet" type="text/css" href="css/main_page.css" />
+		<link rel="stylesheet" type="text/css" href="css/temperature.css" />
 	</head>
 	<body>
 	<?php

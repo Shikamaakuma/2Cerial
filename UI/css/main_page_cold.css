@@ -11,7 +11,7 @@ coolors.co
 
 
 html {
-	background: url("Winterthur_cold.jpg");
+	background: url("../images/Winterthur_cold.jpg");
 	background-size: cover;
 	background-repeat: no-repeat;
 }

@@ -118,9 +118,9 @@
 	<head>
 		<meta charset= "utf-8" />
 		<title> Wetter Winterthur/Romanshorn/Neuhausen am Rheinfall </title>
-		<link rel="stylesheet" type="text/css" href="reset.css" />
-		<link rel="stylesheet" type="text/css" href="wetter_vergleich.css" />
-		<link rel="stylesheet" type="text/css" href="temperature.css" />
+		<link rel="stylesheet" type="text/css" href="css/reset.css" />
+		<link rel="stylesheet" type="text/css" href="css/wetter_vergleich.css" />
+		<link rel="stylesheet" type="text/css" href="css/temperature.css" />
 	</head>
 	<body>
 	<div id = "container">

@@ -22,6 +22,7 @@
 
 /*different background-image on mainpage dependent if higher than 20°C */
 /*currently not working main_page_warm.css and main_page_cold.css still needed*/
+/*
 .higher{
 	background: url("Winterthur_warm.jpg");
 	background-size: cover;
@@ -32,3 +33,4 @@
 	background-size: cover;
 	background-repeat: no-repeat;
 }	
+*/
