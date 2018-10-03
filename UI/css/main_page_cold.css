@@ -10,8 +10,8 @@ coolors.co
 */
 
 
-body, html {
-	background: url("Winterthur_warm.jpg");
+html {
+	background: url("Winterthur_cold.jpg");
 	background-size: cover;
 	background-repeat: no-repeat;
 }
