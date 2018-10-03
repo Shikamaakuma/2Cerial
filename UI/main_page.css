@@ -19,18 +19,23 @@ coolors.co
 	width: 50%;
 	top: 5%;
 	height: 70%;
-	
+	opacity: .8;
+	border-radius: 1em;
 }
 h1{
 	color: black;
 	font-size: 5em;
 	text-align: center;
+	margin-top: .5em;
 }	
-
-	
+.spacing{
+	display: inline;
+	opacity: 0;
+}	
 #datetime{
 	font-size: 2.5em;
 	text-align: center;
+	margin-top: 2em;
 }	
 	
 #time{
@@ -42,8 +47,7 @@ h1{
 }	
 
 p#temp_winti {
-	margin: 1px;
-	
+	margin-top: .25em;
 	font-weight: bold;
 	font-size: 11em;
 	color: black;

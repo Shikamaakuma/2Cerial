@@ -1,5 +1,3 @@
-
-
 <!--
 
 Aufgabe 18.09.2018
@@ -27,22 +25,55 @@ ev. hilfreich für Strukturierung: gridbyexample.com
     fclose($winterthur_Temp);
 	
 ?> 
-
+<?php
+	/*$temp = 20.5; /*for test purposes*/
+	if($temp > 20){
+		$wetter = "higher";
+		
+		echo "<link rel='stylesheet' type='text/css' href='main_page_warm.css' />";
+	}
+	else {
+		$wetter = "lower";
+		
+		echo "<link rel='stylesheet' type='text/css' href='main_page_cold.css' />" ;
+	}
+	
+	if ($temp > 30){
+		$T = "T30";
+	}	
+	else if($temp <= 30 && $temp > 20){
+		$T = "T20";
+	}
+	else if($temp <= 20 && $temp > 10){
+		$T = "T10";
+	}
+	else if($temp <= 10 && $temp > 0){
+		$T = "T0";
+	}
+	else if($temp <= 0){
+		$T = "T-10";
+	}
+?>
 <!DOCTYPE HTML>
 <html>
 	<head>
 		<meta charset= "utf-8" />
 		<title> Wetter Winterthur </title>
+		<link rel="stylesheet" type="text/css" href="reset.css" />
 		<link rel="stylesheet" type="text/css" href="main_page.css" />
+		<link rel="stylesheet" type="text/css" href="temperature.css" />
 	</head>
 	<body>
-	<div id = "Winterthur">
+	<?php
+	echo "<div class=".$wetter.">";
+	echo "<div id = 'Winterthur' class=".$T.">";
+	?>
 		<h1> Winterthur </h1>
 		
 		<div id="datetime">
 			<p id="time">
 			<?php
-				/*$time = "19:00";*/ /*for test purpose*/
+				/*$time = "19:00"; /*for test purposes*/
 				echo $time; 
 			?>
 			</p><!--time-->
@@ -53,7 +84,7 @@ ev. hilfreich für Strukturierung: gridbyexample.com
 			</p><!--spacing-->
 			<p id ="date">
 			<?php
-				/*$date = "20.09.2018";*/ /*for test purpose*/
+				/*$date = "20.09.2018"; /*for test purposes*/
 				echo $date;
 			?>
 			</p><!--date-->
@@ -62,22 +93,11 @@ ev. hilfreich für Strukturierung: gridbyexample.com
 		<p id ="temp_winti">
 		
 		<?php
-			/*$temp = 20.5;*/ /*for test purposes*/
+			/*$temp = 20.5; /*for test purposes*/
 			echo $temp."°C";
 		?>
 		</p><!--temp_winti-->	
-		<?php
-			if($temp > 20){
-				echo "<link rel='stylesheet' type='text/css' href='main_page_warm.css' />";
-			}
-			else /*if*/{
-				echo "<link rel='stylesheet' type='text/css' href='main_page_cold.css' />" ;
-			}
-			/*
-			weitere else ifs für weitere temperaturen	
-			
-			*/
-		?>
 	</div><!--Winterthur-->	
+	</div><!--wetter-->
 	</body>
 </html>

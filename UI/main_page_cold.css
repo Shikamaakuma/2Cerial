@@ -10,11 +10,6 @@ coolors.co
 */
 
 
-#Winterthur {
-	background-color: #2589bd;
-	border-radius: 1em;
-}
-
 body, html {
 	background: url("Winterthur_cold.jpg");
 	background-size: cover;

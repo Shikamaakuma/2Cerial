@@ -1,4 +1,4 @@
-<?php/*
+<?php
 	//reads temperature of Winterthur
     $winterthur_Temp = fopen("winterthur_temp.txt", "r") or die("Unable to open file!");
     $tempW = fgets($winterthur_Temp, 5);
@@ -54,39 +54,99 @@
     $neuhausen_h2o = fopen("neuhausen_h2o.txt", "r") or die("Unable to open file!");
     $h2oN = fgets($neuhausen_h2o);
     fclose($neuhausen_h2o);
-	*/
+	
 ?> 
+<?php
+	/*test
+	$tempW = 20.5;
+	$tempR = 15.8;
+	$tempN = 0;
+	/*test*/
+	if ($tempW > 30){
+		$W = "T30";
+	}	
+	else if($tempW <= 30 && $tempW > 20){
+		$W = "T20";
+	}
+	else if($tempW <= 20 && $tempW >10){
+		$W = "T10";
+	}
+	else if($tempW <= 10 && $tempW >0){
+		$W = "T0";
+	}
+	else if($tempW <= 0){
+		$W = "T-10";
+	}
+	
+	if ($tempR > 30){
+		$R = "T30";
+	}	
+	else if($tempR <= 30 && $tempR > 20){
+		$R = "T20";
+	}
+	else if($tempR <= 20 && $tempR >10){
+		$R = "T10";
+	}
+	else if($tempR <= 10 && $tempR >0){
+		$R = "T0";
+	}
+	else if($tempR <= 0){
+		$R = "T-10";
+	}
+	
+	if ($tempN > 30){
+		$N = "T30";
+	}	
+	else if($tempN <= 30 && $tempN > 20){
+		$N = "T20";
+	}
+	else if($tempN <= 20 && $tempN >10){
+		$N = "T10";
+	}
+	else if($tempN <= 10 && $tempN >0){
+		$N = "T0";
+	}
+	else if($tempN <= 0){
+		$N = "T-10";
+	}
+?>
+
+
 
 <!DOCTYPE HTML>
 <html>
 	<head>
 		<meta charset= "utf-8" />
-		<title> Wetter Winterthur/Romanshorn/Schaffhausen </title>
+		<title> Wetter Winterthur/Romanshorn/Neuhausen am Rheinfall </title>
+		<link rel="stylesheet" type="text/css" href="reset.css" />
 		<link rel="stylesheet" type="text/css" href="wetter_vergleich.css" />
+		<link rel="stylesheet" type="text/css" href="temperature.css" />
 	</head>
 	<body>
 	<div id = "container">
-		<div id = "Winterthur" class="ort">
+		<?php
+		echo "<div id = 'Winterthur' class='".$W." ort'>";
+		?>
 			<!--rightboxstart-->
 				<p class="detail name"> 
 					Winterthur 
 				</p><!--ort-->
 				<p class="detail time">
 					<?php
-						$timeW = "19:00"; /*for test purposes*/
+						/*$timeW = "19:00"; /*for test purposes*/
 						echo $timeW; 
 					?>
 				</p><!--time-->
 				<p class ="detail date">
 					<?php
-						$dateW = "20.09.2018"; /*for test purposes*/
+						/*$dateW = "20.09.2018"; /*for test purposes*/
 						echo $dateW;
 					?>
 				</p><!--date-->
 				
 				<p class ="detail temp">
 					<?php
-						$tempW = 20.5; /*for test purposes*/
+						/*$tempW = 20.5; /*for test purposes*/
 						echo $tempW."°C";
 					?>
 				</p><!--temp-->	
@@ -98,7 +158,7 @@
 				</p><!--pressText-->
 				<p class="detail press">
 					<?php
-						$pressW = 990; /*for test purposes*/
+						/*$pressW = 990; /*for test purposes*/
 						echo $pressW;
 					?>
 				</p><!--press-->
@@ -107,33 +167,35 @@
 				</p><!--h2oText-->
 				<p class="detail h2o">
 					<?php
-						$h2oW = 25.7; /*for test purpose*/
+						/*$h2oW = 25.7; /*for test purpose*/
 						echo $h2oW;
 					?>
 				</p><!--h2o-->
 			<!--leftboxend-->
 		</div><!--Winterthur-->	
-		<div id = "Romanshorn" class="ort">
+		<?php
+		echo "<div id = 'Romanshorn' class='".$R." ort'>";
+		?>
 			<!--rightboxstart-->
 				<p class="detail name"> 
 					Romanshorn 
 				</p><!--ort-->
 				<p class="detail time">
 					<?php
-						$timeR = "19:00"; /*for test purposes*/
+						/*$timeR = "19:00"; /*for test purposes*/
 						echo $timeR; 
 					?>
 				</p><!--time-->
 				<p class ="detail date">
 					<?php
-						$dateR = "20.09.2018"; /*for test purposes*/
+						/*$dateR = "20.09.2018"; /*for test purposes*/
 						echo $dateR;
 					?>
 				</p><!--date-->
 				
 				<p class ="detail temp">
 					<?php
-						$tempR = 20.5; /*for test purposes*/
+						/*$tempR = 20.5; /*for test purposes*/
 						echo $tempR."°C";
 					?>
 				</p><!--temp-->	
@@ -145,7 +207,7 @@
 				</p><!--pressText-->
 				<p class="detail press">
 					<?php
-						$pressR = 990; /*for test purposes*/
+						/*$pressR = 990; /*for test purposes*/
 						echo $pressR;
 					?>
 				</p><!--press-->
@@ -154,33 +216,35 @@
 				</p><!--h2oText-->
 				<p class="detail h2o">
 					<?php
-						$h2oR = 25.7; /*for test purposes*/
+						/*$h2oR = 25.7; /*for test purposes*/
 						echo $h2oR;
 					?>
 				</p><!--h2o-->
 			<!--leftboxend-->
 		</div><!--Romanshorn-->	
-		<div id = "Neuhausen" class="ort">
+		<?php
+		echo "<div id = 'Neuhausen' class='".$N." ort'>";
+		?>
 			<!--rightboxstart-->
 				<p class="detail name"> 
 					Neuhausen am Rheinfall
 				</p><!--ort-->
 				<p class="detail time">
 					<?php
-						$timeN = "19:00"; /*for test purposes*/
+						/*$timeN = "19:00"; /*for test purposes*/
 						echo $timeN; 
 					?>
 				</p><!--time-->
 				<p class ="detail date">
 					<?php
-						$dateN = "20.09.2018"; /*for test purposes*/
+						/*$dateN = "20.09.2018"; /*for test purposes*/
 						echo $dateN;
 					?>
 				</p><!--date-->
 				
 				<p class ="detail temp">
 					<?php
-						$tempN = 20.5; /*for test purposes*/
+						/*$tempN = 20.5; /*for test purposes*/
 						echo $tempN."°C";
 					?>
 				</p><!--temp-->	
@@ -192,7 +256,7 @@
 				</p><!--pressText-->
 				<p class="detail press">
 					<?php
-						$pressN = 990; /*for test purposes*/
+						/*$pressN = 990; /*for test purposes*/
 						echo $pressN;
 					?>
 				</p><!--press-->
@@ -201,7 +265,7 @@
 				</p><!--h2oText-->
 				<p class="detail h2o">
 					<?php
-						$h2oN = 25.7; /*for test purposes*/
+						/*$h2oN = 25.7; /*for test purposes*/
 						echo $h2oN;
 					?>
 				</p><!--h2o-->

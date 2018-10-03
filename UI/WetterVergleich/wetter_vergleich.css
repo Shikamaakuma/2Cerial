@@ -1,17 +1,21 @@
 #container{
 	margin-left: auto;
 	margin-right: auto;
+	margin-top: 2.5%;
 	display: grid;
 	max-width: 80%;
 	grid-row-gap: 10px;
 	background-color: black;
 	padding: .5%;
-	grid-template-columns: 1);
+	grid-template-columns: 1;
 	grid-template-rows: repeat(3, 1fr);
 	border-radius: 20px;
+	opacity: 0.9;
 }	
 body{
-	background-color: green;
+	background: url("Winterthur_warm.jpg");
+	background-size: cover;
+	background-repeat: no-repeat;
 }	
 .detail{
 	background-color: #555;
@@ -28,15 +32,6 @@ body{
 	padding-left: 2%;
 	padding-right: 2%;
 	border-radius: 15px;
-}
-#Winterthur{
-	background-color: blue;
-}
-#Romanshorn{
-	background-color: red;
-}	
-#Neuhausen{
-	background-color: yellow;
 }
 .name {
   grid-column: 1 / span 2;
@@ -86,27 +81,3 @@ body{
 	border-radius:0 0 10px 0;
 	margin-bottom: 1em;
 }
-
-/*
-trying to find a solution for the code below. 
-was formerly in the .php file but didn't work.
-due to not wanting to write 15 or so different .css files it resides here for now.
-
-<?php
-if ($tempW > 30){
-	echo"<style='#Winterthur{background-color: red;}'>";
-}	
-else if($tempW <= 30 && $tempW > 20){
-	echo "<style='#Winterthur{background-color: bce784;}'>";
-}
-else if($tempW <= 20 && $tempW >10){
-	echo "<style='#Winterthur{background-color: 7cfffc4;}'>";
-}
-else if($tempW <= 10 && $tempW >0){
-	echo "<style='#Winterthur{background-color: 9ffff5;}'>";
-}
-else if($tempW <= 0){
-	echo "<style='#Winterthur{background-color: 3e78b2;}'>";
-}
-?>
-*/
