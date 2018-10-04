@@ -1,4 +1,6 @@
  <?php
+    /*if it is called it checks which Variable has been postet and
+     * writes it into the correct file*/
     include 'database_writer.php';
     date_default_timezone_set('Europe/Zurich');
     
@@ -66,5 +68,38 @@
         fwrite($romanshorn_H2o, $r_h2O);
         fclose($romanshorn_H2o);
         writeToDatabase("romanshorn");
+    }
+    
+    if(isset($_POST[Neuhausen_temp])){
+        $n_temp = $_POST[Neuhausen_temp];
+        $date = date('d.m.Y');
+        $time = date('H:i');
+        $neuhausen_Temp = fopen("neuhausen_temp.txt", "w") or die("Unable to open file!");
+        fwrite($neuhausen_Temp, $n_temp ."\n");
+        fwrite($neuhausen_Temp, $date ."\n");
+        fwrite($neuhausen_Temp, $time ."\n");
+        fclose($neuhausen_Temp);
+    }
+    
+    if(isset($_POST[Neuhausen_press])){
+        $n_press = $_POST[Neuhausen_press];
+        $neuhausen_Press = fopen("neuhausen_press.txt", "w") or die("Unable to open file!");
+        fwrite($neuhausen_Press, $n_press);
+        fclose($neuhausen_Press);
+    } 
+    
+    if(isset($_POST[Neuhausen_airqual])){
+        $n_air = $_POST[Neuhausen_airqual];
+        $neuhausen_Air = fopen("neuhausen_air.txt", "w") or die("Unable to open file!");
+        fwrite($neuhausen_Air, $n_air);
+        fclose($neuhausen_Air);
+    }
+    
+    if(isset($_POST[Neuhausen_h2o])){
+        $n_h2O = $_POST[Neuhausen_h2o];
+        $neuhausen_H2o = fopen("neuhausen_h2o.txt", "w") or die("Unable to open file!");
+        fwrite($neuhausen_H2o, $n_h2O);
+        fclose($neuhausen_H2o);
+        writeToDatabase("neuhausen");
     }
 ?> 
