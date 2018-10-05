@@ -1,14 +1,3 @@
-/*
-version:   1.0 
-date:      19.09.2018 
-author:    Janosch Bohner
-email:     janosch.bohner@gmx.net 
-website:   https://2cerials.m2e-demo.ch
-
-Nehmed de Website viellicht:
-coolors.co
-*/
-
 *{font-family: Arial Black;}
 
 #Winterthur {
@@ -17,11 +6,10 @@ coolors.co
 	left: 25%;
 	right: 25%;
 	width: 50%;
-	top: 5%;
 	height: 70%;
 	opacity: .8;
 	border-radius: 1em;
-}
+}	
 h1{
 	color: black;
 	font-size: 5em;
@@ -54,3 +42,51 @@ p#temp_winti {
 	text-align: center;
 }
 
+/*Buttons for navigation*/
+#nav{
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-template-rows: 1fr;
+	text-align: center;
+	width:40%;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 2%;
+	margin-bottom: 2.5%;
+	height: 4%;
+	padding: .5%;
+	height: 5%;
+	opacity: .8;
+	border-radius: 1em;
+}
+
+/* rules for a-elements in nav*/
+#nav a { 
+	text-align: center;
+	font-family: Arial Black;
+	text-decoration: none;
+	color: black;
+	padding: .5%;
+	width: 10%;
+	line-height: 2.5em;
+}
+#nav .navbutton:hover { 
+	background-color: white ;
+}
+#nav .navbutton:hover a{
+	color: black;
+}
+#vergleich {
+	grid-column: 1;
+	grid-row: 1;
+	border-radius: .5em 0 0 .5em;
+}	
+#tables{
+	grid-column: 2;
+	grid-row: 1;
+}	
+#soon{
+	grid-column:3;
+	grid-row:1;
+	border-radius: 0 .5em .5em 0;
+}

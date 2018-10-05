@@ -1,0 +1,63 @@
+/*
+html part
+*/
+div id="nav">
+		<div id="main" class="navbutton"><a href="main_page_buttontest.php">Haus</a></div>
+		<div id="tables" class="navbutton"><a href="tables.php">Wetterarchiv</a></div>
+		<div id="soon" class="navbutton"><a href="comingSoon.html">Prognose</a></div>
+	</div>
+	
+	
+/*
+css part
+*/
+/*Buttons for navigation*/
+#nav{
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-template-rows: 1fr;
+	text-align: center;
+	width:40%;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 2%;
+	margin-bottom: 2.5%;
+	padding: .5%;
+	height: 5%;
+	opacity: .9;
+	border-radius: 1em;
+}
+
+/* rules for a-elements in nav*/
+#nav a { 
+	text-align: center;
+	font-family: Arial Black;
+	text-decoration: none;
+	color: white;
+	padding: .5%;
+	width: 10%;
+	line-height: 2.5em;
+}
+#nav .navbutton{
+	background-color: #555;
+}
+#nav .navbutton:hover { 
+	background-color: white ;
+}
+#nav .navbutton:hover a{
+	color: black;
+}
+#main {
+	grid-column: 2;
+	grid-row: 1;
+}	
+#tables{
+	grid-column: 1;
+	grid-row: 1;
+	border-radius: .5em 0 0 .5em;
+}	
+#soon{
+	grid-column:3;
+	grid-row:1;
+	border-radius: 0 .5em .5em 0;
+}

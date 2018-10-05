@@ -1,21 +1,4 @@
-<!--
-
-Aufgabe 18.09.2018
-
-Website-Oberfläche gestalten (html/css):
-
-Ort: Winterthur
-Temperatur: -> file Temp_Date
-Datum/Zeit: -> file Temp_Date
-
-Temp_Date:
-Temperatur = 21.0° C
-Datum/Zeit = auto Abruf
-
-ev. hilfreich für Strukturierung: gridbyexample.com
--->
-
-<?php
+<?php/*
     $saveThis = $_POST[Winterthur_temp];
     $winterthur_Temp = fopen("winterthur_temp.txt", "r") or die("Unable to open file!");
     $temp = fgets($winterthur_Temp, 5);
@@ -23,10 +6,10 @@ ev. hilfreich für Strukturierung: gridbyexample.com
     $date = fgets($winterthur_Temp);
     $time = fgets($winterthur_Temp);
     fclose($winterthur_Temp);
-	
+	*/
 ?> 
 <?php
-	/*$temp = 20.5; /*for test purposes*/
+	$temp = 20.5; /*for test purposes*/
 	if($temp > 20){
 		$wetter = "higher";
 		
@@ -64,6 +47,13 @@ ev. hilfreich für Strukturierung: gridbyexample.com
 		<link rel="stylesheet" type="text/css" href="css/temperature.css" />
 	</head>
 	<body>
+	<div id="nav">
+		<?php
+		echo "<div id='vergleich' class='".$T." navbutton'><a href='wetter_vergleich.php'>Wetter Vergleich</a></div>";
+		echo "<div id='tables' class='".$T." navbutton'><a href='tables.php'>Wetterarchiv</a></div>";
+		echo "<div id='soon' class='".$T." navbutton'><a href='comingSoon.html'>Prognose</a></div>";
+		?>
+	</div>
 	<?php
 	echo "<div class=".$wetter.">";
 	echo "<div id = 'Winterthur' class=".$T.">";
@@ -73,7 +63,7 @@ ev. hilfreich für Strukturierung: gridbyexample.com
 		<div id="datetime">
 			<p id="time">
 			<?php
-				/*$time = "19:00"; /*for test purposes*/
+				$time = "19:00"; /*for test purposes*/
 				echo $time; 
 			?>
 			</p><!--time-->
@@ -84,7 +74,7 @@ ev. hilfreich für Strukturierung: gridbyexample.com
 			</p><!--spacing-->
 			<p id ="date">
 			<?php
-				/*$date = "20.09.2018"; /*for test purposes*/
+				$date = "20.09.2018"; /*for test purposes*/
 				echo $date;
 			?>
 			</p><!--date-->
