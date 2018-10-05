@@ -119,7 +119,7 @@
 		<meta charset= "utf-8" />
 		<title> Wetter Winterthur/Romanshorn/Neuhausen am Rheinfall </title>
 		<link rel="stylesheet" type="text/css" href="css/reset.css" />
-		<link rel="stylesheet" type="text/css" href="css/wetter_vergleich.css" />
+		<link rel="stylesheet" type="text/css" href="css/weather_comparison.css" />
 		<link rel="stylesheet" type="text/css" href="css/temperature.css" />
 	</head>
 	<body>

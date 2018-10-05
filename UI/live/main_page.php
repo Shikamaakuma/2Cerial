@@ -1,4 +1,4 @@
-<?php/*
+<?php
     $saveThis = $_POST[Winterthur_temp];
     $winterthur_Temp = fopen("winterthur_temp.txt", "r") or die("Unable to open file!");
     $temp = fgets($winterthur_Temp, 5);
@@ -6,10 +6,10 @@
     $date = fgets($winterthur_Temp);
     $time = fgets($winterthur_Temp);
     fclose($winterthur_Temp);
-	*/
+	
 ?> 
 <?php
-	$temp = 20.5; /*for test purposes*/
+	/*$temp = 20.5; /*for test purposes*/
 	if($temp > 20){
 		$wetter = "higher";
 		
@@ -49,7 +49,7 @@
 	<body>
 	<div id="nav">
 		<?php
-		echo "<div id='weather' class='".$T." navbutton'><a href='weather_comparison.php'>Wetter Vergleich</a></div>";
+		echo "<div id='vergleich' class='".$T." navbutton'><a href='wetter_vergleich.php'>Wetter Vergleich</a></div>";
 		echo "<div id='tables' class='".$T." navbutton'><a href='tables.php'>Wetterarchiv</a></div>";
 		echo "<div id='soon' class='".$T." navbutton'><a href='comingSoon.html'>Prognose</a></div>";
 		?>
@@ -63,7 +63,7 @@
 		<div id="datetime">
 			<p id="time">
 			<?php
-				$time = "19:00"; /*for test purposes*/
+				/*$time = "19:00"; /*for test purposes*/
 				echo $time; 
 			?>
 			</p><!--time-->
@@ -74,7 +74,7 @@
 			</p><!--spacing-->
 			<p id ="date">
 			<?php
-				$date = "20.09.2018"; /*for test purposes*/
+				/*$date = "20.09.2018"; /*for test purposes*/
 				echo $date;
 			?>
 			</p><!--date-->
