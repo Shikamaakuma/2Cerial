@@ -163,7 +163,7 @@
 				<p class="detail press">
 					<?php
 						$pressW = 990; /*for test purposes*/
-						echo $pressW." P";
+						echo $pressW." hPa";
 					?>
 				</p><!--press-->
 				<p class="detail h2oText">
@@ -211,7 +211,7 @@
 				<p class="detail press">
 					<?php
 						$pressR = 990; /*for test purposes*/
-						echo $pressR." P";
+						echo $pressR." hPa";
 					?>
 				</p><!--press-->
 				<p class="detail h2oText">
@@ -259,7 +259,7 @@
 				<p class="detail press">
 					<?php
 						$pressN = 990; /*for test purposes*/
-						echo $pressN." P";
+						echo $pressN." hPa";
 					?>
 				</p><!--press-->
 				<p class="detail h2oText">
