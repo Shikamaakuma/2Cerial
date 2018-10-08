@@ -163,7 +163,7 @@
 				<p class="detail press">
 					<?php
 						$pressW = 990; /*for test purposes*/
-						echo $pressW;
+						echo $pressW." P";
 					?>
 				</p><!--press-->
 				<p class="detail h2oText">
@@ -172,7 +172,7 @@
 				<p class="detail h2o">
 					<?php
 						$h2oW = 25.7; /*for test purpose*/
-						echo $h2oW;
+						echo $h2oW." %";
 					?>
 				</p><!--h2o-->
 			<!--rightboxend-->
@@ -211,7 +211,7 @@
 				<p class="detail press">
 					<?php
 						$pressR = 990; /*for test purposes*/
-						echo $pressR;
+						echo $pressR." P";
 					?>
 				</p><!--press-->
 				<p class="detail h2oText">
@@ -220,7 +220,7 @@
 				<p class="detail h2o">
 					<?php
 						$h2oR = 25.7; /*for test purposes*/
-						echo $h2oR;
+						echo $h2oR." %";
 					?>
 				</p><!--h2o-->
 			<!--rightboxend-->
@@ -259,7 +259,7 @@
 				<p class="detail press">
 					<?php
 						$pressN = 990; /*for test purposes*/
-						echo $pressN;
+						echo $pressN." P";
 					?>
 				</p><!--press-->
 				<p class="detail h2oText">
@@ -268,7 +268,7 @@
 				<p class="detail h2o">
 					<?php
 						$h2oN = 25.7; /*for test purposes*/
-						echo $h2oN;
+						echo $h2oN." %";
 					?>
 				</p><!--h2o-->
 			<!--rightboxend-->
