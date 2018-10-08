@@ -2,12 +2,15 @@
 
 #Winterthur {
 	font-family: Arial Black;
-	position: fixed;
-	left: 25%;
-	right: 25%;
+	position: center;
+	margin-left: auto;
+	margin-right: auto;
 	width: 50%;
+	max-width: 100%;
 	opacity: .8;
 	border-radius: 1em;
+	padding-bottom: .25em;
+	padding-top: .25em;
 }	
 h1{
 	color: black;
@@ -62,6 +65,7 @@ p#temp_winti {
 
 /* rules for a-elements in nav*/
 #nav a { 
+	display: block;
 	text-align: center;
 	font-family: Arial Black;
 	text-decoration: none;
@@ -69,12 +73,10 @@ p#temp_winti {
 	padding: .5%;
 	width: 10%;
 	line-height: 2.5em;
+	width:100%;
 }
 #nav .navbutton:hover { 
 	background-color: white ;
-}
-#nav .navbutton:hover a{
-	color: black;
 }
 #weather {
 	grid-column: 1;
@@ -85,7 +87,7 @@ p#temp_winti {
 	grid-column: 2;
 	grid-row: 1;
 }	
-#soon{
+#forecast{
 	grid-column:3;
 	grid-row:1;
 	border-radius: 0 .5em .5em 0;

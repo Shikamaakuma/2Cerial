@@ -9,7 +9,7 @@
 <div id="nav">
 		<div id="tables" class="navbutton"><a href="tables.php">Wetterarchiv</a></div>
 		<div id="main" class="navbutton"><a href="main_page.php">Haus</a></div>
-		<div id="comparison" class="navbutton"><a href="weather_comparison.php">Standorte</a></div>
+		<div id="comparison" class="navbutton"><a href="weather_comparison.php">Wetter Vergleich</a></div>
 </div>
 <div id="title">
 	<h1 class="info"> Prognosen für Winterthur </h1>

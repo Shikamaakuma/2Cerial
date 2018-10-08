@@ -49,9 +49,9 @@
 	<body>
 	<div id="nav">
 		<?php
-		echo "<div id='weather' class='".$T." navbutton'><a href='weather_comparison.php'>Wetter Vergleich</a></div>";
+		echo "<div id='weather' class='".$T." navbutton'><a href='weather_comparison.php'>Standorte</a></div>";
 		echo "<div id='tables' class='".$T." navbutton'><a href='tables.php'>Wetterarchiv</a></div>";
-		echo "<div id='soon' class='".$T." navbutton'><a href='forecast_Winterthur.php'>Prognose</a></div>";
+		echo "<div id='forecast' class='".$T." navbutton'><a href='forecast_Winterthur.php'>Prognose</a></div>";
 		?>
 	</div>
 	<?php

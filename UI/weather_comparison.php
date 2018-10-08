@@ -124,9 +124,9 @@
 	</head>
 	<body>
 	<div id="nav">
-		<div id="main" class="navbutton"><a href="main_page.php">Haus</a></div>
 		<div id="tables" class="navbutton"><a href="tables.php">Wetterarchiv</a></div>
-		<div id="soon" class="navbutton"><a href="forecast_Winterthur.php">Prognose</a></div>
+		<div id="main" class="navbutton"><a href="main_page.php">Haus</a></div>
+		<div id="forecast" class="navbutton"><a href="forecast_Winterthur.php">Prognose</a></div>
 	</div>
 	<div id = "container">
 		<?php

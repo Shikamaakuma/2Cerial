@@ -119,14 +119,14 @@
 		<meta charset= "utf-8" />
 		<title> Wetter Winterthur/Romanshorn/Neuhausen am Rheinfall </title>
 		<link rel="stylesheet" type="text/css" href="css/reset.css" />
-		<link rel="stylesheet" type="text/css" href="css/wetter_vergleich.css" />
+		<link rel="stylesheet" type="text/css" href="css/weather_comparison.css" />
 		<link rel="stylesheet" type="text/css" href="css/temperature.css" />
 	</head>
 	<body>
 	<div id="nav">
-		<div id="main" class="navbutton"><a href="main_page.php">Haus</a></div>
 		<div id="tables" class="navbutton"><a href="tables.php">Wetterarchiv</a></div>
-		<div id="soon" class="navbutton"><a href="comingSoon.html">Prognose</a></div>
+		<div id="main" class="navbutton"><a href="main_page.php">Haus</a></div>
+		<div id="forecast" class="navbutton"><a href="forecast_Winterthur.php">Prognose</a></div>
 	</div>
 	<div id = "container">
 		<?php
@@ -163,7 +163,7 @@
 				<p class="detail press">
 					<?php
 						/*$pressW = 990; /*for test purposes*/
-						echo $pressW;
+						echo $pressW." hPa";
 					?>
 				</p><!--press-->
 				<p class="detail h2oText">
@@ -172,7 +172,7 @@
 				<p class="detail h2o">
 					<?php
 						/*$h2oW = 25.7; /*for test purpose*/
-						echo $h2oW;
+						echo $h2oW." %";
 					?>
 				</p><!--h2o-->
 			<!--rightboxend-->
@@ -211,7 +211,7 @@
 				<p class="detail press">
 					<?php
 						/*$pressR = 990; /*for test purposes*/
-						echo $pressR;
+						echo $pressR." hPa";
 					?>
 				</p><!--press-->
 				<p class="detail h2oText">
@@ -220,7 +220,7 @@
 				<p class="detail h2o">
 					<?php
 						/*$h2oR = 25.7; /*for test purposes*/
-						echo $h2oR;
+						echo $h2oR." %";
 					?>
 				</p><!--h2o-->
 			<!--rightboxend-->
@@ -259,7 +259,7 @@
 				<p class="detail press">
 					<?php
 						/*$pressN = 990; /*for test purposes*/
-						echo $pressN;
+						echo $pressN." hPa";
 					?>
 				</p><!--press-->
 				<p class="detail h2oText">
@@ -268,7 +268,7 @@
 				<p class="detail h2o">
 					<?php
 						/*$h2oN = 25.7; /*for test purposes*/
-						echo $h2oN;
+						echo $h2oN." %";
 					?>
 				</p><!--h2o-->
 			<!--rightboxend-->
