@@ -18,7 +18,7 @@
 	font-family: Arial Black;
 	line-height: 2.5em;
 	text-align: center;
-	background-color: #555;
+	background-color: #777;
 }
 .ort {
   grid-column: 1 / span 2;
@@ -81,11 +81,15 @@
 	text-decoration: none;
 	color: black;
 	padding: .5%;
+	width: 100%;
 	line-height: 2.5em;
-	width:100%;
+}
+.navbutton{
+	background-color: #777;
 }
 #nav .navbutton:hover { 
-	background-color: white ;
+	background-color: white;
+	color: black;
 }
 #weather {
 	grid-column: 1;

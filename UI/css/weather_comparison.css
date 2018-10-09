@@ -31,6 +31,7 @@ body{
 	padding-left: 2%;
 	padding-right: 2%;
 	border-radius: 15px;
+	background-color: #777;
 }
 .name {
   grid-column: 1 / span 2;

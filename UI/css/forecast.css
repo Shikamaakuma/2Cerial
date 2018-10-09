@@ -25,7 +25,6 @@
 	text-decoration: none;
 	color: white;
 	padding: .5%;
-	width: 10%;
 	line-height: 2.5em;
 	width: 100%;
 }
@@ -109,6 +108,7 @@ h1{
 	grid-template-columns: 1fr;
 	border-radius: 15px;
 	grid-row-gap: 1em;
+	background-color: #777;
 }
 h2{
 	color: black;
