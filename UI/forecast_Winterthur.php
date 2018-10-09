@@ -220,7 +220,7 @@
 		
 		$timestamp_foo=strtotime($db_path->date);
 		setlocale(LC_TIME, 'German');
-		echo "<p class='date'>".strftime('%A, %d. %B %Y', $timestamp_foo)."</br></p>";
+		echo "<p class='date'>".strftime('%A', $timestamp_foo)."</br>".strftime('%d. %B %Y', $timestamp_foo)."</br></p>";
 		
 		echo "<p class='high info'>Höchste Temperatur: ".$db_path->high . "°C</br></p>";
 		
