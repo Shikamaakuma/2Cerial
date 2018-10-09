@@ -9,15 +9,11 @@
 	*/
 ?> 
 <?php
-	$temp = 20.5; /*for test purposes*/
+	$temp = 10.5; /*for test purposes*/
 	if($temp > 20){
-		$wetter = "higher";
-		
 		echo "<link rel='stylesheet' type='text/css' href='css/main_page_warm.css' />";
 	}
 	else {
-		$wetter = "lower";
-		
 		echo "<link rel='stylesheet' type='text/css' href='css/main_page_cold.css' />" ;
 	}
 	
@@ -54,40 +50,27 @@
 		echo "<div id='forecast' class='".$T." navbutton'><a href='forecast_Winterthur.php'>Prognose</a></div>";
 		?>
 	</div>
+	<div id="container">
 	<?php
-	echo "<div class=".$wetter.">";
-	echo "<div id = 'Winterthur' class=".$T.">";
-	?>
-		<h1> Winterthur </h1>
+		echo "<p class='info ort ".$T."'>";
+		echo	"Winterthur";
+		echo "</p><!--ort-->";
+		echo "<p class='info time ".$T."'>";
+			$time = "19:00"; /*for test purpose*/
+			echo $time; 
+		echo "</p><!--time-->";
+		echo "<p class ='info date ".$T."'>";
+			$date = "20.09.2018"; /*for test purpose*/
+			echo $date;
+		echo "</p><!--date-->";
 		
-		<div id="datetime">
-			<p id="time">
-			<?php
-				$time = "19:00"; /*for test purposes*/
-				echo $time; 
-			?>
-			</p><!--time-->
-			<p class="spacing">
-			<?php
-				echo "----------------";
-			?>
-			</p><!--spacing-->
-			<p id ="date">
-			<?php
-				$date = "20.09.2018"; /*for test purposes*/
-				echo $date;
-			?>
-			</p><!--date-->
-		</div><!--date/time-->
-		
-		<p id ="temp_winti">
-		
-		<?php
+		echo "<p class ='info temp_winti ".$T."'>";
 			/*$temp = 20.5; /*for test purposes*/
 			echo $temp."°C";
-		?>
+	?>
 		</p><!--temp_winti-->	
-	</div><!--Winterthur-->	
-	</div><!--wetter-->
+	</div><!--container-->
 	</body>
 </html>
+
+				
