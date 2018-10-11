@@ -81,7 +81,7 @@ h1{
 	grid-column-gap: 10px;
 	background-color: none;
 	padding: .5%;
-	grid-template-columns: repeat(5, 1fr);
+	grid-template-columns: repeat(4, 1fr);
 	grid-template-rows: repeat(2, 1fr);
 	border-radius: 20px;
 	opacity: 0.9;
@@ -154,31 +154,23 @@ p.text{
 .daft2{
 	grid-column: 4;
 	grid_row: 1;
-}
-.daft3{
-	grid-column: 5;
-	grid_row: 1;
 	margin-right: 0;
 }
-.daft4{
+.daft3{
 	grid-column: 1;
 	grid_row: 2;
 	margin-left: 0;
 }
-.daft5{
+.daft4{
 	grid-column: 2;
 	grid_row: 2;
 }
-.daft6{
+.daft5{
 	grid-column: 3;
 	grid_row: 2;
 }
-.daft7{
+.daft6{
 	grid-column: 4;
-	grid_row: 2;
-}
-.daft8{
-	grid-column: 5;
 	grid_row: 2;
 	margin-right: 0;
 }

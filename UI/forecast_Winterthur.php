@@ -7,9 +7,9 @@
 </head>
 <body>
 <div id="nav">
-		<div id="tables" class="navbutton"><a href="tables.php">Wetterarchiv</a></div>
-		<div id="main" class="navbutton"><a href="main_page.php">Haus</a></div>
-		<div id="comparison" class="navbutton"><a href="weather_comparison.php">Standorte</a></div>
+		<div id="tables" class="navbutton"><a href="../tables.php">Wetterarchiv</a></div>
+		<div id="main" class="navbutton"><a href="../main_page.php">Haus</a></div>
+		<div id="comparison" class="navbutton"><a href="../weather_comparison.php">Standorte</a></div>
 </div>
 <div id="title">
 	<h1 class="info"> Prognosen für Winterthur </h1>
@@ -17,7 +17,7 @@
 <div class="container">
 <?php
     $BASE_URL = "http://query.yahooapis.com/v1/public/yql";
-    $yql_query = 'select * from weather.forecast where woeid in (select woeid from geo.places(1) where text="winterthur, zh") and u=\'c\'';
+    $yql_query = 'select * from weather.forecast where woeid=784723 and u=\'c\' and datetime between date_sub(curdate(), interval 7 days) nd now()';
     $yql_query_url = $BASE_URL . "?q=" . urlencode($yql_query) . "&format=json";
     // Make call with cURL
     $session = curl_init($yql_query_url);
@@ -28,134 +28,134 @@
 	
 	//Übersetzung der Wetterbeschreibung
 	function transl_engl2de($weather){
-		if($weather=="Mostly Cloudy"){
-			return "Überwiegend bewölkt";
-		}		
-		if($weather=="Partly Cloudy"){
-			return "Teilweise bewölkt";
-		}		
-		if($weather=="Mostly Sunny"){
-			return "Überwiegend sonnig";
-		}		
-		if($weather=="Rain"){
-			return "Regen";
-		}		
-		if($weather=="Hurricane"){
-			return "Hurrikan";
-		}		
-		if($weather=="Severe Thunderstorms"){
-			return "Schweres Gewitter";
-		}		
-		if($weather=="Thunderstorms"){
-			return "Gewitter";
+		switch ($weather){
+			case "Mostly Cloudy":
+				return "Überwiegend bewölkt";
+				break;		
+			case "Partly Cloudy":
+				return "Teilweise bewölkt";
+				break;	
+			case "Mostly Sunny":
+				return "Überwiegend sonnig";
+				break;
+			case "Rain":
+				return "Regen";
+				break;
+			case "Hurricane":
+				return "Hurrikan";
+				break;
+			case "Severe Thunderstorms":
+				return "Schweres Gewitter";
+				break;
+			case "Thunderstorms":
+				return "Gewitter";
+				break;
+			case "Mixed Rain And Snow":
+				return "Regen und Schnee gemischt";
+				break;
+			case "Mixed Rain And Sleet":
+				return "Regen und Schneeregen gemischt";
+				break;
+			case "Mixed Snow And Sleet":
+				return "Schnee und Regen gemischt";
+				break;
+			case "Freezing Drizzle":
+				return "Gefrierender Nieselregen";
+				break;
+			case "Drizzle":
+				return "Überwiegend bewölkt";
+				break;
+			case "Freezing Rain":
+				return "Gefrierender Regen";
+				break;
+			case "Showers":
+				return "Schauer";
+				break;
+			case "Snow Flurries":
+				return "Schneeflocken";
+				break;
+			case "Light Snow Showers":
+				return "Leichte Schneeschauer";
+				break;
+			case "Blowing Snow":
+				return "Dichter Schnee";
+				break;
+			case "Snow":
+				return "Schnee";
+				break;
+			case "Hail":
+				return "Hagel";
+				break;
+			case "Sleet":
+				return "Nieselregen";
+				break;
+			case "Dust":
+				return "Staub";
+				break;
+			case "Foggy":
+				return "Nebel";
+				break;
+			case "Haze":
+				return "Dunst";
+				break;
+			case "Smoky":
+				return "Rauch";
+				break;
+			case "Blustery":
+				return "Stürmisch";
+				break;
+			case "Windy":
+				return "Wind";
+				break;
+			case "Cold":
+				return "Kalt";
+				break;
+			case "Cloudy":
+				return "Bewölkt";
+				break;
+			case "Clear":
+				return "Klar";
+				break;
+			case "Sunny":
+				return "Sonnig";
+				break;
+			case "Fair":
+				return "Hell";
+				break;
+			case "Mixed Rain And Hail":
+				return "Regen und Hagel";
+				break;
+			case "Hot":
+				return "Heiss";
+				break;
+			case "Isolated Thunderstorms":
+				return "Einzelne Gewitter";
+				break;
+			case "Scattered Thunderstorms":
+				return "Vereinzelte Gewitter";
+				break;
+			case "Scattered Rain":
+				return "Vereinzelter Regen";
+				break;
+			case "Heavy Snow":
+				return "Schwerer Schnee";
+				break;
+			case "Scattered Snow Showers":
+				return "Vereinzelte Schneeschauer";
+				break;
+			case "Thundershowers":
+				return "Gewitterregen";
+				break;
+			case "Snow Showers":
+				return "Schneeschauer";
+				break;
+			case "Isolated Thundershowers":
+				return "Vereinzelte Gewitterregen";
+				break;
+			case "Not Available":
+				return "Wetter nicht vorhanden";
+				break;
 		}	
-		if($weather=="Mixed Rain And Snow"){
-			return "Regen und Schnee gemischt";
-		}
-		if($weather=="Mixed Rain And Sleet"){
-			return "Regen und Schneeregen gemischt";
-		}
-		if($weather=="Mixed Snow And Sleet"){
-			return "Schnee und Regen gemischt";
-		}
-		if($weather=="Freezing Drizzle"){
-			return "Gefrierender Nieselregen";
-		}
-		if($weather=="Drizzle"){
-			return "Überwiegend bewölkt";
-		}
-		if($weather=="Freezing Rain"){
-			return "Gefrierender Regen";
-		}
-		if($weather=="Showers"){
-			return "Schauer";
-		}
-		if($weather=="Snow Flurries"){
-			return "Schneeflocken";
-		}
-		if($weather=="Light Snow Showers"){
-			return "Leichte Schneeschauer";
-		}
-		if($weather=="Blowing Snow"){
-			return "Dichter Schnee";
-		}
-		if($weather=="Snow"){
-			return "Schnee";
-		}
-		if($weather=="Hail"){
-			return "Hagel";
-		}
-		if($weather=="Sleet"){
-			return "Nieselregen";
-		}
-		if($weather=="Dust"){
-			return "Staub";
-		}
-		if($weather=="Foggy"){
-			return "Nebel";
-		}
-		if($weather=="Haze"){
-			return "Dunst";
-		}
-		if($weather=="Smoky"){
-			return "Rauch";
-		}
-		if($weather=="Blustery"){
-			return "Stürmisch";
-		}
-		if($weather=="Windy"){
-			return "Wind";
-		}
-		if($weather=="Cold"){
-			return "Kalt";
-		}
-		if($weather=="Cloudy"){
-			return "Bewölkt";
-		}
-		if($weather=="Clear"){
-			return "Klar";
-		}
-		if($weather=="Sunny"){
-			return "Sonnig";
-		}
-		if($weather=="Fair"){
-			return "Hell";
-		}
-		if($weather=="Mixed Rain And Hail"){
-			return "Regen und Hagel";
-		}
-		if($weather=="Hot"){
-			return "Heiss";
-		}
-		if($weather=="Isolated Thunderstorms"){
-			return "Einzelne Gewitter";
-		}
-		if($weather=="Scattered Thunderstorms"){
-			return "Vereinzelte Gewitter";
-		}
-		if($weather=="Scattered Rain"){
-			return "Vereinzelter Regen";
-		}
-		if($weather=="Heavy Snow"){
-			return "Schwerer Schnee";
-		}
-		
-		if($weather=="Scattered Snow Showers"){
-			return "Vereinzelte Schneeschauer";
-		}
-		if($weather=="Thundershowers"){
-			return "Gewitterregen";
-		}
-		if($weather=="Snow Showers"){
-			return "Schneeschauer";
-		}
-		if($weather=="Isolated Thundershowers"){
-			return "Vereinzelte Gewitterregen";
-		}
-		if($weather=="Not Available"){
-			return "Wetter nicht vorhanden";
-		}
-		
 	}
 	
 	//Kreieren der divs für zehn Tage ab heute
@@ -177,46 +177,48 @@
 			$W = "T-10";
 		}
 		echo "<div class='".$W." days'>";
-		if($daily_data==1){
-				echo "<div class='today'>";
-				echo "<h2>Heute</h2>";
+		
+		switch ($daily_data){
+			case 1:
+					echo "<div class='today'>";
+					echo "<h2>Heute</h2>";
+					break;
+			case 2:
+					echo "<div class='tomorrow'>";
+					echo "<h2>Morgen</h2>";
+					break;
+			case 3:
+					echo "<div class='daft1'>";
+					echo "<h2>Übermorgen</h2>";	
+					break;
+			case 4:
+					echo "<div class='daft2'>";
+					echo "<h2>In 3 Tagen</h2>";	
+					break;
+			case 5:
+					echo "<div class='daft3'>";
+					echo "<h2>In 4 Tagen</h2>";
+					break;
+			case 6:
+					echo "<div class='daft4'>";
+					echo "<h2>In 5 Tagen</h2>";	
+					break;
+			case 7:
+					echo "<div class='daft5'>";
+					echo "<h2>In 6 Tagen</h2>";	
+					break;
+			case 8:
+					echo "<div class='daft6'>";
+					echo "<h2>In 7 Tagen</h2>";	
+					break;
 		}
-		else if($daily_data==2){
-				echo "<div class='tomorrow'>";
-				echo "<h2>Morgen</h2>";
-		}
-		else if($daily_data==3){
-			echo "<div class='daft1'>";
-			echo "<h2>Übermorgen</h2>";	
-		}
-		else if($daily_data==4){
-			echo "<div class='daft2'>";
-			echo "<h2>In 3 Tagen</h2>";	
-		}
-		else if($daily_data==5){
-			echo "<div class='daft3'>";
-			echo "<h2>In 4 Tagen</h2>";	
-		}
-		else if($daily_data==6){
-			echo "<div class='daft4'>";
-			echo "<h2>In 5 Tagen</h2>";	
-		}
-		else if($daily_data==7){
-			echo "<div class='daft5'>";
-			echo "<h2>In 6 Tagen</h2>";	
-		}
-		else if($daily_data==8){
-			echo "<div class='daft6'>";
-			echo "<h2>In 7 Tagen</h2>";	
-		}
-		else if($daily_data==9){
-			echo "<div class='daft7'>";
-			echo "<h2>In 8 Tagen</h2>";	
-		}
-		else if($daily_data==10){
-			echo "<div class='daft8'>";
-			echo "<h2>In 9 Tagen</h2>";
-		}
+			/*
+			 * doesn't work right now.
+			 * day 9 and 10 are not wanted
+			 */
+			if($daily_data == 9 || $daily_data == 10){
+				echo "<div class='nope'>";
+			}
 		
 		$timestamp_foo=strtotime($db_path->date);
 		setlocale(LC_TIME, 'German');
