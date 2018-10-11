@@ -141,7 +141,6 @@ p.text{
 	grid-column: 1;
 	grid-row: 1;
 	margin-left: 0;
-
 }
 .tomorrow{
 	grid-column: 2;
@@ -173,5 +172,4 @@ p.text{
 	grid-column: 4;
 	grid_row: 2;
 	margin-right: 0;
-}
-	
+}	

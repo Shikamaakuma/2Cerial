@@ -17,7 +17,7 @@
 <div class="container">
 <?php
     $BASE_URL = "http://query.yahooapis.com/v1/public/yql";
-    $yql_query = 'select * from weather.forecast where woeid=784723 and u=\'c\' and datetime between date_sub(curdate(), interval 7 days) nd now()';
+    $yql_query = "select * from weather.forecast where woeid=784723 and u='c'";
     $yql_query_url = $BASE_URL . "?q=" . urlencode($yql_query) . "&format=json";
     // Make call with cURL
     $session = curl_init($yql_query_url);
@@ -160,7 +160,9 @@
 	
 	//Kreieren der divs für zehn Tage ab heute
 	$daily_data=1;
-	foreach ($phpObj->query->results->channel->item->forecast as $db_path){
+	
+	for ($counter = 0; $counter < 8; $counter++){
+		$db_path = $phpObj->query->results->channel->item->forecast[$counter];
 		if ($db_path->high > 30){
 			$W = "T30";
 		}	
@@ -212,13 +214,6 @@
 					echo "<h2>In 7 Tagen</h2>";	
 					break;
 		}
-			/*
-			 * doesn't work right now.
-			 * day 9 and 10 are not wanted
-			 */
-			if($daily_data == 9 || $daily_data == 10){
-				echo "<div class='nope'>";
-			}
 		
 		$timestamp_foo=strtotime($db_path->date);
 		setlocale(LC_TIME, 'German');
