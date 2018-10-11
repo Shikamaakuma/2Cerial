@@ -12,17 +12,39 @@
 #define     AIR_QUALITY_ANALOG_PORT     0
 
 #define     GROVEPI_I2C_ADDRESS         0x04
+#define     PASSWORD_DB                 "somethingsomething"
 
 #define     PIN_MODE_INPUT              0
 #define     PIN_MODE_OUTPUT             1
 
+int mac_get_ascii_from_file( char addr[]) {
+  FILE *fp;
+  int i = 0;
+  char c;
+  fp = fopen("/sys/class/net/eth0/address", "r");
+  if (fp != NULL) {
+    while (!feof(fp)) {
+      c = fgetc(fp);
+      if (c == ':')
+        continue;
+      if (c == '\n')
+        break;
+      addr[i++] = c;
+    }
+    fclose(fp);
+    return 1;
+  }
+  fclose(fp);
+  return 0;
+}
+
 int main ( int argc, char **argv ) {
     int air_quality = 0;
-    char webPage[1000] = "http://2cerials.m2e-demo.ch/file_writer.php";
+    char WEBPAGE[1000] = "https://airquality.m2e-demo.ch/AirQuality/write2dbAQ.php";
     int postsize = 33;
     char toPost[postsize];
-    char type[10];
-    char standort[200];
+    char pw[30] = PASSWORD_DB;
+    char macAddr[20];
     int start = 1;          //prevents the issue of first value after booting beeing 0
   
     
@@ -36,16 +58,16 @@ int main ( int argc, char **argv ) {
         sleep(1);
         
         if(start !=1){
-            /*
-             *Give your Raspberry Pi a name 
-             */ 
-            strcpy(standort,"winterthurZHAW\0");
+            if(mac_get_ascii_from_file(macAddr) ==1){
+            }
+            else{
+                printf("Error: failed to find macAddr");
+            }
 
             //posting air quality (coming soon)
             sprintf(toPost,"%d",air_quality);
-            strcpy(type, "airqual\0");
             //sends the air quality to our webpage
-            postToWeb(webPage, standort, type, toPost);
+            postToWeb(WEBPAGE, macAddr, pw, toPost);
             sleep(1);
             
         }

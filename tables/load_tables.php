@@ -16,6 +16,23 @@
             array_push($city,getCity($graph));
             array_push($value,getValue($graph));
         }
+        $counter = 0;
+        foreach($city as $draw){
+            $query = "select $value[$counter] from $draw;";
+            $res = mysqli_query($mysqli,$query);
+            if(!$res)
+            {
+                echo "Error MySQLI QUERY: ".mysqli_error($mysqli)."";
+                die();
+            }
+            else{
+                $line = mysqli_fetch_all($res,MYSQLI_NUM);
+                foreach($line as $element){
+                }
+                $counter ++;
+                echo "<br>";
+            }
+        }
     }
     
     mysqli_close($mysqli);
@@ -46,7 +63,7 @@
             return 'waterSaturation';   
         }
         else if(strpos($graph,'Pressure') ==! false){
-            return 'pressure'; 
+            return 'airpressure'; 
         }
         else if(strpos($graph,'AirQuality') ==! false){
             return 'airQuality';   

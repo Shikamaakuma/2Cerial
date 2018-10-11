@@ -18,18 +18,18 @@
 #include <curl/curl.h>
 #include <string.h>
  
-int postToWeb(char *webpage, char *location, char *varType, char *value){
+int postToWeb(char *webpage, char *macAddr, char *pw, char *value){
     
     CURL *curl;
     CURLcode res;
-    char toPost[35];
+    char toPost[100];
 	//constructs whole string that should be posted
-    sprintf(toPost,"%s_%s=%s",location,varType,value);
-    printf("%s \n", toPost);
+    sprintf(toPost,"macAddr=%s&pw=%s&airQuality=%s",macAddr,pw,value);
+    printf("%s \n",toPost);
     
 	//initializes most things like socket and protocols
     curl_global_init(CURL_GLOBAL_ALL);
-    //starts a libcurl session with curl as handle
+        //starts a libcurl session with curl as handle
     curl = curl_easy_init();
     
 	//if it could create a session -> needs exception catcher

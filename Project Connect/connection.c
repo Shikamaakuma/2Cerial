@@ -18,7 +18,7 @@
 #include <curl/curl.h>
 #include <string.h>
  
-int postToWeb(char *webpage, char *location, char *varType, char *value){
+int postToWeb(char *webpage, char *macAddr, char *pW, char *value){
     
     CURL *curl;
     CURLcode res;

@@ -1,14 +1,14 @@
 <!DOCTYPE HTML>
 <html>
     <head>
-	<content ref="text/html" meta charset = "utf8">
+        <meta http-equiv="Content-Type" content="text/html" meta charset="utf-8" />
         <!--includes jquerry-->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     </head>
 
     <body>
         <script src="js/table_evaluator.js"></script>
-        <a href="main_page"> zurück </a>
+        <a href="main_page.php"> zurÃ¼ck </a>
         <h1> Tabellen </h1>
         
         <h2>y-Achse</h2>
@@ -34,7 +34,7 @@
             <li><input type="checkbox" name="neuhausenPressure" value="pressure" autocomplete="off"> Neuhausen </li>
         </ul>
         
-        <h3>Luftqualität</h3>
+        <h3>LuftqualitÃ¤t</h3>
         <ul id="temperatureList">
             <li><input type="checkbox" name="winterthurAirQuality" value="airQuality" autocomplete="off"> Winterthur  </li>
             <li><input type="checkbox" name="romanshornAirQuality" value="airQuality" autocomplete="off"> Romanshorn </li>
