@@ -11,10 +11,10 @@
 <?php
 	/*$temp = 10.5; /*for test purposes*/
 	if($temp > 20){
-		echo "<link rel='stylesheet' type='text/css' href='../css/main_page_warm.css' />";
+		echo "<link rel='stylesheet' type='text/css' media='all and (orientation: landscape)' href='css/main_page_warm.css' />";
 	}
 	else {
-		echo "<link rel='stylesheet' type='text/css' href='../css/main_page_cold.css' />" ;
+		echo "<link rel='stylesheet' type='text/css' media='all and (orientation: landscape)' href='css/main_page_cold.css' />" ;
 	}
 	
 	if ($temp > 30){
@@ -39,7 +39,8 @@
 		<meta charset= "utf-8" />
 		<title> Wetter Winterthur </title>
 		<link rel="stylesheet" type="text/css" href="css/reset.css" />
-		<link rel="stylesheet" type="text/css" href="css/main_page.css" />
+		<link rel="stylesheet" type="text/css" media="all and (orientation: portrait)" href="css/main_page_mobile.css" />
+		<link rel="stylesheet" type="text/css" media="all and (orientation: landscape)" href="css/main_page.css" />
 		<link rel="stylesheet" type="text/css" href="css/temperature.css" />
 	</head>
 	<body>

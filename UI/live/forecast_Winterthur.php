@@ -2,7 +2,8 @@
 <html>
 <head>
 	<title> Prognosen für Winterthur </title>
-	<link rel="stylesheet" type="text/css" href="css/forecast.css" />
+	<link rel="stylesheet" type="text/css" media="all and (orientation: portrait)" href="css/forecast_mobile.css" />
+	<link rel="stylesheet" type="text/css" media="all and (orientation: landscape)" href="css/forecast.css" />
 	<link rel="stylesheet" type="text/css" href="css/temperature.css" />
 </head>
 <body>

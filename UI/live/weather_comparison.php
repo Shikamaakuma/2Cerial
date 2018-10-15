@@ -117,9 +117,11 @@
 <html>
 	<head>
 		<meta charset= "utf-8" />
+		<!--<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">-->
 		<title> Wetter Winterthur/Romanshorn/Neuhausen am Rheinfall </title>
 		<link rel="stylesheet" type="text/css" href="css/reset.css" />
-		<link rel="stylesheet" type="text/css" href="css/weather_comparison.css" />
+		<link rel="stylesheet" type="text/css" media="all and (orientation: portrait)" href="css/weather_comparison_mobile.css" />
+		<link rel="stylesheet" type="text/css" media="all and (orientation: landscape)" href="css/weather_comparison.css" />
 		<link rel="stylesheet" type="text/css" href="css/temperature.css" />
 	</head>
 	<body>
