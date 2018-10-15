@@ -57,16 +57,13 @@
 		echo	"Winterthur";
 		echo "</p><!--ort-->";
 		echo "<p class='info time ".$T."'>";
-			/*$time = "19:00"; /*for test purpose*/
 			echo $time; 
 		echo "</p><!--time-->";
 		echo "<p class ='info date ".$T."'>";
-			/*$date = "20.09.2018"; /*for test purpose*/
 			echo $date;
 		echo "</p><!--date-->";
 		
 		echo "<p class ='info temp_winti ".$T."'>";
-			/*$temp = 20.5; /*for test purposes*/
 			echo $temp."°C";
 	?>
 		</p><!--temp_winti-->	

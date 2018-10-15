@@ -117,7 +117,6 @@
 <html>
 	<head>
 		<meta charset= "utf-8" />
-		<!--<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">-->
 		<title> Wetter Winterthur/Romanshorn/Neuhausen am Rheinfall </title>
 		<link rel="stylesheet" type="text/css" href="css/reset.css" />
 		<link rel="stylesheet" type="text/css" media="all and (orientation: portrait)" href="css/weather_comparison_mobile.css" />
@@ -140,20 +139,17 @@
 				</p><!--ort-->
 				<p class="detail time">
 					<?php
-						/*$timeW = "19:00"; /*for test purposes*/
 						echo $timeW; 
 					?>
 				</p><!--time-->
 				<p class ="detail date">
 					<?php
-						/*$dateW = "20.09.2018"; /*for test purposes*/
 						echo $dateW;
 					?>
 				</p><!--date-->
 				
 				<p class ="detail temp">
 					<?php
-						/*$tempW = 20.5; /*for test purposes*/
 						echo $tempW."°C";
 					?>
 				</p><!--temp-->	
@@ -164,7 +160,6 @@
 				</p><!--pressText-->
 				<p class="detail press">
 					<?php
-						/*$pressW = 990; /*for test purposes*/
 						echo $pressW." hPa";
 					?>
 				</p><!--press-->
@@ -173,7 +168,6 @@
 				</p><!--h2oText-->
 				<p class="detail h2o">
 					<?php
-						/*$h2oW = 25.7; /*for test purpose*/
 						echo $h2oW." %";
 					?>
 				</p><!--h2o-->
@@ -188,20 +182,17 @@
 				</p><!--ort-->
 				<p class="detail time">
 					<?php
-						/*$timeR = "19:00"; /*for test purposes*/
 						echo $timeR; 
 					?>
 				</p><!--time-->
 				<p class ="detail date">
 					<?php
-						/*$dateR = "20.09.2018"; /*for test purposes*/
 						echo $dateR;
 					?>
 				</p><!--date-->
 				
 				<p class ="detail temp">
 					<?php
-						/*$tempR = 20.5; /*for test purposes*/
 						echo $tempR."°C";
 					?>
 				</p><!--temp-->	
@@ -212,7 +203,6 @@
 				</p><!--pressText-->
 				<p class="detail press">
 					<?php
-						/*$pressR = 990; /*for test purposes*/
 						echo $pressR." hPa";
 					?>
 				</p><!--press-->
@@ -221,7 +211,6 @@
 				</p><!--h2oText-->
 				<p class="detail h2o">
 					<?php
-						/*$h2oR = 25.7; /*for test purposes*/
 						echo $h2oR." %";
 					?>
 				</p><!--h2o-->
@@ -236,20 +225,17 @@
 				</p><!--ort-->
 				<p class="detail time">
 					<?php
-						/*$timeN = "19:00"; /*for test purposes*/
 						echo $timeN; 
 					?>
 				</p><!--time-->
 				<p class ="detail date">
 					<?php
-						/*$dateN = "20.09.2018"; /*for test purposes*/
 						echo $dateN;
 					?>
 				</p><!--date-->
 				
 				<p class ="detail temp">
 					<?php
-						/*$tempN = 20.5; /*for test purposes*/
 						echo $tempN."°C";
 					?>
 				</p><!--temp-->	
@@ -260,7 +246,6 @@
 				</p><!--pressText-->
 				<p class="detail press">
 					<?php
-						/*$pressN = 990; /*for test purposes*/
 						echo $pressN." hPa";
 					?>
 				</p><!--press-->
@@ -269,13 +254,11 @@
 				</p><!--h2oText-->
 				<p class="detail h2o">
 					<?php
-						/*$h2oN = 25.7; /*for test purposes*/
 						echo $h2oN." %";
 					?>
 				</p><!--h2o-->
 			<!--rightboxend-->
 		</div><!--Neuhausen-->
-		
 	</div><!--container-->
 	</body>
 </html>
