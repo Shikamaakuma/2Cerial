@@ -10,20 +10,20 @@
 ?> 
 <?php
 	/*change of the background image dependent on temperature*/
-	/*$temp = 10.5; /*for test purposes*/
-	/*if($temp > 40){
+	/*$temp = 40.5; /*for test purposes*/
+	if($temp > 40){
 		echo "<link rel='stylesheet' type='text/css' media='all and (orientation: landscape)' href='css/main_page_mustafar.css' />";
 	}
-	else*/ if(/*$temp <= 40 &&*/ $temp > 20){
+	else if($temp <= 40 && $temp > 20){
 		echo "<link rel='stylesheet' type='text/css' media='all and (orientation: landscape)' href='css/main_page_warm.css' />";
 	}
-	else/* if($temp <= 20 && $temp > -20)*/{
+	else if($temp <= 20 && $temp > -20){
 		echo "<link rel='stylesheet' type='text/css' media='all and (orientation: landscape)' href='css/main_page_cold.css' />" ;
 	}
-	/*else if($temp < -20){
+	else if($temp < -20){
 		echo "<link rel='stylesheet' type='text/css' media='all and (orientation: landscape)' href='css/main_page_hoth.css' />";
 	}
-	*/
+	
 	/* class determination for the different backgroundcolours*/
 	if ($temp > 40){
 		$T = "Mustafar";
