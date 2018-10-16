@@ -11,8 +11,9 @@
 	opacity: 0.9;
 }	
 body{
-	/*background: url("../images/Winterthur_mobile.jpg");//image is turned 90°. so monochromecolour is used instead.
-	background-repeat: no-repeat;*/
+	background: url("../images/Winterthur_mobile.jpg");
+	background-size: cover;
+	background-repeat: no-repeat;
 	background-color: #5E8FBE;
 }	
 .detail{
