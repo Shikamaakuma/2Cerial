@@ -1,4 +1,15 @@
 <!DOCTYPE HTML>
+<?php
+    $BASE_URL = "http://query.yahooapis.com/v1/public/yql";
+    $yql_query = "select * from weather.forecast where woeid=784723 and u='c'";
+    $yql_query_url = $BASE_URL . "?q=" . urlencode($yql_query) . "&format=json";
+    // Make call with cURL
+    $session = curl_init($yql_query_url);
+    curl_setopt($session, CURLOPT_RETURNTRANSFER,true);
+    $json = curl_exec($session);
+    // Convert JSON to PHP object
+    $phpObj =  json_decode($json);
+?>
 <html>
 <head>
 	<title> Prognosen für Winterthur </title>
@@ -13,31 +24,14 @@
 		<div id="comparison" class="navbutton"><a href="weather_comparison.php">Standorte</a></div>
 </div>
 <?php
+	
 if(isset($phpObj->query->results->channel->item->forecast)){
 	echo
 	"<div id='title'>
 		<h1 class='info'> Prognosen für Winterthur </h1>
 	</div>";
-}
-else{
-	echo
-	"<div class='title'>
-		<h1 class='info'>Prognose für Winterthur nicht verfügbar</h1>
-	</div>";
-}
-?>
-<div class="container">
-<?php
-    $BASE_URL = "http://query.yahooapis.com/v1/public/yql";
-    $yql_query = "select * from weather.forecast where woeid=784723 and u='c'";
-    $yql_query_url = $BASE_URL . "?q=" . urlencode($yql_query) . "&format=json";
-    // Make call with cURL
-    $session = curl_init($yql_query_url);
-    curl_setopt($session, CURLOPT_RETURNTRANSFER,true);
-    $json = curl_exec($session);
-    // Convert JSON to PHP object
-    $phpObj =  json_decode($json);
-	
+
+echo "<div class='container'>";
 	//Übersetzung der Wetterbeschreibung
 	function transl_engl2de($weather){
 		switch ($weather){
@@ -167,11 +161,12 @@ else{
 			case "Not Available":
 				return "Wetter nicht vorhanden";
 				break;
-		}	
+		}
 	}
 	
-	//Kreieren der divs für 8 Tage ab heute
+	//Kreieren der divs für zehn Tage ab heute
 	$daily_data=1;
+	
 	for ($counter = 0; $counter < 8; $counter++){
 		$db_path = $phpObj->query->results->channel->item->forecast[$counter];
 		//Einteilung der Klassen für die verschiedenen Hintergrundfarben
@@ -211,8 +206,8 @@ else{
 		else if($db_path->high <= -20){
 			$W = "Hoth";
 		}
-			echo "<div class='".$W." days'>";
-			
+		echo "<div class='".$W." days'>";
+		
 		switch ($daily_data){
 			case 1:
 					echo "<div class='today'>";
@@ -247,50 +242,33 @@ else{
 					echo "<h2>In 7 Tagen</h2>";	
 					break;
 		}
-		$date=$db_path->date;
-		if(isset($date)){
-			$timestamp_foo=strtotime($date);
-			setlocale(LC_TIME, 'German');
-			echo "<p class='date'>".strftime('%A', $timestamp_foo)."</br>".strftime('%d. %B %Y', $timestamp_foo)."</br></p>";
-		}
-		else{
-			echo "Zeit nicht verfügbar";
-		}
 		
-		$high=$db_path->high;
-		if(isset($high)){
-			echo "<p class='high info'>Höchste Temperatur: ".$high . "°C</br></p>";
-		}
-		else{
-			echo "Höchste Temperatur nicht verfügbar";
-			echo "<p class='high info'>Höchste Temperatur nicht verfügbar</br></p>";
+		$timestamp_foo=strtotime($db_path->date);
+		setlocale(LC_TIME, 'German');
+		echo "<p class='date'>".strftime('%A', $timestamp_foo)."</br>".strftime('%d. %B %Y', $timestamp_foo)."</br></p>";
+		
+		echo "<p class='high info'>Höchste Temperatur: ".$db_path->high . "°C</br></p>";
+		
+		echo "<p class='low info'>Niedrigste Temperatur: ".$db_path->low . "°C</br></p>";
 
-		}
-		
-		$low=$db_path->low;
-		if(isset($low)){
-			echo "<p class='low info'>Niedrigste Temperatur: ".$low . "°C</br></p>";
-		}
-		else{
-			echo "Niedrigste Temperatur nicht verfügbar";
-		}
-		
 		$text=$db_path->text;
-		if(isset($text)){
-			echo "<p class='text info'>".transl_engl2de($text)."</br></p>";
-		}
-		else{
-			echo "Wetterbeschreibung nicht verfügbar";
-		}
+		echo "<p class='text info'>".transl_engl2de($text)."</br></p>";
 		
 		echo "</div>";
 		echo "</div>";
 		$daily_data++;
 	}
-	
-?>
 
-</div><!--container-->
+
+echo "</div><!--container-->";
+}
+else{
+	echo
+	"<div id='title'>
+		<h1 class='info'>Prognose für Winterthur nicht verfügbar</h1>
+	</div>";
+}
+?>
 
 </body>
 </html>

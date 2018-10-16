@@ -1,4 +1,15 @@
 <!DOCTYPE HTML>
+<?php
+    $BASE_URL = "http://query.yahooapis.com/v1/public/yql";
+    $yql_query = "select * from weather.forecast where woeid=784723 and u='c'";
+    $yql_query_url = $BASE_URL . "?q=" . urlencode($yql_query) . "&format=json";
+    // Make call with cURL
+    $session = curl_init($yql_query_url);
+    curl_setopt($session, CURLOPT_RETURNTRANSFER,true);
+    $json = curl_exec($session);
+    // Convert JSON to PHP object
+    $phpObj =  json_decode($json);
+?>
 <html>
 <head>
 	<title> Prognosen für Winterthur </title>
@@ -12,21 +23,15 @@
 		<div id="main" class="navbutton"><a href="main_page.php">Haus</a></div>
 		<div id="comparison" class="navbutton"><a href="weather_comparison.php">Standorte</a></div>
 </div>
-<div id="title">
-	<h1 class="info"> Prognosen für Winterthur </h1>
-</div>
-<div class="container">
 <?php
-    $BASE_URL = "http://query.yahooapis.com/v1/public/yql";
-    $yql_query = "select * from weather.forecast where woeid=784723 and u='c'";
-    $yql_query_url = $BASE_URL . "?q=" . urlencode($yql_query) . "&format=json";
-    // Make call with cURL
-    $session = curl_init($yql_query_url);
-    curl_setopt($session, CURLOPT_RETURNTRANSFER,true);
-    $json = curl_exec($session);
-    // Convert JSON to PHP object
-    $phpObj =  json_decode($json);
 	
+if(isset($phpObj->query->results->channel->item->forecast)){
+	echo
+	"<div id='title'>
+		<h1 class='info'> Prognosen für Winterthur </h1>
+	</div>";
+
+echo "<div class='container'>";
 	//Übersetzung der Wetterbeschreibung
 	function transl_engl2de($weather){
 		switch ($weather){
@@ -253,9 +258,17 @@
 		echo "</div>";
 		$daily_data++;
 	}
-?>
 
-</div><!--container-->
+
+echo "</div><!--container-->";
+}
+else{
+	echo
+	"<div id='title'>
+		<h1 class='info'>Prognose für Winterthur nicht verfügbar</h1>
+	</div>";
+}
+?>
 
 </body>
 </html>
