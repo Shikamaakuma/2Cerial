@@ -71,6 +71,15 @@ h1{
 	text-align: center;
 	color: white;
 }
+.info{
+	background-color: #555;
+	border-radius: .5em;
+	font-size: 1em;
+	line-height: 1.1em;
+	text-align: center;
+	margin: .2em 0 .2em 0;
+	padding: .25em;
+}
 .container{
 	margin-left: auto;
 	margin-right: auto;
@@ -86,15 +95,6 @@ h1{
 	border-radius: 20px;
 	opacity: 0.9;
 }
-.info{
-	background-color: #555;
-	border-radius: .5em;
-	font-size: 1em;
-	line-height: 1.1em;
-	text-align: center;
-	margin: .2em 0 .2em 0;
-	padding: .25em;
-}
 .days{
 	display: grid;
 	padding: .25em;
@@ -107,7 +107,6 @@ h1{
 	grid-template-columns: 1fr;
 	border-radius: 15px;
 	grid-row-gap: 1em;
-	background-color: #777;
 }
 h2{
 	color: black;

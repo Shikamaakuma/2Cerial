@@ -9,29 +9,59 @@
 	
 ?> 
 <?php
-	/*$temp = 10.5; /*for test purposes*/
-	if($temp > 20){
-		echo "<link rel='stylesheet' type='text/css' href='../css/main_page_warm.css' />";
+	/*change of the background image dependent on temperature*/
+	/*$temp = 40.5; /*for test purposes*/
+	if($temp > 40){
+		echo "<link rel='stylesheet' type='text/css' media='all and (orientation: landscape)' href='css/main_page_mustafar.css' />";
 	}
-	else {
-		echo "<link rel='stylesheet' type='text/css' href='../css/main_page_cold.css' />" ;
+	else if($temp <= 40 && $temp > 20){
+		echo "<link rel='stylesheet' type='text/css' media='all and (orientation: landscape)' href='css/main_page_warm.css' />";
+	}
+	else if($temp <= 20 && $temp > -20){
+		echo "<link rel='stylesheet' type='text/css' media='all and (orientation: landscape)' href='css/main_page_cold.css' />" ;
+	}
+	else if($temp < -20){
+		echo "<link rel='stylesheet' type='text/css' media='all and (orientation: landscape)' href='css/main_page_hoth.css' />";
 	}
 	
-	if ($temp > 30){
+	/* class determination for the different backgroundcolours*/
+	if ($temp > 40){
+		$T = "Mustafar";
+	}
+	else if($temp <= 40 && $temp > 35){
+		$T = "T35";
+	}
+	else if($temp <= 35 && $temp > 30){
 		$T = "T30";
-	}	
-	else if($temp <= 30 && $temp > 20){
+	}
+	else if($temp <= 30 && $temp > 25){
+		$T = "T25";
+	}
+	else if($temp <= 25 && $temp > 20){
 		$T = "T20";
 	}
-	else if($temp <= 20 && $temp > 10){
+	else if($temp <= 20 && $temp > 15){
+		$T = "T15";
+	}
+	else if($temp <= 15 && $temp > 10){
 		$T = "T10";
 	}
-	else if($temp <= 10 && $temp > 0){
+	else if($temp <= 10 && $temp > 5){
+		$T = "T5";
+	}
+	else if($temp <= 5 && $temp > 0){
 		$T = "T0";
 	}
-	else if($temp <= 0){
+	else if($temp <= 0 && $temp > -10){
 		$T = "T-10";
 	}
+	else if($temp <= -10 && $temp > -20){
+		$T = "T-20";
+	}
+	else if($temp <= -20){
+		$T = "Hoth";
+	}
+
 ?>
 <!DOCTYPE HTML>
 <html>
@@ -39,7 +69,8 @@
 		<meta charset= "utf-8" />
 		<title> Wetter Winterthur </title>
 		<link rel="stylesheet" type="text/css" href="css/reset.css" />
-		<link rel="stylesheet" type="text/css" href="css/main_page.css" />
+		<link rel="stylesheet" type="text/css" media="all and (orientation: portrait)" href="css/main_page_mobile.css" />
+		<link rel="stylesheet" type="text/css" media="all and (orientation: landscape)" href="css/main_page.css" />
 		<link rel="stylesheet" type="text/css" href="css/temperature.css" />
 	</head>
 	<body>
@@ -56,16 +87,13 @@
 		echo	"Winterthur";
 		echo "</p><!--ort-->";
 		echo "<p class='info time ".$T."'>";
-			/*$time = "19:00"; /*for test purpose*/
 			echo $time; 
 		echo "</p><!--time-->";
 		echo "<p class ='info date ".$T."'>";
-			/*$date = "20.09.2018"; /*for test purpose*/
 			echo $date;
 		echo "</p><!--date-->";
 		
 		echo "<p class ='info temp_winti ".$T."'>";
-			/*$temp = 20.5; /*for test purposes*/
 			echo $temp."°C";
 	?>
 		</p><!--temp_winti-->	
