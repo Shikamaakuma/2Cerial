@@ -12,6 +12,7 @@
 	margin-top: 2%;
 	margin-bottom: 1.5%;
 	padding: .5%;
+	height: 5%;
 	opacity: .9;
 	border-radius: 1em;
 }
@@ -24,6 +25,7 @@
 	text-decoration: none;
 	color: white;
 	padding: .5%;
+	width: 10%;
 	line-height: 2.5em;
 	width: 100%;
 }
@@ -71,6 +73,15 @@ h1{
 	text-align: center;
 	color: white;
 }
+.info{
+	background-color: #555;
+	border-radius: .5em;
+	font-size: 1em;
+	line-height: 1.1em;
+	text-align: center;
+	margin: .2em 0 .2em 0;
+	padding: .25em;
+}
 .container{
 	margin-left: auto;
 	margin-right: auto;
@@ -81,19 +92,10 @@ h1{
 	grid-column-gap: 10px;
 	background-color: none;
 	padding: .5%;
-	grid-template-columns: repeat(4, 1fr);
+	grid-template-columns: repeat(5, 1fr);
 	grid-template-rows: repeat(2, 1fr);
 	border-radius: 20px;
 	opacity: 0.9;
-}
-.info{
-	background-color: #555;
-	border-radius: .5em;
-	font-size: 1em;
-	line-height: 1.1em;
-	text-align: center;
-	margin: .2em 0 .2em 0;
-	padding: .25em;
 }
 .days{
 	display: grid;
@@ -107,7 +109,6 @@ h1{
 	grid-template-columns: 1fr;
 	border-radius: 15px;
 	grid-row-gap: 1em;
-	background-color: #777;
 }
 h2{
 	color: black;
@@ -141,6 +142,7 @@ p.text{
 	grid-column: 1;
 	grid-row: 1;
 	margin-left: 0;
+
 }
 .tomorrow{
 	grid-column: 2;
@@ -153,23 +155,32 @@ p.text{
 .daft2{
 	grid-column: 4;
 	grid_row: 1;
-	margin-right: 0;
 }
 .daft3{
+	grid-column: 5;
+	grid_row: 1;
+	margin-right: 0;
+}
+.daft4{
 	grid-column: 1;
 	grid_row: 2;
 	margin-left: 0;
 }
-.daft4{
+.daft5{
 	grid-column: 2;
 	grid_row: 2;
 }
-.daft5{
+.daft6{
 	grid-column: 3;
 	grid_row: 2;
 }
-.daft6{
+.daft7{
 	grid-column: 4;
 	grid_row: 2;
+}
+.daft8{
+	grid-column: 5;
+	grid_row: 2;
 	margin-right: 0;
-}	
+}
+	
