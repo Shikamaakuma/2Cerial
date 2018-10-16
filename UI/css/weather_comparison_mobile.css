@@ -59,6 +59,7 @@ body{
 .pressText {
   grid-column: 1;
   grid-row: 4;
+  text-align: right;
   border-radius:10px 0 0 0;
   margin: 0 0 0 0;
 }
@@ -72,6 +73,7 @@ body{
 .h2oText {
   grid-column: 1;
   grid-row: 5;
+  text-align: right;
   border-radius:0 0 0 10px;
   margin-bottom: 1em;
 }
