@@ -1,36 +1,38 @@
 
 /*different background colour depending on the temperature*/
-.T30{
+.Mustafar{
 	background-color: red;
 }
-.T20{
-	background-color: #bce784;
+.T35{
+	background-color: #f34213;
 }
+.T30{
+	background-color: #f46036;
+}
+.T25{
+	background-color: #ffc15e;
+}
+.T20{
+	background-color: #f2dd6e;
+}
+.T15{
+	background-color: #bce784;
+}	
 .T10{
-	background-color: #7cffc4;
+	background-color: #a8fc97;
+}
+.T5{
+	background-color: #7ae7c7;
 }
 .T0{
 	background-color: #9ffff5;
 }
 .T-10{
-	background-color: #3e78b2;
+	background-color: #b9fbee
 }
-
-.test{
-	background-color: green;
+.T-20{
+	background-color: #89b0ae;
 }
-
-/*different background-image on mainpage dependent if higher than 20°C */
-/*currently not working main_page_warm.css and main_page_cold.css still needed*/
-/*
-.higher{
-	background: url("Winterthur_warm.jpg");
-	background-size: cover;
-	background-repeat: no-repeat;
+.Hoth{
+	background-color: #7a918d;
 }	
-.lower{
-	background: url("Winterthur_cold.jpg");
-	background-size: cover;
-	background-repeat: no-repeat;
-}	
-*/

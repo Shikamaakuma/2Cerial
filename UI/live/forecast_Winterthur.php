@@ -164,20 +164,42 @@
 	
 	for ($counter = 0; $counter < 8; $counter++){
 		$db_path = $phpObj->query->results->channel->item->forecast[$counter];
-		if ($db_path->high > 30){
+		//Einteilung der Klassen für die verschiedenen Hintergrundfarben
+		if ($db_path->high > 40){
+			$W = "Mustafar";
+		}
+		else if($db_path->high  <= 40 && $db_path->high > 35){
+			$W = "T35";
+		}		
+		else if($db_path->high  <= 35 && $db_path->high > 30){
 			$W = "T30";
-		}	
-		else if($db_path->high  <= 30 && $db_path->high > 20){
+		}
+		else if($db_path->high  <= 30 && $db_path->high > 25){
+			$W = "T25";
+		}
+		else if($db_path->high  <= 25 && $db_path->high > 20){
 			$W = "T20";
 		}
-		else if($db_path->high <= 20 && $db_path->high >10){
+		else if($db_path->high  <= 20 && $db_path->high > 15){
+			$W = "T15";
+		}
+		else if($db_path->high  <= 15 && $db_path->high > 10){
 			$W = "T10";
 		}
-		else if($db_path->high <= 10 && $db_path->high >0){
+		else if($db_path->high  <= 10 && $db_path->high > 5){
+			$W = "T5";
+		}
+		else if($db_path->high <= 5 && $db_path->high > 0){
 			$W = "T0";
 		}
-		else if($db_path->high <= 0){
+		else if($db_path->high <= 0 && $db_path->high > -10){
 			$W = "T-10";
+		}
+		else if($db_path->high  <= -10 && $db_path->high > -20){
+			$W = "T-20";
+		}
+		else if($db_path->high <= -20){
+			$W = "Hoth";
 		}
 		echo "<div class='".$W." days'>";
 		

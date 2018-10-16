@@ -9,29 +9,59 @@
 	
 ?> 
 <?php
+	/*change of the background image dependent on temperature*/
 	/*$temp = 10.5; /*for test purposes*/
-	if($temp > 20){
+	/*if($temp > 40){
+		echo "<link rel='stylesheet' type='text/css' media='all and (orientation: landscape)' href='css/main_page_mustafar.css' />";
+	}
+	else*/ if(/*$temp <= 40 &&*/ $temp > 20){
 		echo "<link rel='stylesheet' type='text/css' media='all and (orientation: landscape)' href='css/main_page_warm.css' />";
 	}
-	else {
+	else/* if($temp <= 20 && $temp > -20)*/{
 		echo "<link rel='stylesheet' type='text/css' media='all and (orientation: landscape)' href='css/main_page_cold.css' />" ;
 	}
-	
-	if ($temp > 30){
+	/*else if($temp < -20){
+		echo "<link rel='stylesheet' type='text/css' media='all and (orientation: landscape)' href='css/main_page_hoth.css' />";
+	}
+	*/
+	/* class determination for the different backgroundcolours*/
+	if ($temp > 40){
+		$T = "Mustafar";
+	}
+	else if($temp <= 40 && $temp > 35){
+		$T = "T35";
+	}
+	else if($temp <= 35 && $temp > 30){
 		$T = "T30";
-	}	
-	else if($temp <= 30 && $temp > 20){
+	}
+	else if($temp <= 30 && $temp > 25){
+		$T = "T25";
+	}
+	else if($temp <= 25 && $temp > 20){
 		$T = "T20";
 	}
-	else if($temp <= 20 && $temp > 10){
+	else if($temp <= 20 && $temp > 15){
+		$T = "T15";
+	}
+	else if($temp <= 15 && $temp > 10){
 		$T = "T10";
 	}
-	else if($temp <= 10 && $temp > 0){
+	else if($temp <= 10 && $temp > 5){
+		$T = "T5";
+	}
+	else if($temp <= 5 && $temp > 0){
 		$T = "T0";
 	}
-	else if($temp <= 0){
+	else if($temp <= 0 && $temp > -10){
 		$T = "T-10";
 	}
+	else if($temp <= -10 && $temp > -20){
+		$T = "T-20";
+	}
+	else if($temp <= -20){
+		$T = "Hoth";
+	}
+
 ?>
 <!DOCTYPE HTML>
 <html>

@@ -62,52 +62,116 @@
 	$tempR = 15.8;
 	$tempN = 0;
 	/*test*/
-	if ($tempW > 30){
+	/* class determination for the different backgroundcolours for Winterthur*/
+	if ($tempW > 40){
+		$W = "Mustafar";
+	}
+	else if($tempW <= 40 && $tempW > 35){
+		$W = "T35";
+	}
+	else if($tempW <= 35 && $tempW > 30){
 		$W = "T30";
-	}	
-	else if($tempW <= 30 && $tempW > 20){
+	}
+	else if($tempW <= 30 && $tempW > 25){
+		$W = "T25";
+	}
+	else if($tempW <= 25 && $tempW > 20){
 		$W = "T20";
 	}
-	else if($tempW <= 20 && $tempW >10){
+	else if($tempW <= 20 && $tempW > 15){
+		$W = "T15";
+	}
+	else if($tempW <= 15 && $tempW > 10){
 		$W = "T10";
 	}
-	else if($tempW <= 10 && $tempW >0){
+	else if($tempW <= 10 && $tempW > 5){
+		$W = "T5";
+	}
+	else if($tempW <= 5 && $tempW > 0){
 		$W = "T0";
 	}
-	else if($tempW <= 0){
+	else if($tempW <= 0 && $tempW > -10){
 		$W = "T-10";
 	}
-	
-	if ($tempR > 30){
+	else if($tempW <= -10 && $tempW > -20){
+		$W = "T-20";
+	}
+	else if($tempW <= -20){
+		$W = "Hoth";
+	}
+	/* class determination for the different backgroundcolours for Romanshorn*/
+	if ($tempR > 40){
+		$R = "Mustafar";
+	}
+	else if($tempR <= 40 && $tempR > 35){
+		$R = "T35";
+	}
+	else if($tempR <= 35 && $tempR > 30){
 		$R = "T30";
-	}	
-	else if($tempR <= 30 && $tempR > 20){
+	}
+	else if($tempR <= 30 && $tempR > 25){
+		$R = "T25";
+	}
+	else if($tempR <= 25 && $tempR > 20){
 		$R = "T20";
 	}
-	else if($tempR <= 20 && $tempR >10){
+	else if($tempR <= 20 && $tempR > 15){
+		$R = "T15";
+	}
+	else if($tempR <= 15 && $tempR > 10){
 		$R = "T10";
 	}
-	else if($tempR <= 10 && $tempR >0){
+	else if($tempR <= 10 && $tempR > 5){
+		$R = "T5";
+	}
+	else if($tempR <= 5 && $tempR > 0){
 		$R = "T0";
 	}
-	else if($tempR <= 0){
+	else if($tempR <= 0 && $tempR > -10){
 		$R = "T-10";
 	}
-	
-	if ($tempN > 30){
+	else if($tempR <= -10 && $tempR > -20){
+		$R = "T-20";
+	}
+	else if($tempR <= -20){
+		$R = "Hoth";
+	}
+	/* class determination for the different backgroundcolours for Neuhausen am Rheinfall*/
+	if ($tempN > 40){
+		$N = "Mustafar";
+	}
+	else if($tempN <= 40 && $tempN > 35){
+		$N = "T35";
+	}
+	else if($tempN <= 35 && $tempN > 30){
 		$N = "T30";
-	}	
-	else if($tempN <= 30 && $tempN > 20){
+	}
+	else if($tempN <= 30 && $tempN > 25){
+		$N = "T25";
+	}
+	else if($tempN <= 25 && $tempN > 20){
 		$N = "T20";
 	}
-	else if($tempN <= 20 && $tempN >10){
+	else if($tempN <= 20 && $tempN > 15){
+		$N = "T15";
+	}
+	else if($tempN <= 15 && $tempN > 10){
 		$N = "T10";
 	}
-	else if($tempN <= 10 && $tempN >0){
+	else if($tempN <= 10 && $tempN > 5){
+		$N = "T5";
+	}
+	else if($tempN <= 5 && $tempN > 0){
 		$N = "T0";
 	}
-	else if($tempN <= 0){
+	else if($tempN <= 0 && $tempN > -10){
 		$N = "T-10";
+	}
+	else if($tempN <= -10 && $tempN > -20){
+		$N = "T-20";
+	}
+	else if($tempN <= -20){
+		$N = "Hoth";
 	}
 ?>
 
