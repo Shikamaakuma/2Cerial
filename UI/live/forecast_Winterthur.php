@@ -13,15 +13,17 @@
 <html>
 <head>
 	<title> Prognosen für Winterthur </title>
+	<link rel="stylesheet" type="text/css" media="all and (orientation: portrait)" href="css/navbar_mobile.css" />
 	<link rel="stylesheet" type="text/css" media="all and (orientation: portrait)" href="css/forecast_mobile.css" />
+	<link rel="stylesheet" type="text/css" media="all and (orientation: landscape)" href="css/navbar.css" />
 	<link rel="stylesheet" type="text/css" media="all and (orientation: landscape)" href="css/forecast.css" />
 	<link rel="stylesheet" type="text/css" href="css/temperature.css" />
 </head>
 <body>
 <div id="nav">
-		<div id="tables" class="navbutton"><a href="tables.php">Wetterarchiv</a></div>
-		<div id="main" class="navbutton"><a href="main_page.php">Haus</a></div>
-		<div id="comparison" class="navbutton"><a href="weather_comparison.php">Standorte</a></div>
+		<div id="left_button" class="navbutton"><a href="https://2cerials.m2e-demo.ch/tables.php">Wetterarchiv</a></div>
+		<div id="middle_button" class="navbutton"><a href="main_page.php">Startseite</a></div>
+		<div id="right_button" class="navbutton"><a href="weather_comparison.php">Standorte</a></div>
 </div>
 <?php
 	

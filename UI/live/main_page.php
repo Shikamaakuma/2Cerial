@@ -69,16 +69,18 @@
 		<meta charset= "utf-8" />
 		<title> Wetter Winterthur </title>
 		<link rel="stylesheet" type="text/css" href="css/reset.css" />
+		<link rel="stylesheet" type="text/css" media="all and (orientation: portrait)" href="css/navbar_mobile.css" />
 		<link rel="stylesheet" type="text/css" media="all and (orientation: portrait)" href="css/main_page_mobile.css" />
+		<link rel="stylesheet" type="text/css" media="all and (orientation: landscape)" href="css/navbar.css" />
 		<link rel="stylesheet" type="text/css" media="all and (orientation: landscape)" href="css/main_page.css" />
 		<link rel="stylesheet" type="text/css" href="css/temperature.css" />
 	</head>
 	<body>
 	<div id="nav">
 		<?php
-		echo "<div id='weather' class='".$T." navbutton'><a href='weather_comparison.php'>Standorte</a></div>";
-		echo "<div id='tables' class='".$T." navbutton'><a href='tables.php'>Wetterarchiv</a></div>";
-		echo "<div id='forecast' class='".$T." navbutton'><a href='forecast_Winterthur.php'>Prognose</a></div>";
+		echo "<div id='left_button' class='".$T." navbutton'><a href='weather_comparison.php'>Standorte</a></div>";
+		echo "<div id='middle_button' class='".$T." navbutton'><a href='https://2cerials.m2e-demo.ch/tables.php'>Wetterarchiv</a></div>";
+		echo "<div id='right_button' class='".$T." navbutton'><a href='forecast_Winterthur.php'>Prognose</a></div>";
 		?>
 	</div>
 	<div id="container">

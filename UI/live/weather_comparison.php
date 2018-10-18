@@ -183,15 +183,17 @@
 		<meta charset= "utf-8" />
 		<title> Wetter Winterthur/Romanshorn/Neuhausen am Rheinfall </title>
 		<link rel="stylesheet" type="text/css" href="css/reset.css" />
+		<link rel="stylesheet" type="text/css" media="all and (orientation: portrait)" href="css/navbar_mobile.css" />
 		<link rel="stylesheet" type="text/css" media="all and (orientation: portrait)" href="css/weather_comparison_mobile.css" />
+		<link rel="stylesheet" type="text/css" media="all and (orientation: landscape)" href="css/navbar.css" />
 		<link rel="stylesheet" type="text/css" media="all and (orientation: landscape)" href="css/weather_comparison.css" />
 		<link rel="stylesheet" type="text/css" href="css/temperature.css" />
 	</head>
 	<body>
 	<div id="nav">
-		<div id="tables" class="navbutton"><a href="tables.php">Wetterarchiv</a></div>
-		<div id="main" class="navbutton"><a href="main_page.php">Haus</a></div>
-		<div id="forecast" class="navbutton"><a href="forecast_Winterthur.php">Prognose</a></div>
+		<div id="left_button" class="navbutton"><a href="https://2cerials.m2e-demo.ch/tables.php">Wetterarchiv</a></div>
+		<div id="middle_button" class="navbutton"><a href="main_page.php">Startseite</a></div>
+		<div id="right_button" class="navbutton"><a href="forecast_Winterthur.php">Prognose</a></div>
 	</div>
 	<div id = "container">
 		<?php

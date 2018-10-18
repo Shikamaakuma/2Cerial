@@ -1,0 +1,56 @@
+/*Buttons for navigation*/
+#nav{
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-template-rows: 1fr;
+	text-align: center;
+	width:40%;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 2%;
+	margin-bottom: 2.5%;
+	padding: .5%;
+	opacity: .9;
+	border-radius: 1em;
+}
+
+/* rules for a-elements in nav*/
+#nav a { 
+	display: block;
+	text-align: center;
+	font-family: Arial Black;
+	text-decoration: none;
+	color: white;
+	padding: .5%;
+	width: 100%;
+	line-height: 2.5em;
+}
+.navbutton {
+	background-color: #555;
+}
+#nav .navbutton:hover { 
+	background-color: white ;
+}
+#nav .navbutton:hover a {
+	color: black;
+}
+#nav .navbutton:focus {
+	background-color: white;
+}
+#nav .navbutton:focus a {
+	color: black;
+}
+#middle_button {
+	grid-column: 2;
+	grid-row: 1;
+}	
+#left_button {
+	grid-column: 1;
+	grid-row: 1;
+	border-radius: .5em 0 0 .5em;
+}	
+#right_button {
+	grid-column:3;
+	grid-row:1;
+	border-radius: 0 .5em .5em 0;
+}
