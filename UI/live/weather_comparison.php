@@ -1,4 +1,13 @@
 <?php 
+	//current time
+	$timenow = time();
+	$datenow = date("Y-m-d H:i:s", $timenow);
+	
+	//UNIX timestamp now
+	$dtall = new DateTime($datenow);
+	$now = $dtall->getTimestamp();
+	
+
 	//reads temperature of Winterthur
     $winterthur_Temp = fopen("winterthur_temp.txt", "r") or die("Unable to open file!");
     $tempW = fgets($winterthur_Temp, 5);
@@ -16,6 +25,14 @@
     $winterthur_h2o = fopen("winterthur_h2o.txt", "r") or die("Unable to open file!");
     $h2oW = fgets($winterthur_h2o);
     fclose($winterthur_h2o);
+	
+	//UNIX timestamp messured by Winterthur
+	$datetimeW = $dateW .' '. $timeW;
+	$dtW = new DateTime($datetimeW);
+	$datetimeW = $dtW->getTimestamp();
+
+	//calculates timedifference for Winterthur
+	$diffW = round(($now - $datetimeW)/60);
 	
 	
 	//reads temperature of Romanshorn
@@ -36,6 +53,14 @@
     $h2oR = fgets($romanshorn_h2o);
     fclose($romanshorn_h2o);
 	
+	//UNIX timestamp messured by Romanshorn
+	$datetimeR = $dateR .' '. $timeR;
+	$dtR = new DateTime($datetimeR);
+	$datetimeR = $dtR->getTimestamp();
+
+	//calculates timedifference for Romanshorn
+	$diffR = round(($now - $datetimeR)/60);
+	
 	
 	//reads temperature of Neuhausen am Rheinfall
     $neuhausen_Temp = fopen("neuhausen_temp.txt", "r") or die("Unable to open file!");
@@ -54,6 +79,14 @@
     $neuhausen_h2o = fopen("neuhausen_h2o.txt", "r") or die("Unable to open file!");
     $h2oN = fgets($neuhausen_h2o);
     fclose($neuhausen_h2o);
+	
+	//UNIX timestamp messured by Neuhausen am Rheinfall
+	$datetimeN = $dateN .' '. $timeN;
+	$dtN = new DateTime($datetimeN);
+	$datetimeN = $dtN->getTimestamp();
+
+	//calculates timedifference for Neuhausen am Rheinfall
+	$diffN = round(($now - $datetimeN)/60);
 	
 ?> 
 <?php
@@ -192,7 +225,7 @@
 	<body>
 	<div id="nav">
 		<div id="left_button" class="navbutton"><a href="https://2cerials.m2e-demo.ch/tables.php">Wetterarchiv</a></div>
-		<div id="middle_button" class="navbutton"><a href="main_page.php">Startseite</a></div>
+		<div id="middle_button" class="navbutton"><a href="index.php">Startseite</a></div>
 		<div id="right_button" class="navbutton"><a href="forecast_Winterthur.php">Prognose</a></div>
 	</div>
 	<div id = "container">
@@ -221,6 +254,11 @@
 				</p><!--temp-->	
 			<!--leftboxend-->
 			<!--rightboxstart-->
+				<?php
+				if($diffW > 5){
+					echo "<p class='".$T." detail old'>Daten nicht aktuell</p>";
+				}	
+				?>
 				<p class="detail pressText">
 					Luftdruck
 				</p><!--pressText-->
@@ -264,6 +302,11 @@
 				</p><!--temp-->	
 			<!--leftboxend-->
 			<!--rightboxstart-->
+				<?php
+				if($diffR > 5){
+					echo "<p class='".$T." detail old'>Daten nicht aktuell</p>";
+				}	
+				?>
 				<p class="detail pressText">
 					Luftdruck
 				</p><!--pressText-->
@@ -307,6 +350,11 @@
 				</p><!--temp-->	
 			<!--leftboxend-->
 			<!--rightboxstart-->
+				<?php
+				if($diffN > 5){
+					echo "<p id='old' class='".$T." detail old'>Daten nicht aktuell</p>";
+				}	
+				?>
 				<p class="detail pressText">
 					Luftdruck
 				</p><!--pressText-->

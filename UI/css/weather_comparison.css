@@ -56,6 +56,13 @@ body{
 	border-radius:0 0 10px 10px;
 	margin-bottom: 1em;
 }
+.old {
+	grid-column: 3/span2;
+	grid-row: 1;
+	margin-top: 1em;
+	margin-left: 1em;
+	border-radius: 2em;
+}
 .pressText {
   grid-column: 3;
   grid-row: 2;

@@ -7,6 +7,23 @@
     $time = fgets($winterthur_Temp);
     fclose($winterthur_Temp);
 	
+	
+	//current time
+	$timenow = time();
+	$datenow = date("Y-m-d H:i:s", $timenow);
+	
+	//UNIX timestamp messured
+	$datetime = $date .' '. $time;
+	$dt1 = new DateTime($datetime);
+	$datetime = $dt1->getTimestamp();
+
+	//UNIX timestamp now
+	$dt2 = new DateTime($datenow);
+	$now = $dt2->getTimestamp();
+
+	//calculates timedifference
+	$diff = round(($now - $datetime)/60);
+	
 ?> 
 <?php
 	/*change of the background image dependent on temperature*/
@@ -97,6 +114,10 @@
 		
 		echo "<p class ='info temp_winti ".$T."'>";
 			echo $temp."°C";
+			
+		if($diff > 5){
+			echo "<p id='old' class='".$T."'>Daten nicht aktuell</p>";
+		}
 	?>
 		</p><!--temp_winti-->	
 	</div><!--container-->
