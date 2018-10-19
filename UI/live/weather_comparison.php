@@ -256,8 +256,11 @@
 			<!--rightboxstart-->
 				<?php
 				if($diffW > 5){
-					echo "<p class='".$T." detail old'>Daten nicht aktuell</p>";
-				}	
+					echo "<p class='status old'>Daten veraltet</p>";
+				}
+				else{
+					echo "<p class='status new'>Daten aktuell</p>";	
+				}					
 				?>
 				<p class="detail pressText">
 					Luftdruck
@@ -306,6 +309,9 @@
 				if($diffR > 5){
 					echo "<p class='".$T." detail old'>Daten nicht aktuell</p>";
 				}	
+				else{
+					echo "<p class='status new'>Daten aktuell</p>";	
+				}
 				?>
 				<p class="detail pressText">
 					Luftdruck
@@ -353,7 +359,10 @@
 				<?php
 				if($diffN > 5){
 					echo "<p id='old' class='".$T." detail old'>Daten nicht aktuell</p>";
-				}	
+				}
+				else{
+					echo "<p class='status new'>Daten aktuell</p>";	
+				}				
 				?>
 				<p class="detail pressText">
 					Luftdruck
