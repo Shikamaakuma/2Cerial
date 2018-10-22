@@ -95,6 +95,20 @@
 	$tempR = 15.8;
 	$tempN = 0;
 	/*test*/
+	/*change of the background image dependent on temperature in Winterthur*/
+	/*$temp = 40.5; /*for test purposes*/
+	if($tempW > 40){
+		echo "<link rel='stylesheet' type='text/css' media='all and (orientation: landscape)' href='css/main_page_mustafar.css' />";
+	}
+	else if($tempW <= 40 && $tempW > 20){
+		echo "<link rel='stylesheet' type='text/css' media='all and (orientation: landscape)' href='css/main_page_warm.css' />";
+	}
+	else if($tempW <= 20 && $tempW > -20){
+		echo "<link rel='stylesheet' type='text/css' media='all and (orientation: landscape)' href='css/main_page_cold.css' />" ;
+	}
+	else if($tempW < -20){
+		echo "<link rel='stylesheet' type='text/css' media='all and (orientation: landscape)' href='css/main_page_hoth.css' />";
+	}
 	/* class determination for the different backgroundcolours for Winterthur*/
 	if ($tempW > 40){
 		$W = "Mustafar";
@@ -307,7 +321,7 @@
 			<!--rightboxstart-->
 				<?php
 				if($diffR > 5){
-					echo "<p class='".$T." detail old'>Daten nicht aktuell</p>";
+					echo "<p class='status old'>Daten veraltet</p>";
 				}	
 				else{
 					echo "<p class='status new'>Daten aktuell</p>";	
@@ -358,7 +372,7 @@
 			<!--rightboxstart-->
 				<?php
 				if($diffN > 5){
-					echo "<p id='old' class='".$T." detail old'>Daten nicht aktuell</p>";
+					echo "<p id='old' class='status old'>Daten veraltet</p>";
 				}
 				else{
 					echo "<p class='status new'>Daten aktuell</p>";	

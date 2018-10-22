@@ -1,11 +1,6 @@
 *{	font-family: Arial;}
 /*code of the body*/
-body{
-	background: url("../../images/Winterthur_warm.jpg");
-	background-size: cover;
-	background-repeat: no-repeat;
-	background-color: #555;
-}
+
 #title{
 	display: grid;
 	max-width: 80%;

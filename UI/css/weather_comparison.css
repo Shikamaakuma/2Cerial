@@ -9,12 +9,7 @@
 	border-radius: 15px;
 	opacity: 0.9;
 }	
-body{
-	background: url("../images/Winterthur_warm.jpg");
-	background-size: cover;
-	background-repeat: no-repeat;
-	background-color: #555;
-}	
+
 .detail{
 	background-color: #555;
 	color: white;
