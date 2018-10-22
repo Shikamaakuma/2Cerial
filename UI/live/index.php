@@ -31,10 +31,10 @@
 	if($temp > 40){
 		echo "<link rel='stylesheet' type='text/css' media='all and (orientation: landscape)' href='css/main_page_mustafar.css' />";
 	}
-	else if($temp <= 40 && $temp > 20){
+	else if($temp <= 40 && $temp > 15){
 		echo "<link rel='stylesheet' type='text/css' media='all and (orientation: landscape)' href='css/main_page_warm.css' />";
 	}
-	else if($temp <= 20 && $temp > -20){
+	else if($temp <= 15 && $temp > -20){
 		echo "<link rel='stylesheet' type='text/css' media='all and (orientation: landscape)' href='css/main_page_cold.css' />" ;
 	}
 	else if($temp < -20){
