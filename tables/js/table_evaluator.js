@@ -15,9 +15,26 @@ $(document).ready(function () {
                     fontSize: 16,
                     itemclick: toggleDataSeries
                 },
-                toolTip: {
-                    shared: true
-                },
+				toolTip: {
+					cornerRadius:10,
+					shared: true,
+					contentFormatter: function (e) {
+						var content = " ";
+							for (var i = 0; i < e.entries.length; i++) {
+							if(e.entries[i].dataSeries.visible == true){
+								content += e.entries[i].dataSeries.name + ": " + "<strong>" + e.entries[i].dataPoint.y + "</strong>";
+								content += "<br/>";
+							}
+						}
+						return content;
+					}
+				},   
+				axisY:{
+					includeZero: false
+				},
+				axisY2:{
+					includeZero: false
+				},
                 data: [{
                         type: "spline",
                         name: "Winterthur Temperatur",
@@ -25,6 +42,7 @@ $(document).ready(function () {
                         showInLegend: true,
                         legendText: " Winterthur Temperatur (°C)",
                         color:"#1B2A41",
+						markerType: "none", 
                         dataPoints: data['winterthurTemperatur']
                     },
                     {
@@ -34,6 +52,7 @@ $(document).ready(function () {
                         showInLegend: true,
                         legendText: " Winterthur Luftfeuchtigkeit (%)",
                         color:"#324A5F",
+						markerType: "none",
                         dataPoints: data['winterthurWaterSaturation']
                     },
                     {
@@ -44,6 +63,7 @@ $(document).ready(function () {
                         showInLegend: true,
                         legendText: " Winterthur Luftdruck (hPa)",
                         color:"#1D7874",
+						markerType: "none",
                         dataPoints: data['winterthurPressure']
                     },
                     {
@@ -52,6 +72,7 @@ $(document).ready(function () {
                         xValueType: "dateTime",
                         showInLegend: true,
                         color:"#679289",
+						markerType: "none", 
                         dataPoints: data['winterthurAirQuality']
                     },
                     {
@@ -61,6 +82,7 @@ $(document).ready(function () {
                         showInLegend: true,
                         legendText: " Romanshorn Temperatur (°C)",
                         color:"#E57A44",
+						markerType: "none",
                         dataPoints: data['romanshornTemperatur']
                     },
                     {
@@ -70,6 +92,7 @@ $(document).ready(function () {
                         showInLegend: true,
                         legendText: " Romanshorn Luftfeuchtigkeit (%)",
                         color:"#ED7E2A",
+						markerType: "none",
                         dataPoints: data['romanshornWaterSaturation']
                     },
                     {
@@ -80,6 +103,7 @@ $(document).ready(function () {
                         showInLegend: true,
                         legendText: " Romanshorn Luftdruck (hPa)",
                         color:"#F5B841",
+						markerType: "none", 
                         dataPoints: data['romanshornPressure']
                     },
                     {
@@ -88,6 +112,7 @@ $(document).ready(function () {
                         xValueType: "dateTime",
                         showInLegend: true,
                         color:"#FFFB3D",
+						markerType: "none", 
                         dataPoints: data['romanshornAirQuality']
                     },
                     {
@@ -97,6 +122,7 @@ $(document).ready(function () {
                         showInLegend: true,
                         legendText: " Neuhausen Temperatur (°C)",
                         color:"#386C0B",
+						markerType: "none", 
                         dataPoints: data['neuhausenTemperatur']
                     },
                     {
@@ -104,8 +130,9 @@ $(document).ready(function () {
                         name: "Neuhausen Luftfeuchtigkeit",
                         xValueType: "dateTime",
                         showInLegend: true,
-                        legendText: " Winterthur Neuhausen (%)",
+                        legendText: "Neuhausen Luftfeuchtigkeit(%)",
                         color:"#38A700",
+						markerType: "none", 
                         dataPoints: data['neuhausenWaterSaturation']
                     },
                     {
@@ -116,6 +143,7 @@ $(document).ready(function () {
                         showInLegend: true,
                         legendText: " Neuhausen Luftdruck (hPa)",
                         color:"#29BF12",
+						markerType: "none", 
                         dataPoints: data['neuhausenPressure']
                     },
                     {
@@ -124,6 +152,7 @@ $(document).ready(function () {
                         xValueType: "dateTime",
                         showInLegend: true,
                         color:"#1EFC1E",
+						markerType: "none",
                         dataPoints: data['neuhausenAirQuality']
                     }
                 ]

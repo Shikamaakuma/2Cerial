@@ -9,7 +9,7 @@
         }
         else{
             foreach($table as $row){
-             $data[] = array("x"=>intval($row['unix_timestamp(datum)*1000']),
+             $data[] = array("x"=>intval($row['unix_timestamp(subdate(datum, interval second(datum) second))*1000']),
                  "y"=>intval($row[$value]));
         }
         }
@@ -21,9 +21,9 @@
     $mysqli = mysqli_connect("2cerials.m2e-demo.ch", "2cerials","sonM5!98", "medemoc_2cerials");
     $mysqli -> set_charset('utf8');
     
-    $QUERYROMANSHORN = "SELECT airpressure, airquality, waterSaturation, temperature, unix_timestamp(datum)*1000 FROM romanshorn WHERE romanshorn.datum > DATE_SUB(now(), INTERVAL 1 HOUR);";
-    $QUERYNEUHAUSEN  = "SELECT airpressure, airquality, waterSaturation, temperature, unix_timestamp(datum)*1000 FROM neuhausen WHERE neuhausen.datum > DATE_SUB(now(), INTERVAL 1 HOUR);";
-    $QUERYWINTERTHUR = "SELECT airpressure, airquality, waterSaturation, temperature, unix_timestamp(datum)*1000 FROM winterthur WHERE winterthur.datum > DATE_SUB(now(), INTERVAL 1 HOUR);";
+    $QUERYROMANSHORN = "select airpressure, airquality, waterSaturation, temperature, unix_timestamp(subdate(datum, interval second(datum) second))*1000 from romanshorn WHERE romanshorn.datum > DATE_SUB(now(), INTERVAL 1 HOUR);";
+    $QUERYNEUHAUSEN  = "select airpressure, airquality, waterSaturation, temperature, unix_timestamp(subdate(datum, interval second(datum) second))*1000 from neuhausen WHERE neuhausen.datum > DATE_SUB(now(), INTERVAL 1 HOUR);";
+    $QUERYWINTERTHUR = "select airpressure, airquality, waterSaturation, temperature, unix_timestamp(subdate(datum, interval second(datum) second))*1000 from winterthur WHERE winterthur.datum > DATE_SUB(now(), INTERVAL 1 HOUR);";
     $resRomanshorn = mysqli_query($mysqli, $QUERYROMANSHORN);
     $dataRomanshorn = mysqli_fetch_all($resRomanshorn,MYSQLI_ASSOC);
     $resNeuhausen = mysqli_query($mysqli, $QUERYNEUHAUSEN);
