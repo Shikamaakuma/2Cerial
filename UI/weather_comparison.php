@@ -1,4 +1,13 @@
-<?php /*
+<?php 
+	//current time
+	$timenow = time();
+	$datenow = date("Y-m-d H:i:s", $timenow);
+	
+	//UNIX timestamp now
+	$dtall = new DateTime($datenow);
+	$now = $dtall->getTimestamp();
+	
+
 	//reads temperature of Winterthur
     $winterthur_Temp = fopen("winterthur_temp.txt", "r") or die("Unable to open file!");
     $tempW = fgets($winterthur_Temp, 5);
@@ -16,6 +25,14 @@
     $winterthur_h2o = fopen("winterthur_h2o.txt", "r") or die("Unable to open file!");
     $h2oW = fgets($winterthur_h2o);
     fclose($winterthur_h2o);
+	
+	//UNIX timestamp messured by Winterthur
+	$datetimeW = $dateW .' '. $timeW;
+	$dtW = new DateTime($datetimeW);
+	$datetimeW = $dtW->getTimestamp();
+
+	//calculates timedifference for Winterthur
+	$diffW = round(($now - $datetimeW)/60);
 	
 	
 	//reads temperature of Romanshorn
@@ -36,6 +53,14 @@
     $h2oR = fgets($romanshorn_h2o);
     fclose($romanshorn_h2o);
 	
+	//UNIX timestamp messured by Romanshorn
+	$datetimeR = $dateR .' '. $timeR;
+	$dtR = new DateTime($datetimeR);
+	$datetimeR = $dtR->getTimestamp();
+
+	//calculates timedifference for Romanshorn
+	$diffR = round(($now - $datetimeR)/60);
+	
 	
 	//reads temperature of Neuhausen am Rheinfall
     $neuhausen_Temp = fopen("neuhausen_temp.txt", "r") or die("Unable to open file!");
@@ -54,60 +79,132 @@
     $neuhausen_h2o = fopen("neuhausen_h2o.txt", "r") or die("Unable to open file!");
     $h2oN = fgets($neuhausen_h2o);
     fclose($neuhausen_h2o);
-	*/
+	
+	//UNIX timestamp messured by Neuhausen am Rheinfall
+	$datetimeN = $dateN .' '. $timeN;
+	$dtN = new DateTime($datetimeN);
+	$datetimeN = $dtN->getTimestamp();
+
+	//calculates timedifference for Neuhausen am Rheinfall
+	$diffN = round(($now - $datetimeN)/60);
+	
 ?> 
 <?php
-	/*test*/
+	/*test
 	$tempW = 20.5;
 	$tempR = 15.8;
 	$tempN = 0;
 	/*test*/
-	if ($tempW > 30){
+	/* class determination for the different backgroundcolours for Winterthur*/
+	if ($tempW > 40){
+		$W = "Mustafar";
+	}
+	else if($tempW <= 40 && $tempW > 35){
+		$W = "T35";
+	}
+	else if($tempW <= 35 && $tempW > 30){
 		$W = "T30";
-	}	
-	else if($tempW <= 30 && $tempW > 20){
+	}
+	else if($tempW <= 30 && $tempW > 25){
+		$W = "T25";
+	}
+	else if($tempW <= 25 && $tempW > 20){
 		$W = "T20";
 	}
-	else if($tempW <= 20 && $tempW >10){
+	else if($tempW <= 20 && $tempW > 15){
+		$W = "T15";
+	}
+	else if($tempW <= 15 && $tempW > 10){
 		$W = "T10";
 	}
-	else if($tempW <= 10 && $tempW >0){
+	else if($tempW <= 10 && $tempW > 5){
+		$W = "T5";
+	}
+	else if($tempW <= 5 && $tempW > 0){
 		$W = "T0";
 	}
-	else if($tempW <= 0){
+	else if($tempW <= 0 && $tempW > -10){
 		$W = "T-10";
 	}
-	
-	if ($tempR > 30){
+	else if($tempW <= -10 && $tempW > -20){
+		$W = "T-20";
+	}
+	else if($tempW <= -20){
+		$W = "Hoth";
+	}
+	/* class determination for the different backgroundcolours for Romanshorn*/
+	if ($tempR > 40){
+		$R = "Mustafar";
+	}
+	else if($tempR <= 40 && $tempR > 35){
+		$R = "T35";
+	}
+	else if($tempR <= 35 && $tempR > 30){
 		$R = "T30";
-	}	
-	else if($tempR <= 30 && $tempR > 20){
+	}
+	else if($tempR <= 30 && $tempR > 25){
+		$R = "T25";
+	}
+	else if($tempR <= 25 && $tempR > 20){
 		$R = "T20";
 	}
-	else if($tempR <= 20 && $tempR >10){
+	else if($tempR <= 20 && $tempR > 15){
+		$R = "T15";
+	}
+	else if($tempR <= 15 && $tempR > 10){
 		$R = "T10";
 	}
-	else if($tempR <= 10 && $tempR >0){
+	else if($tempR <= 10 && $tempR > 5){
+		$R = "T5";
+	}
+	else if($tempR <= 5 && $tempR > 0){
 		$R = "T0";
 	}
-	else if($tempR <= 0){
+	else if($tempR <= 0 && $tempR > -10){
 		$R = "T-10";
 	}
-	
-	if ($tempN > 30){
+	else if($tempR <= -10 && $tempR > -20){
+		$R = "T-20";
+	}
+	else if($tempR <= -20){
+		$R = "Hoth";
+	}
+	/* class determination for the different backgroundcolours for Neuhausen am Rheinfall*/
+	if ($tempN > 40){
+		$N = "Mustafar";
+	}
+	else if($tempN <= 40 && $tempN > 35){
+		$N = "T35";
+	}
+	else if($tempN <= 35 && $tempN > 30){
 		$N = "T30";
-	}	
-	else if($tempN <= 30 && $tempN > 20){
+	}
+	else if($tempN <= 30 && $tempN > 25){
+		$N = "T25";
+	}
+	else if($tempN <= 25 && $tempN > 20){
 		$N = "T20";
 	}
-	else if($tempN <= 20 && $tempN >10){
+	else if($tempN <= 20 && $tempN > 15){
+		$N = "T15";
+	}
+	else if($tempN <= 15 && $tempN > 10){
 		$N = "T10";
 	}
-	else if($tempN <= 10 && $tempN >0){
+	else if($tempN <= 10 && $tempN > 5){
+		$N = "T5";
+	}
+	else if($tempN <= 5 && $tempN > 0){
 		$N = "T0";
 	}
-	else if($tempN <= 0){
+	else if($tempN <= 0 && $tempN > -10){
 		$N = "T-10";
+	}
+	else if($tempN <= -10 && $tempN > -20){
+		$N = "T-20";
+	}
+	else if($tempN <= -20){
+		$N = "Hoth";
 	}
 ?>
 
@@ -119,14 +216,17 @@
 		<meta charset= "utf-8" />
 		<title> Wetter Winterthur/Romanshorn/Neuhausen am Rheinfall </title>
 		<link rel="stylesheet" type="text/css" href="css/reset.css" />
-		<link rel="stylesheet" type="text/css" href="css/weather_comparison.css" />
+		<link rel="stylesheet" type="text/css" media="all and (orientation: portrait)" href="css/navbar_mobile.css" />
+		<link rel="stylesheet" type="text/css" media="all and (orientation: portrait)" href="css/weather_comparison_mobile.css" />
+		<link rel="stylesheet" type="text/css" media="all and (orientation: landscape)" href="css/navbar.css" />
+		<link rel="stylesheet" type="text/css" media="all and (orientation: landscape)" href="css/weather_comparison.css" />
 		<link rel="stylesheet" type="text/css" href="css/temperature.css" />
 	</head>
 	<body>
 	<div id="nav">
-		<div id="tables" class="navbutton"><a href="tables.php">Wetterarchiv</a></div>
-		<div id="main" class="navbutton"><a href="main_page.php">Haus</a></div>
-		<div id="forecast" class="navbutton"><a href="forecast_Winterthur.php">Prognose</a></div>
+		<div id="left_button" class="navbutton"><a href="https://2cerials.m2e-demo.ch/tables.php">Wetterarchiv</a></div>
+		<div id="middle_button" class="navbutton"><a href="index.php">Startseite</a></div>
+		<div id="right_button" class="navbutton"><a href="forecast_Winterthur.php">Prognose</a></div>
 	</div>
 	<div id = "container">
 		<?php
@@ -138,31 +238,35 @@
 				</p><!--ort-->
 				<p class="detail time">
 					<?php
-						$timeW = "19:00"; /*for test purposes*/
 						echo $timeW; 
 					?>
 				</p><!--time-->
 				<p class ="detail date">
 					<?php
-						$dateW = "20.09.2018"; /*for test purposes*/
 						echo $dateW;
 					?>
 				</p><!--date-->
 				
 				<p class ="detail temp">
 					<?php
-						/*$tempW = 20.5; /*for test purposes*/
 						echo $tempW."°C";
 					?>
 				</p><!--temp-->	
 			<!--leftboxend-->
 			<!--rightboxstart-->
+				<?php
+				if($diffW > 5){
+					echo "<p class='status old'>Daten veraltet</p>";
+				}
+				else{
+					echo "<p class='status new'>Daten aktuell</p>";	
+				}					
+				?>
 				<p class="detail pressText">
 					Luftdruck
 				</p><!--pressText-->
 				<p class="detail press">
 					<?php
-						$pressW = 990; /*for test purposes*/
 						echo $pressW." hPa";
 					?>
 				</p><!--press-->
@@ -171,7 +275,6 @@
 				</p><!--h2oText-->
 				<p class="detail h2o">
 					<?php
-						$h2oW = 25.7; /*for test purpose*/
 						echo $h2oW." %";
 					?>
 				</p><!--h2o-->
@@ -186,31 +289,35 @@
 				</p><!--ort-->
 				<p class="detail time">
 					<?php
-						$timeR = "19:00"; /*for test purposes*/
 						echo $timeR; 
 					?>
 				</p><!--time-->
 				<p class ="detail date">
 					<?php
-						$dateR = "20.09.2018"; /*for test purposes*/
 						echo $dateR;
 					?>
 				</p><!--date-->
 				
 				<p class ="detail temp">
 					<?php
-						/*$tempR = 20.5; /*for test purposes*/
 						echo $tempR."°C";
 					?>
 				</p><!--temp-->	
 			<!--leftboxend-->
 			<!--rightboxstart-->
+				<?php
+				if($diffR > 5){
+					echo "<p class='".$T." detail old'>Daten nicht aktuell</p>";
+				}	
+				else{
+					echo "<p class='status new'>Daten aktuell</p>";	
+				}
+				?>
 				<p class="detail pressText">
 					Luftdruck
 				</p><!--pressText-->
 				<p class="detail press">
 					<?php
-						$pressR = 990; /*for test purposes*/
 						echo $pressR." hPa";
 					?>
 				</p><!--press-->
@@ -219,7 +326,6 @@
 				</p><!--h2oText-->
 				<p class="detail h2o">
 					<?php
-						$h2oR = 25.7; /*for test purposes*/
 						echo $h2oR." %";
 					?>
 				</p><!--h2o-->
@@ -234,31 +340,35 @@
 				</p><!--ort-->
 				<p class="detail time">
 					<?php
-						$timeN = "19:00"; /*for test purposes*/
 						echo $timeN; 
 					?>
 				</p><!--time-->
 				<p class ="detail date">
 					<?php
-						$dateN = "20.09.2018"; /*for test purposes*/
 						echo $dateN;
 					?>
 				</p><!--date-->
 				
 				<p class ="detail temp">
 					<?php
-						/*$tempN = 20.5; /*for test purposes*/
 						echo $tempN."°C";
 					?>
 				</p><!--temp-->	
 			<!--leftboxend-->
 			<!--rightboxstart-->
+				<?php
+				if($diffN > 5){
+					echo "<p id='old' class='".$T." detail old'>Daten nicht aktuell</p>";
+				}
+				else{
+					echo "<p class='status new'>Daten aktuell</p>";	
+				}				
+				?>
 				<p class="detail pressText">
 					Luftdruck
 				</p><!--pressText-->
 				<p class="detail press">
 					<?php
-						$pressN = 990; /*for test purposes*/
 						echo $pressN." hPa";
 					?>
 				</p><!--press-->
@@ -267,13 +377,11 @@
 				</p><!--h2oText-->
 				<p class="detail h2o">
 					<?php
-						$h2oN = 25.7; /*for test purposes*/
 						echo $h2oN." %";
 					?>
 				</p><!--h2o-->
 			<!--rightboxend-->
 		</div><!--Neuhausen-->
-		
 	</div><!--container-->
 	</body>
 </html>
