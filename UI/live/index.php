@@ -111,6 +111,45 @@
 		echo "<div id='right_button' class='".$T." navbutton'><a href='forecast_Winterthur.php'>Prognose</a></div>";
 		?>
 	</div>
+	<!-- displays the different possible colours -->
+	<div id="infobar">
+		<p class="info colour12 Mustafar">
+			</br> > 40 </br>
+		</p>
+		<p class="info colour11 T35">
+			35</br> - </br>40
+		</p>
+		<p class="info colour10 T30">
+			30</br> - </br>35
+		</p>
+		<p class="info colour9 T25">
+			25</br> - </br>30
+		</p>
+		<p class="info colour8 T20">
+			20</br> - </br>25
+		</p>
+		<p class="info colour7 T15">
+			15</br> - </br>20
+		</p>
+		<p class="info colour6 T10">
+			10</br> - </br>15
+		</p>
+		<p class="info colour5 T5">
+			5</br> - </br>10
+		</p>
+		<p class="info colour4 T0">
+			0</br> - </br>10
+		</p>
+		<p class="info colour3 T-10">
+			-10</br> - </br>0
+		</p>
+		<p class="info colour2 T-20">
+			-10</br> - </br>-20
+		</p>
+		<p class="info colour1 Hoth">
+			</br> < -20 </br>
+		</p>
+	</div><!-- infobar-->
 	<div id="container">
 	<?php
 		echo "<p class='info ort ".$T."'>";
