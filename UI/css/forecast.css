@@ -1,4 +1,4 @@
-*{	font-family: Arial;}
+*{	font-family: "Arial Black", Arial, Helvetica, sans-serif !important;}
 /*code of the body*/
 
 #title{
@@ -57,7 +57,6 @@ h1{
 h2{
 	color: black;
 	grid-row: 1;
-	font-family: Arial Black;
 	margin-left: .5em;
 }
 p{
@@ -67,7 +66,6 @@ p.date{
 	text-align: right;
 	color: black;
 	grid-row: 2;
-	font-family: Arial Black;
 }
 p.high{
 	grid-row: 3;

@@ -1,3 +1,4 @@
+*{font-family: "Arial Black", Arial, Helvetica, sans-serif !important;}
 /*Buttons for navigation*/
 #nav{
 	display: grid;
@@ -18,7 +19,6 @@
 #nav a { 
 	display: block;
 	text-align: center;
-	font-family: Arial Black;
 	text-decoration: none;
 	color: white;
 	padding: .5%;
@@ -33,12 +33,6 @@
 	background-color: white ;
 }
 #nav .navbutton:hover a{
-	color: black;
-}
-#nav .navbutton:focus {
-	background-color: white;
-}
-#nav .navbutton:focus a{
 	color: black;
 }
 #middle_button {
