@@ -39,6 +39,8 @@
 	$messuredW = explode(" ", $data[1]['Datum']);
 	$dateW = $messuredW[0];
 	$dateW = str_replace("-", ".", $dateW);
+	$dateW = explode(".", $dateW);
+	$dateW = $dateW[2].".".$dateW[1].".".$dateW[0];
 	$timeW = $messuredW[1];
 	$timeW = substr ($timeW , 0 , 5 );
 	
@@ -63,7 +65,9 @@
 	$datetimeR = $data[0]['Datum'];
 	$messuredR = explode(" ", $data[0]['Datum']);
 	$dateR = $messuredR[0];
-	$dateR = str_replace("-", ".", $dateW);
+	$dateR = str_replace("-", ".", $dateR);
+	$dateR = explode(".", $dateR);
+	$dateR = $dateR[2].".".$dateR[1].".".$dateR[0];
 	$timeR = $messuredR[1];
 	$timeR = substr ($timeR , 0 , 5 );
 	
@@ -89,6 +93,8 @@
 	$messuredN = explode(" ", $data[2]['Datum']);
 	$dateN = $messuredN[0];
 	$dateN = str_replace("-", ".", $dateN);
+	$dateN = explode(".", $dateN);
+	$dateN = $dateN[2].".".$dateN[1].".".$dateN[0];
 	$timeN = $messuredN[1];
 	$timeN = substr ($timeN , 0 , 5 );
 

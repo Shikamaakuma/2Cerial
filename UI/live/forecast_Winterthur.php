@@ -89,6 +89,9 @@ echo "<div class='container'>";
 			case "Mixed Rain And Snow":
 				return "Regen und Schnee gemischt";
 				break;
+			case "Rain And Snow":
+				return "Regen und Schnee gemischt";
+				break;
 			case "Mixed Rain And Sleet":
 				return "Regen und Schneeregen gemischt";
 				break;

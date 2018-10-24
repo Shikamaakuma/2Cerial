@@ -15,6 +15,8 @@
 	$messured = explode(" ", $data[0]['Datum']);
 	$date = $messured[0];
 	$date = str_replace("-", ".", $date);
+	$date = explode(".", $date);
+	$date = $date[2].".".$date[1].".".$date[0];
 	$time = $messured[1];
 	$time = substr ($time , 0 , 5 );
 	
