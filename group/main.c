@@ -51,19 +51,22 @@ int main ( int argc, char **argv ) {
     int i2c_adresse = wiringPiI2CSetup(GROVEPI_I2C_ADDRESS);
     grove_set_pin_mode(i2c_adresse, AIR_QUALITY_ANALOG_PORT,PIN_MODE_INPUT);
     
-    
+    int macAddrGet = mac_get_ascii_from_file(macAddr);
     
     while(1){
         air_quality = get_air_quality_values(i2c_adresse, AIR_QUALITY_ANALOG_PORT);
         sleep(1);
         
+        if(mac_get_ascii_from_file(macAddr) !=1){
+            printf("Error: failed to find macAddr");
+            break;
+        }
+        
         if(start !=1){
-            if(mac_get_ascii_from_file(macAddr) ==1){
-            }
-            else{
+            if(mac_get_ascii_from_file(macAddr) !=1){
                 printf("Error: failed to find macAddr");
+                break;
             }
-
             //posting air quality (coming soon)
             sprintf(toPost,"%d",air_quality);
             //sends the air quality to our webpage
