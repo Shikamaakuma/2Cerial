@@ -1,11 +1,22 @@
-<?php
-    $saveThis = $_POST[Winterthur_temp];
-    $winterthur_Temp = fopen("winterthur_temp.txt", "r") or die("Unable to open file!");
-    $temp = fgets($winterthur_Temp, 5);
-	fgets($winterthur_Temp);
-    $date = fgets($winterthur_Temp);
-    $time = fgets($winterthur_Temp);
-    fclose($winterthur_Temp);
+<?php	
+	include "DB.php";
+	
+	$query = "select * from Readings where UserID = 2 order by Datum desc limit 1;";
+	$resQuery = mysqli_query($mysqli,$query);
+	if(!$resQuery){
+		echo "query invalid";
+	}
+	else{
+		$data = mysqli_fetch_all($resQuery,MYSQLI_ASSOC);
+	}
+	
+	$temp = $data[0]['Temperature'];
+	$datetime = $data[0]['Datum'];
+	$messured = explode(" ", $data[0]['Datum']);
+	$date = $messured[0];
+	$date = str_replace("-", ".", $date);
+	$time = $messured[1];
+	$time = substr ($time , 0 , 5 );
 	
 	
 	//current time
@@ -13,13 +24,13 @@
 	$datenow = date("Y-m-d H:i:s", $timenow);
 	
 	//UNIX timestamp messured
-	$datetime = $date .' '. $time;
-	$dt1 = new DateTime($datetime);
-	$datetime = $dt1->getTimestamp();
+	//$datetime = $date .' '. $time;
+	$dtmessured = new DateTime($datetime);
+	$datetime = $dtmessured->getTimestamp();
 
 	//UNIX timestamp now
-	$dt2 = new DateTime($datenow);
-	$now = $dt2->getTimestamp();
+	$dtnow = new DateTime($datenow);
+	$now = $dtnow->getTimestamp();
 
 	//calculates timedifference
 	$diff = round(($now - $datetime)/60);

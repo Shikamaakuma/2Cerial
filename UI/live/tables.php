@@ -1,10 +1,18 @@
 <!DOCTYPE HTML>
 <?php
 /*messures temp for backgroundimage data*/
-	$saveThis = $_POST[Winterthur_temp];
-    $winterthur_Temp = fopen("winterthur_temp.txt", "r") or die("Unable to open file!");
-    $temp = fgets($winterthur_Temp, 5);
-    fclose($winterthur_Temp);
+	include "DB.php";
+	
+	$query = "select * from Readings where UserID = 2 order by Datum desc limit 1;";
+	$resQuery = mysqli_query($mysqli,$query);
+	if(!$resQuery){
+		echo "query invalid";
+	}
+	else{
+		$data = mysqli_fetch_all($resQuery,MYSQLI_ASSOC);
+	}
+	
+	$temp = $data[0]['Temperature'];
 /*change of the background image dependent on temperature*/
 	/*$temp = 40.5; /*for test purposes*/
 	if($temp > 40){

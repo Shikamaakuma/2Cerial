@@ -7,27 +7,43 @@
 	$dtall = new DateTime($datenow);
 	$now = $dtall->getTimestamp();
 	
-
+	//reads data from database
+	include "DB.php";
+	
+	$query = "select *
+	from Readings
+    inner join (
+        select UserID as UI, max(Datum) as MaxDate
+        from Readings
+        group by UserID
+    ) tm on Readings.UserID = tm.UI and Readings.Datum = tm.MaxDate order by UserID;";
+	$resQuery = mysqli_query($mysqli,$query);
+	if(!$resQuery){
+		echo "query invalid";
+	}
+	else{
+		$data = mysqli_fetch_all($resQuery,MYSQLI_ASSOC);
+	}
+	
+	
+	//Winterthur
+	
 	//reads temperature of Winterthur
-    $winterthur_Temp = fopen("winterthur_temp.txt", "r") or die("Unable to open file!");
-    $tempW = fgets($winterthur_Temp, 5);
-	fgets($winterthur_Temp);
-    $dateW = fgets($winterthur_Temp);
-    $timeW = fgets($winterthur_Temp);
-    fclose($winterthur_Temp);
-	
+	$tempW = $data[1]['Temperature'];
 	// reads airpressure of Winterthur
-    $winterthur_Press = fopen("winterthur_press.txt", "r") or die("Unable to open file!");
-    $pressW = fgets($winterthur_Press);
-    fclose($winterthur_Press);
-	
+	$pressW = $data[1]['AirPressure'];
 	// reads waterconcentration in air of Winterthur
-    $winterthur_h2o = fopen("winterthur_h2o.txt", "r") or die("Unable to open file!");
-    $h2oW = fgets($winterthur_h2o);
-    fclose($winterthur_h2o);
+	$h2oW = $data[1]['WaterSaturation'];
+	// reads datetime of messurement and splits it into $date and $time
+	$datetimeW = $data[1]['Datum'];
+	$messuredW = explode(" ", $data[1]['Datum']);
+	$dateW = $messuredW[0];
+	$dateW = str_replace("-", ".", $dateW);
+	$timeW = $messuredW[1];
+	$timeW = substr ($timeW , 0 , 5 );
 	
 	//UNIX timestamp messured by Winterthur
-	$datetimeW = $dateW .' '. $timeW;
+	/*$datetimeW = $dateW .' '. $timeW;*/
 	$dtW = new DateTime($datetimeW);
 	$datetimeW = $dtW->getTimestamp();
 
@@ -35,59 +51,54 @@
 	$diffW = round(($now - $datetimeW)/60);
 	
 	
+	//Romanshorn
+	
 	//reads temperature of Romanshorn
-    $romanshorn_Temp = fopen("romanshorn_temp.txt", "r") or die("Unable to open file!");
-    $tempR = fgets($romanshorn_Temp, 5);
-	fgets($romanshorn_Temp);
-    $dateR = fgets($romanshorn_Temp);
-    $timeR = fgets($romanshorn_Temp);
-    fclose($romanshorn_Temp);
-	
+	$tempR = $data[0]['Temperature'];
 	// reads airpressure of Romanshorn
-    $romanshorn_Press = fopen("romanshorn_press.txt", "r") or die("Unable to open file!");
-    $pressR = fgets($romanshorn_Press);
-    fclose($romanshorn_Press);
-	
+	$pressR = $data[0]['AirPressure'];
 	// reads waterconcentration in air of Romanshorn
-    $romanshorn_h2o = fopen("romanshorn_h2o.txt", "r") or die("Unable to open file!");
-    $h2oR = fgets($romanshorn_h2o);
-    fclose($romanshorn_h2o);
+	$h2oR = $data[0]['WaterSaturation'];
+	// reads datetime of messurement and splits it into $date and $time
+	$datetimeR = $data[0]['Datum'];
+	$messuredR = explode(" ", $data[0]['Datum']);
+	$dateR = $messuredR[0];
+	$dateR = str_replace("-", ".", $dateW);
+	$timeR = $messuredR[1];
+	$timeR = substr ($timeR , 0 , 5 );
 	
 	//UNIX timestamp messured by Romanshorn
-	$datetimeR = $dateR .' '. $timeR;
+	//$datetimeR = $dateR .' '. $timeR;
 	$dtR = new DateTime($datetimeR);
 	$datetimeR = $dtR->getTimestamp();
 
 	//calculates timedifference for Romanshorn
 	$diffR = round(($now - $datetimeR)/60);
+
 	
+	//Neuhausen am Rhenfall
 	
 	//reads temperature of Neuhausen am Rheinfall
-    $neuhausen_Temp = fopen("neuhausen_temp.txt", "r") or die("Unable to open file!");
-    $tempN = fgets($neuhausen_Temp, 5);
-	fgets($neuhausen_Temp);
-    $dateN = fgets($neuhausen_Temp);
-    $timeN = fgets($neuhausen_Temp);
-    fclose($neuhausen_Temp);
-	
+	$tempN = $data[2]['Temperature'];
 	// reads airpressure of Neuhausen am Rheinfall
-    $neuhausen_Press = fopen("neuhausen_press.txt", "r") or die("Unable to open file!");
-    $pressN = fgets($neuhausen_Press);
-    fclose($neuhausen_Press);
-	
+	$pressN = $data[2]['AirPressure'];
 	// reads waterconcentration in air of Neuhausen am Rheinfall
-    $neuhausen_h2o = fopen("neuhausen_h2o.txt", "r") or die("Unable to open file!");
-    $h2oN = fgets($neuhausen_h2o);
-    fclose($neuhausen_h2o);
-	
+	$h2oN = $data[2]['WaterSaturation'];
+	// reads datetime of messurement and splits it into $date and $time
+	$datetimeN = $data[2]['Datum'];
+	$messuredN = explode(" ", $data[2]['Datum']);
+	$dateN = $messuredN[0];
+	$dateN = str_replace("-", ".", $dateN);
+	$timeN = $messuredN[1];
+	$timeN = substr ($timeN , 0 , 5 );
+
 	//UNIX timestamp messured by Neuhausen am Rheinfall
-	$datetimeN = $dateN .' '. $timeN;
+	//$datetimeN = $dateN .' '. $timeN;
 	$dtN = new DateTime($datetimeN);
 	$datetimeN = $dtN->getTimestamp();
 
 	//calculates timedifference for Neuhausen am Rheinfall
 	$diffN = round(($now - $datetimeN)/60);
-	
 ?> 
 <?php
 	/*test
