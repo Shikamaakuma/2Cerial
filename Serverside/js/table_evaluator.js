@@ -8,7 +8,8 @@ $(document).ready(function () {
             var chart = new CanvasJS.Chart("graph", {
                 animationEnabled: true,
                 title: {
-                    text: "Graph Moff Tarkin"
+                    text: "Graph Moff Tarkin",
+					fontColor: "white"
                 },
                 legend: {
                     cursor: "pointer",
@@ -72,16 +73,6 @@ $(document).ready(function () {
 						markerType: "none",
                         dataPoints: data['winterthurPressure']
                     },
-                    /*{
-                        type: "line",
-                        name: "Winterthur Luftqualität",
-                        xValueType: "dateTime",
-                        showInLegend: true,
-						visible: false,
-                        color:"#679289",
-						markerType: "none", 
-                        dataPoints: data['winterthurAirQuality']
-                    },*/
                     {
                         type: "line",
                         name: "Romanshorn Temperatur",
@@ -116,16 +107,6 @@ $(document).ready(function () {
 						markerType: "none", 
                         dataPoints: data['romanshornPressure']
                     },
-                    /*{
-                        type: "line",
-                        name: "Romanshorn Luftqualität",
-                        xValueType: "dateTime",
-                        showInLegend: true,
-						visible: false,
-                        color:"#FFFB3D",
-						markerType: "none", 
-                        dataPoints: data['romanshornAirQuality']
-                    },*/
                     {
                         type: "line",
                         name: "Neuhausen Temperatur",
@@ -159,17 +140,8 @@ $(document).ready(function () {
                         color:"#29BF12",
 						markerType: "none", 
                         dataPoints: data['neuhausenPressure']
-                    },
-                   /* {
-                        type: "line",
-                        name: "Neuhausen Luftqualität",
-                        xValueType: "dateTime",
-                        showInLegend: true,
-						visible: false,
-                        color:"#1EFC1E",
-						markerType: "none",
-                        dataPoints: data['neuhausenAirQuality']
-                    }*/
+                    }
+					//TODO add Part 4
                 ]
             });
             chart.render();
