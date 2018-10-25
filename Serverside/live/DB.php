@@ -1,4 +1,4 @@
 <?php
-	$mysqli = mysqli_connect("2cerials.m2e-demo.ch", "2cerials","sonM5!98", "medemoc_2cerials");
+	$mysqli = mysqli_connect("blabla"); //TODO switch blabla for your connectionstring
 	$mysqli -> set_charset('utf8');
 ?>

@@ -9,7 +9,7 @@
 #include "grovepi.h"
 #include <string.h>
 
-#include "connection.h"//TODO actually get the library
+#include "connection.h"
 
 #define     DHT_DIGITAL_PORT            4
 #define     AIR_QUALITY_ANALOG_PORT     0
@@ -19,7 +19,7 @@
 
 #define     PIN_MODE_INPUT              0
 #define     PIN_MODE_OUTPUT             1
-#define     PASSWORD                    "B4ck4tIt4g4in"
+#define     PASSWORD                    "Password" //TODO set your own password
 #define     URL                         "http://2cerials.m2e-demo.ch/database_writer.php"
 #define     POSTSIZE                    33
 
