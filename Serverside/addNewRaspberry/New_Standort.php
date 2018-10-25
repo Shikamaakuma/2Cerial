@@ -5,17 +5,17 @@
 <?php	//Part 1 start
 	//Standort start 
 	
-	//TODO: change userID to your userID. You will get it from 2cerials
+	//TODO: change userNumber to your UserID. You will get it from 2cerials
 	
 	//reads temperature of Standort
-	$tempStandort = $data[userID]['Temperature'];
+	$tempStandort = $data[userNumber]['Temperature'];
 	// reads airpressure of Standort
-	$pressStandort = $data[userID]['AirPressure'];
+	$pressStandort = $data[userNumber]['AirPressure'];
 	// reads Saterconcentration in air of Standort
-	$h2oStandort = $data[userID]['SaterSaturation'];
+	$h2oStandort = $data[userNumber]['SaterSaturation'];
 	// reads datetime of messurement and splits it into $date and $time
 	$datetimeStandort = $data[1]['Datum'];
-	$messuredStandort = explode(" ", $data[userID]['Datum']);
+	$messuredStandort = explode(" ", $data[userNumber]['Datum']);
 	$dateStandort = $messuredStandort[0];
 	$dateStandort = str_replace("-", ".", $dateStandort);
 	$dateStandort = explode(".", $dateStandort);
