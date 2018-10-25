@@ -45,7 +45,6 @@
 	$timeW = substr ($timeW , 0 , 5 );
 	
 	//UNIX timestamp messured by Winterthur
-	/*$datetimeW = $dateW .' '. $timeW;*/
 	$dtW = new DateTime($datetimeW);
 	$datetimeW = $dtW->getTimestamp();
 
@@ -73,7 +72,6 @@
 	$timeR = substr ($timeR , 0 , 5 );
 	
 	//UNIX timestamp messured by Romanshorn
-	//$datetimeR = $dateR .' '. $timeR;
 	$dtR = new DateTime($datetimeR);
 	$datetimeR = $dtR->getTimestamp();
 
@@ -101,7 +99,6 @@
 	$timeN = substr ($timeN , 0 , 5 );
 
 	//UNIX timestamp messured by Neuhausen am Rheinfall
-	//$datetimeN = $dateN .' '. $timeN;
 	$dtN = new DateTime($datetimeN);
 	$datetimeN = $dtN->getTimestamp();
 
@@ -110,15 +107,11 @@
 	
 	//Neuhausen am Rheinfall end
 	
+	
+	//TODO: Insert your Part 1 above this line
 ?> 
 <?php
-	/*test
-	$tempW = 20.5;
-	$tempR = 15.8;
-	$tempN = 0;
-	/*test*/
 	/*change of the background image dependent on temperature in Winterthur*/
-	/*$temp = 40.5; /*for test purposes*/
 	if($tempW > 40){
 		echo "<link rel='stylesheet' type='text/css' media='all and (orientation: landscape)' href='css/main_page_mustafar.css' />";
 	}
@@ -242,6 +235,9 @@
 	else if($tempN <= -20){
 		$N = "Hoth";
 	}
+	
+	
+	//TODO: Insert your Part 2 above this line
 ?>
 
 
@@ -418,6 +414,8 @@
 				</p><!--h2o-->
 			<!--rightboxend-->
 		</div><!--Neuhausen-->
+		
+		<!--TODO: Insert your Part 3 above this line-->
 	</div><!--container-->
 	</body>
 </html>
