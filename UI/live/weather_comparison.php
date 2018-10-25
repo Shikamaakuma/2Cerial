@@ -110,7 +110,6 @@
 	
 	//Neuhausen am Rheinfall end
 	
-	mysqli_close($mysgli);
 ?> 
 <?php
 	/*test

@@ -24,7 +24,6 @@
 	
 	$temp = $data[0]['Temperature'];
 	
-	mysqli_close($mysgli);
 	
 	
 	/*change of the background image dependent on temperature*/
