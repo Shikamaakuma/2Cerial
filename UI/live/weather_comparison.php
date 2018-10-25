@@ -26,7 +26,7 @@
 	}
 	
 	
-	//Winterthur
+	//Winterthur start
 	
 	//reads temperature of Winterthur
 	$tempW = $data[1]['Temperature'];
@@ -49,11 +49,12 @@
 	$dtW = new DateTime($datetimeW);
 	$datetimeW = $dtW->getTimestamp();
 
-	//calculates timedifference for Winterthur
+	//calculates timedifference for Winterthur in minutes
 	$diffW = round(($now - $datetimeW)/60);
 	
+	//Winterthur end
 	
-	//Romanshorn
+	//Romanshorn start
 	
 	//reads temperature of Romanshorn
 	$tempR = $data[0]['Temperature'];
@@ -76,11 +77,12 @@
 	$dtR = new DateTime($datetimeR);
 	$datetimeR = $dtR->getTimestamp();
 
-	//calculates timedifference for Romanshorn
+	//calculates timedifference for Romanshorn in minutes
 	$diffR = round(($now - $datetimeR)/60);
 
+	//Romanshorn end
 	
-	//Neuhausen am Rhenfall
+	//Neuhausen am Rhenfall start
 	
 	//reads temperature of Neuhausen am Rheinfall
 	$tempN = $data[2]['Temperature'];
@@ -103,8 +105,12 @@
 	$dtN = new DateTime($datetimeN);
 	$datetimeN = $dtN->getTimestamp();
 
-	//calculates timedifference for Neuhausen am Rheinfall
+	//calculates timedifference for Neuhausen am Rheinfall in minutes
 	$diffN = round(($now - $datetimeN)/60);
+	
+	//Neuhausen am Rheinfall end
+	
+	mysqli_close($mysgli);
 ?> 
 <?php
 	/*test

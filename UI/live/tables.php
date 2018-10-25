@@ -27,6 +27,8 @@
 	else if($temp < -20){
 		echo "<link rel='stylesheet' type='text/css' media='all and (orientation: landscape)' href='css/main_page_hoth.css' />";
 	}
+	
+	mysqli_close($mysgli);
 ?>
 <html>
     <head>

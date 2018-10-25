@@ -34,9 +34,10 @@
 	$dtnow = new DateTime($datenow);
 	$now = $dtnow->getTimestamp();
 
-	//calculates timedifference
+	//calculates timedifference in minutes
 	$diff = round(($now - $datetime)/60);
 	
+	mysqli_close($mysgli);
 ?> 
 <?php
 	/*change of the background image dependent on temperature*/
