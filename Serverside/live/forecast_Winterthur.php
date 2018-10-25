@@ -23,6 +23,9 @@
 	}
 	
 	$temp = $data[0]['Temperature'];
+	
+	
+	
 	/*change of the background image dependent on temperature*/
 	/*$temp = 40.5; /*for test purposes*/
 	if($temp > 40){
