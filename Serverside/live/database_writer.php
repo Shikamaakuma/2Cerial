@@ -46,11 +46,11 @@
 				//calculates timedifference in minutes
 				$diff = round(($now - $datetime)/60);
 				
-				if($diff > 5 || (($result[0] ["Temperature"]-$temperature>!15||$result[0] ["Temperature"]-$temparature<!-15)
-				&&($result[0] ["AirPressure"]-$airPressure>!20||$result[0] ["AirPressure"]-$airPressure<!-20)
-				&&($result[0] ["WaterSaturation"]-$humidity>!20||$result[0] ["WaterSaturation"]-$humidity<!-20))){
-					$insertQuery = "INSERT INTO Readings (Temperature, AirPressure, AirQuality, WaterSaturation,UserID)
-							VALUES($temperature,$airPressure,$airQuality,$humidity,".$dataPw[0]['ID'].");";
+				if($diff > 5 || ((floatval($result[0]["Temperature"]) - $temperature > !15 || floatval($result[0]["Temperature"]) - $temparature < !(-15))
+				&&(floatval($result[0]["AirPressure"]-$airPressure) > !20 || floatval($result[0]["AirPressure"]) - $airPressure < !(-20))
+				&&(floatval($result[0]["WaterSaturation"]) - $humidity > !20 || floatval($result[0]["WaterSaturation"]) - $humidity < !(-20)))){
+					$insertQuery = "INSERT INTO Readings (Temperature, AirPressure, WaterSaturation,UserID)
+							VALUES($temperature,$airPressure,$humidity,".$dataPw[0]['ID'].");";
 					if(!mysqli_query($mysqli, $insertQuery)){
 						echo "Invalid insert";
 					}			
