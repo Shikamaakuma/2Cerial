@@ -197,6 +197,9 @@ echo "<div class='container'>";
 			case "Not Available":
 				return "Wetter nicht vorhanden";
 				break;
+			default : 
+				return $weather;
+				break;
 		}
 	}
 	
