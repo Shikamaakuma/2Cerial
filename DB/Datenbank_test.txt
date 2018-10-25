@@ -1,6 +1,0 @@
-CREATE TABLE Standort(
-	Name VARCHAR(100) NOT NULL,
-	Temperatur FLOAT(2,1) NOT NULL,
-	Datum/Zeit TIMESTAMP,
-	PRIMARY KEY Name
-);
