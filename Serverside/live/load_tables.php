@@ -21,9 +21,9 @@
     }
     
 	//fetches the needed Data for Graph from Database
-    $QUERYROMANSHORN = "select Temperature, AirPressure, WaterSaturation, unix_timestamp(subdate(Datum, interval second(Datum) second))*1000 from Readings WHERE Readings.Datum > DATE_SUB(now(), INTERVAL 1 HOUR) AND UserID = 1;";
-    $QUERYWINTERTHUR  = "select Temperature, AirPressure, WaterSaturation, unix_timestamp(subdate(Datum, interval second(Datum) second))*1000 from Readings WHERE Readings.Datum > DATE_SUB(now(), INTERVAL 1 HOUR) AND UserID = 2;";
-    $QUERYNEUHAUSEN = "select Temperature, AirPressure, WaterSaturation, unix_timestamp(subdate(Datum, interval second(Datum) second))*1000 from Readings WHERE Readings.Datum > DATE_SUB(now(), INTERVAL 1 HOUR) AND UserID = 3;";
+    $QUERYROMANSHORN = "select Temperature, AirPressure, WaterSaturation, unix_timestamp(subdate(Datum, interval second(Datum) second))*1000 from Readings WHERE Readings.Datum > DATE_SUB(now(), INTERVAL 12 HOUR) AND UserID = 1;";
+    $QUERYWINTERTHUR  = "select Temperature, AirPressure, WaterSaturation, unix_timestamp(subdate(Datum, interval second(Datum) second))*1000 from Readings WHERE Readings.Datum > DATE_SUB(now(), INTERVAL 12 HOUR) AND UserID = 2;";
+    $QUERYNEUHAUSEN = "select Temperature, AirPressure, WaterSaturation, unix_timestamp(subdate(Datum, interval second(Datum) second))*1000 from Readings WHERE Readings.Datum > DATE_SUB(now(), INTERVAL 12 HOUR) AND UserID = 3;";
     //TODO add part 1
 	
 	$resRomanshorn = mysqli_query($mysqli, $QUERYROMANSHORN);
